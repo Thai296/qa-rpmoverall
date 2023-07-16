@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Test Code" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="500" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener' />
+	</listeners>
+
+	<test name="Test Code Detail - Landing Pages">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_26">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Load test Code - Load information detail of Test ID with invalid Test ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_43">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Load test Code - Verify Test Code information with valid Test Code ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_44">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Load Test Code - Verify All the fields is required in Create Test CodeInformation (Single Test) Screen">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_148">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Load test Code - Verify All the fields is required in Create Test CodeInformation (Profile) Screen">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_151">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="TestCode - Log into RPM and verify The No Load Test Page">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_154">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search with invalid test id">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_38">
+					<parameter name="invalidTestId" value="*** invalid test id ***" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search valid Lab info">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_40">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Verify Search Result Page">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_41">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search With Empty Field">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_136">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Close search">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_138">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search All Test Code ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_139">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search test code with any Procedure code">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_140">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search Test Code With Type is Profile">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_219">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search test code with type is non-profile">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_220">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Search test code with sort is facility">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_221">
+					<parameter name="sortBySearch" value="Facility" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Verify footer button at search test code result page">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_222">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Search Test Code - Verify option display entry per page">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_223">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Create new Effective date with invalid Exp Date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_47">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Verify procedure exp date of any effective date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_189">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Effective Date - Add Payor ID With Exp Date greater next eff date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_190">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="ProFile Code Detail - Eff date - Create new eff date is the same existing eff date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_226">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Add component with Eff date less than component Eff date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_227">
+					<parameter name="testName" value="TESTM1" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Add new Eff date with invalid format date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_228">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Effective Date - Verify New Record is not save when user re-select eff date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_240">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+    <test name="Single Test Detail - Procedures - Add valid Procedures">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_49">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Verify new eff isn't save when user without input data in tab">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_52">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Add procedures some required fields are empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_55">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Cancel Add Procedure">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_56">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Add Procedure with invalid Exp date format">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_57">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Updated procedure with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_59">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Test Code Detail - Verify procedure table icon">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_60">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Test Code Detail - Filter procedure base on procedure table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_92">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Verify system display all list when user un-filter">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_93">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - update Procedure without select any row">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_159">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Update procedure with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_162">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Update procedure with required field is empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_179">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Add new with pro code invalid">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_230">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Procedures - Verify that procedure table is change when user re-select Procedure">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_233">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Add new Proc with Exp date less than Effective date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_234">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   	<test name="Single Test Detail - Facility - Add Facility with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_96">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Update Facility with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_97">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Single Test Detail - Facility - Verify hidden icon in The Facility grid">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_99">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Single Test Detail - Facility - Add new facility with performing facility is duplicate">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_180">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Add new Facility with require field is empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_182">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Change default facility">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_184">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Add new Facility with invalid format exp date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_237">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Cancel add new facility">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_238">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Verify that new facility is not saved when user click Reset">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_239">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Reset the update facility">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_242">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Facility - Update facility without select any row">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_243">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   	<test name="Single Test Detail - Modifier - Add Payor Group with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_100">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Edit Group information with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_101">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Delete any payor group ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_102">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Add payor with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_104">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Edit payor with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_105">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Verify hide icon in Payor Table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_107">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Update payor with modifiers are emtpy">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_188">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Delete any payor info">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_193">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Filter in Payor Group Specific Modifiers">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_202">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Filter in Payor Specific Modifiers table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_203">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Cancel add new payor group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_244">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Add Payor with invalid data Procedure">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_246">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Cancel the update payor group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_250">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Click Edit icon without select any row payor group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_252">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Add Payor with PayorID is duplicate with existing payorID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_258">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Add Payor with exp date is before eff date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_259">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Reset delete payor group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_264">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Delete Payor - Reset the delete payor">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_265">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Search Payor - Search PayorID with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_109">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Search Payor -  Search all Payor">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_253">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Search Payor -  Search Payor with valid data for Payor Info">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_254">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Search Payor -  Search Payor with full data for Cross-Reference">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_255">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Single Test Detail - fee Schedule - Add new Fee Schedule with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_110">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - fee Schedule - Edit fee schedule with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_111">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Single Test Detail - fee Schedule - Hide gird balance">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_112">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Single Test Detail - fee Schedule - Verify Filter function in table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_205">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Add FS with new price is less than min price and dup ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_266">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Add FS with eff date is overlap the an other one">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_267">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Single Test Detail - Fee Schedule - Add FS with eff date and exp date is consistent with exist">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_268">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Single Test Detail - Fee Schedule - Edit FS with eff date is overlap with existing one">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_270">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Cancel the Add FS">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_271">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+
+	<test name="Single Test Detail - Modifier - Reset the add new FS">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_272">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Reset the update FS">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_273">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Modifier - Verify Sort function in Test Based fee schedule">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_274">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Single Test Detail - fee Schedule - add Fee Schedule with FSId is not active fee schedule">
+			<classes>
+				<class name="com.newXp.tests.RegressionTestCodeTest" />
+				<methods>
+					<include name="testXPR_302">
+					</include>
+				</methods>
+			</classes>
+		</test>
+
+   <test name="Single Test Detail - Fee Schedule - Reset add new FS">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_307">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	  <test name="Single Test Detail - Xref - Verify hide grid icon">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_117">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+<!--	<test name="Single Test Detail - Xref - Delete any row in Xref tab">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_194">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+    <test name="Single Test Detail - Xref - Verify filter function in cross reference table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_206">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Xref - Add Xref with some require fields are empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_276">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Xref - Add Xref with invalid format">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_277">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Single Test Detail - Xref - Add Xref with duplicate Cross-Reference description ">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_278">
+				</include>
+			</methods>
+		</classes>
+	 </test>
+
+	 <test name="Single Test Detail - Xref - Cancel Add Xref ">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_279">
+				</include>
+			</methods>
+		</classes>
+	 </test>
+
+	  <test name="Single Test Detail - Xref - Reset add Xref ">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_280">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Single Test Detail - Xref - Edit xref without select any row">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_282">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Single Test Detail - Xref - Verify sort function in cross reference table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_284">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Profile Detail - Xref - Add Xref with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_309">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Xref - Add Xref with cross-reference is duplicate cross">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_310">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Xref - Add Xref with invalid data input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_311">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Xref - Cancel add new xref information">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_312">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Profile Detail - Xref - Update Xref with valid data">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_313">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Profile Detail - Xref - Reset the update Xref">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_314">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Xref - Delete Xref">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_315">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single test Detail - Exclusions - Add Payor Group Exclusion">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_118">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Single Test Detail - Exclusions - Delete Payor Group">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_119">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Single Test Detail - Exclusions - Verify Hide grid icon in Payor Group table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_120">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusions - Add Payor with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_121">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single test Detail - Exclusions - Delete Payor in the Payor List">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_122">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single test Detail - Exclusions - Verify Hide grid icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_123">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusions-Reset Delete payorID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_124">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single test Detail - Exclusions - Edit Payor Exclusion without select any row">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_125">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusions - Verify Filter function in Payor Group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_207">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusions - Verify Filter function in Payor Exclusions">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_208">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusion - Add Payor Group with duplicate GroupID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_285">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Exclusions - Cancel add record">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_286">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Reset the add payor Group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_287">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Add Payor Group with GroupId is duplicate">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_318">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Add Payor Group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_317">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Add Payor with duplicate payorID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_288">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Profile Detail - Exclusions - Cancel Add Payor Group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_319">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	 <test name="Profile Detail - Exclusions - Delete Payor Group">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_320">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Profile Detail - Exclusions - Reset the Delete Payor Group">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_321">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Add Payor with valid Payor ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_322">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Add Payor with invalid Payor ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_323">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Reset Add Payor">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_324">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Delete Payor Id">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_325">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Profile Detail - Exclusions - Verify Filter function in Payor Group Exclusions table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_326">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Profile Detail - Exclusions - Verify Filter function in Payor Exclusions table">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_327">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Component - add new component with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_291">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Component - Add Component with testId is duplicate">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_293">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Component - Add Component with Invlaid testId">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_296">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Component - Delete Component">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_299">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Single Test Detail - Suppress Cross - Add Payor with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_126">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Suppress Cross - Edit Payor with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_127">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Single Test Detail - Suppress Cross - Verify hide grid icon">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionTestCodeTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_128">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Single Test Detail - Suppress Cross - Edit Payor with invalid format effective date">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_129">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Suppress Cross - Cancel add new payor">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_130">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Suppress Cross - Delete payor in the table list">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_196">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Suppress Cross - Add payor with required field is empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_289">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Load Test - Verify Help link icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_401">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Code Detail - Verify Help link icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_402">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Single Test Detail-Procedures-Search Proc Code-Search all procedure code for any procedure table ">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_53">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Search Proc Code - Verify Keep Search Open checkbox">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_164">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Search FS with invalid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_114">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Verify New Search button">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_172">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Verify close Fee Sched">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_174">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+  	<test name="Single Test Detail - Fee Schedule - Check on Keep search open checkbox">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_175">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Single Test Detail - Fee Schedule - Verify footer buttons">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_176">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!-- 	Issue
+	<test name="Single Test Detail - Facility - Update Facility lab cost is greater than min price">
+		<classes>
+			<class name="com.newXp.tests.RegressionTestCodeTest" />
+			<methods>
+				<include name="testXPR_183">
+					<parameter name="email" value="qatester@xifin.com"  />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+	-->
+</suite>

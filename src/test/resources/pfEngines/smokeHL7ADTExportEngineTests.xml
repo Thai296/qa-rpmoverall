@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-Hl7AdtExportEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+	<parameter name="email" value="qatester@xifin.com"/>
+	<parameter name="password" value="qatester123"/>
+    <test name="PT.B_SENT_ADT = 0 and the record can be processed ">
+        <classes>
+            <class name="com.pfEngines.tests.HL7ADTExportEngineTest"/>
+            <methods>
+                <include name="testPFER_469">
+                    <parameter name="formatType" value="hl7ADTExport"/>
+                    <parameter name="ptSeqId" value="88"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+	<test name="PT.B_SENT_ADT = 1 and the record won't be processed ">
+		<classes>
+			<class name="com.pfEngines.tests.HL7ADTExportEngineTest" />
+			<methods>
+				<include name="testPFER_470">
+						<parameter name="formatType" value="hl7ADTExport" />
+                    <parameter name="ptSeqId" value="104321"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="PT.B_SENT_ADT = 0 and multiple records can be processed ">
+		<classes>
+			<class name="com.pfEngines.tests.HL7ADTExportEngineTest" />
+			<methods>
+				<include name="testPFER_471">
+						<parameter name="formatType" value="hl7ADTExport" />
+						<parameter name="ptSeqId1" value="88" />
+						<parameter name="ptSeqId2" value="90" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Patient Statement Regression Tests" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-28&quot;&gt; RPM_28 RPM - Accession - Accession Demographics - Update Accession - Add EPI ">
+		<classes>
+			<class name="com.mars.tests.RegressionPatientStatementTest" />
+			<methods>
+				<include name="testPatientStatement_01">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="customer" value="acme" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="eType" value="OePostingEngine" />
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />
+				</include>
+			</methods>
+		</classes>
+	</test>   
+	
+ 
+	 
+</suite>

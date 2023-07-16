@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Cross Reference Configuration" preserve-order="true" parallel="tests" thread-count="1" verbose="45">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoXpUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoXpPassword" value="qatester123"/>
+
+    <test name="Verify Cross Reference Members are displayed correctly">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_823">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update Xref_Typ with checked on check box">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_824">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add new XrefId for any type with valid data">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_825">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Remove data that is assigned for TEST_XREF">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_826">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update Xref Id with new Description.">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_827">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete XrefId">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_828">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Reset button">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_829">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Run Audit button">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_830">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Help icon">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testXPR_831">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Creating New Type from Create New Type link ">
+        <classes>
+            <class name="com.newXp.tests.CrossReferenceConfigTest"/>
+            <methods>
+                <include name="testCreateNewType">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+
+</suite>

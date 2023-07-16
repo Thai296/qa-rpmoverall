@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine Dunning Cycle" preserve-order="true" parallel="tests"
+       thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+
+    <test name="No Promise Payment, Dun Is Incremented">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE01"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value=""/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_739"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="No Promise Payment, Correct Submission Service Is Used">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE02"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612032"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_740"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Active Promise Payment Plan Created After Last Statement">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE03"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612023"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_741"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Active Promise Payment Plan, No Payments Since Last Statement">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE04"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-GRP-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612161"/>
+        <parameter name="qMessage" value="Promised payment plan in arrears for accnId:"/>
+        <parameter name="userFrom" value="AccnSubmEngine"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_742"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Active Promise Payment Plan, Payments Since Last Statement, Min Not Met">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE05"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-GRP-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612197"/>
+        <parameter name="qMessage" value="Promised payment plan in arrears for accnId:"/>
+        <parameter name="userFrom" value="AccnSubmEngine"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_743"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Active Promise Payment Plan, Minimum Payment Met">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE06"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612034"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_744"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Active Promise Payment Plan, Min Had Been Met On Last Stmt But No Payments This Stmt">
+        <parameter name="accnId" value="QATESTERNONCLIENTDUNCYCLE07"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="PtStmt"/>
+        <parameter name="docSeqIdsStr" value="612035"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_745"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="No Promise Payment, Paperless Override Enabled with notification plan">
+        <parameter name="accnId" value="QATESTERMDTMK2016010702214462"/>
+        <parameter name="patientPyrAbbrv" value="P-DUN-TEST"/>
+        <parameter name="subId" value="A518940247"/>
+        <parameter name="submSvcSubmitAbbrev" value="PtStmt"/>
+        <parameter name="submSvcCreatedAbbrev" value="PtStmtPaperless"/>
+        <parameter name="docSeqIdsStr" value="663798"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testPFER_776"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cancelled Professional Claim Does Not Queue Submission for Next Dunning Cycle">
+        <parameter name="accnId" value="QATESTER2023042023104351"/>
+        <parameter name="pyrAbbrv" value="MCCA"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="MCCA"/>
+        <parameter name="claimId" value="QATESTER2023042023104351Z01"/>
+        <parameter name="icn" value="ICN20230421001"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testCancelledProfessionalClaimDoesNotQueueNextDunningCycle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Original Professional Claim Queues Submission for Next Dunning Cycle">
+        <parameter name="accnId" value="QATESTER20230421093606162"/>
+        <parameter name="pyrAbbrv" value="MCCA"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="MCCA"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineDunCycleTest">
+                <methods>
+                    <include name="testOriginalProfessionalClaimQueuesNextDunningCycle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

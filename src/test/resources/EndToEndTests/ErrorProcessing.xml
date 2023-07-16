@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Error Processing" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="email" value="qatester@xifin.com"/>
+    <parameter name="password" value="qatester123"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+   <test name="Getting into EP unpriceable">
+       <classes>
+            <class name="com.EndToEndTests.ErrorProcessing"/>
+            <methods>
+                <include name="gettingIntoEPUnpriceable">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewFinalReportedPartyPyrSuspAccnWithNewEPI"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Generate letter with Type fax">
+       <classes>
+           <class name="com.EndToEndTests.ErrorProcessing"/>
+           <methods>
+               <include name="generateLetterWithTypeFax">
+                   <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                   <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                   <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyPyrAccnWithPtZipErr_EPFAX"/>
+                   <parameter name="formatType" value="epClient" />
+               </include>
+           </methods>
+       </classes>
+   </test>
+    <test name="Generate letter with Type fax and action Client">
+        <classes>
+            <class name="com.EndToEndTests.ErrorProcessing"/>
+            <methods>
+                <include name="generateLetterWithTypeFax_action_client">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-CreateNewFinalReported3rdPartyPyrAccnWithOverrideError"/>
+                    <parameter name="formatType" value="epClient" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

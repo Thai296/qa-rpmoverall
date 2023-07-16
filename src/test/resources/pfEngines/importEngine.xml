@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ImportEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+
+    <test name="Format Type HL7 ">
+        <classes>
+            <class name="com.pfEngines.tests.EngineTest"/>
+            <methods>
+                <include name="testXP_importEngineByHL7">
+                    <parameter name="email" value="qatester@xifin.com"/>
+                    <parameter name="password" value="qatester123"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="propLevel" value="TestCase"/>
+                    <parameter name="propName" value="NewAccnID"/>
+                    <parameter name="wsUsername" value="clndoc"/>
+                    <parameter name="wsPassword" value="clndoc"/>
+                    <parameter name="eType" value="ImportEngine"/>
+                    <parameter name="eJar" value="import-engine-1.0.0-SNAPSHOT.jar"/>
+                    <parameter name="file" value="hl7.txt"/>
+                    <parameter name="formatType" value="hl7"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Valid Format Type USPS ">
+        <classes>
+            <class name="com.pfEngines.tests.EngineTest"/>
+            <methods>
+                <include name="testXP_importEngineByValidUSPS">
+                    <parameter name="email" value="qatester@xifin.com"/>
+                    <parameter name="password" value="qatester123"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="propLevel" value="TestCase"/>
+                    <parameter name="propName" value="NewAccnID"/>
+                    <parameter name="wsUsername" value="clndoc"/>
+                    <parameter name="wsPassword" value="clndoc"/>
+                    <parameter name="eType" value="ImportEngine"/>
+                    <parameter name="eJar" value="import-engine-1.0.0-SNAPSHOT.jar"/>
+                    <parameter name="file" value="usps.txt"/>
+                    <parameter name="formatType" value="usps"/>
+                    <parameter name="newAddr1" value="123 Main st"/>
+                    <parameter name="newZip" value="91941"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Invalid Format Type USPS ">
+        <classes>
+            <class name="com.pfEngines.tests.EngineTest"/>
+            <methods>
+                <include name="testXP_importEngineByInvalidUSPS">
+                    <parameter name="email" value="qatester@xifin.com"/>
+                    <parameter name="password" value="qatester123"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="propLevel" value="TestCase"/>
+                    <parameter name="propName" value="NewAccnID"/>
+                    <parameter name="wsUsername" value="clndoc"/>
+                    <parameter name="wsPassword" value="clndoc"/>
+                    <parameter name="eType" value="ImportEngine"/>
+                    <parameter name="eJar" value="import-engine-1.0.0-SNAPSHOT.jar"/>
+                    <parameter name="file" value="usps.txt"/>
+                    <parameter name="formatType" value="usps"/>
+                    <parameter name="newAccnId" value="newAccn12345"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+
+</suite>

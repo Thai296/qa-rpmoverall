@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-X12InterfaceEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="120"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+	<parameter name="engConfigDB" value="SSO_APP_STAGING" />
+	<parameter name="formatType" value="X12" />
+
+	<test name="Verify 835 file with all loops and segments are processed and saved properly ">
+		<classes>
+			<class name="com.pfEngines.tests.X12InterfaceEngineTest" />
+			<methods>
+				<include name="testPFER_608">
+					<parameter name="file" value="X12-835-PFER608.txt" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify 4010 835 file with all loops and segments are processed properly ">
+		<classes>
+			<class name="com.pfEngines.tests.X12InterfaceEngineTest" />
+			<methods>
+				<include name="testPFER_636">
+					<parameter name="file" value="X12-835-4010-PFER636.txt" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify 835 file with all loops and segments failed and moved to errored directory ">
+		<classes>
+			<class name="com.pfEngines.tests.X12InterfaceEngineTest" />
+			<methods>
+				<include name="testPFER_640">
+					<parameter name="file" value="X12-835-PFER640.txt" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify 835 file with all loops and segments are processed and saved properly for already existed interchange record ">
+    <classes>
+        <class name="com.pfEngines.tests.X12InterfaceEngineTest" />
+        <methods>
+            <include name="testPFER_642">
+                <parameter name="file" value="X12-835-2022112911451628.txt" />
+            </include>
+        </methods>
+    </classes>
+	</test>
+
+</suite>

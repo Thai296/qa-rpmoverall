@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Menu Link Navigation" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="200" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="version" value="ANY" />
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Accession - Accession Processing - Detail - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_70">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Accession Processing - Super Search - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_71">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Error Processing - EP Search - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_72">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Patient Processing - Patient Demographics - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_73">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Demographics - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_74">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Pricing Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_75">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Submission Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_76">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Transaction Detail - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_77">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - Tables - Eligibility Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_78">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - Tables - Eligibility Translation - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_79">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - Tables - Reason Code - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_80">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - Pricing - Test Code - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_81">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - System Management - Submission and Remittance - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_82">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Deposits - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_83">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Non-Client Summary - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_84">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor - Demographics - Demographics - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_85">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    <test name="Financial Management - End of Month - Closing Package - Landing page">-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.MenuLinkNavigationTest" />-->
+<!--            <methods>-->
+<!--                <include name="testXPR_86">-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Accession - Accession Processing - History Log - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_87">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Accession Processing - Notes and Promised Payments - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_88">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Accession Processing - Single Statement - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_89">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Order Processing - Test Update - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_90">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Contact Manager - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_91">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client - Client Processing - Eligibility Census Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_98">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - Tables - Physician License - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_106">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="File Maintenance - System Management - Document Upload and Storage - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_131">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Client Payments - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_134">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Expect Price Discrepancies - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_145">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Non-Client Payments - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_146">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payment - Payments - Patient Payments - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_147">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor - Demographics - Pricing Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_149">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Accession - Error Processing - EP Summary - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_150">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Client - Client Processing - Billing Rules - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_152">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Client - Client Inquiry - Batch Single Demand Statement - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_153">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="File Maintenance - Pricing - Fee Schedule - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_155">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="File Maintenance - Pricing - Incremental Price Table - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_167">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="File Maintenance - Pricing - Special Price Table - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_168">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="File Maintenance - System Management - Logo Configuration - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_169">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Payment - Payments - Payment Search - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_170">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Payor - Consolidation - Procedure Code Rules - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_178">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Financial Management - End of Month - EOM Schedule - Landing page">
+        <classes>
+            <class name="com.newXp.tests.MenuLinkNavigationTest" />
+            <methods>
+                <include name="testXPR_191">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

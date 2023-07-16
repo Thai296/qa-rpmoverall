@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Accn Daily Receipt" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="150" />
+	<parameter name="platform" value="WINDOWS" />
+    <parameter name="version" value="ANY" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="ssoXpUsername" value="qatester@xifin.com" />
+	<parameter name="ssoXpPassword" value="qatester123" />
+	
+    <test name="Verify loading existing Daily Receipt">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1679">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify Help icon">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1680">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify creating new Daily Receipt with input all required fields">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1681">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify creating new Daily Receipt with input full fields">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1682">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify Reset button">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1683">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify loading Daily Receipt has b_deleted = 1">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1684">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify loading Daily Receipt does not exist in DB">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1685">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify error message when 'Cash counted at drawer opening by' field is not inputted">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1686">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify correct error msg displays when load a Daily Receipt which doesn't have access based on facility">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1687">
+                </include>
+            </methods>
+        </classes>
+    </test>     
+    
+    <test name="Verify error message displays when 'Please explain any overages or shortage' is empty ">
+        <classes>
+            <class name="com.newXp.tests.DailyReceiptTest" />
+            <methods>
+                <include name="testXPR_1688">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+</suite>

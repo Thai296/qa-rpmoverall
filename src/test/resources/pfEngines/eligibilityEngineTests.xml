@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-EligEngine" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="120"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1013&quot;&gt;XPR-1013: Eligibility Engine - Eligibility check is ELIGIBLE">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE-XPR-1013-001"/>
+        <parameter name="pyrAbbrv" value="BSIN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1013"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Flaky Test   <test name="Eligibility check is INELIGIBLE">-->
+    <!--        <parameter name="accnId" value="QATESTER-XPR-1014-ELIG-ENGINE-001"/>-->
+    <!--        <parameter name="pyrAbbrv" value="BSIN"/>-->
+    <!--        <parameter name="accnCntct" value="Transaction Acknowledged. Eligibility denied."/>-->
+    <!--        <classes>-->
+    <!--            <class name="com.pfEngines.tests.EligibilityEngineTest">-->
+    <!--                <methods>-->
+    <!--                    <include name="testXPR_1014"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="Eligibility check is REJECTED/ADDERR">
+        <parameter name="accnId" value="QATESTER-XPR-1015-ELIG-ENGINE-001"/>
+        <parameter name="pyrAbbrv" value="BSIN"/>
+        <parameter name="accnCntct"
+                   value="Rejection received: Invalid/Missing Subscriber/Insured ID. Action taken: ADDERR - Add Ineligible Error"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1015"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is REJECTED/SUBMIT">
+        <parameter name="accnId" value="QATESTER-XPR-1016-ELIG-ENGINE-001"/>
+        <parameter name="pyrAbbrv" value="BSIN"/>
+        <parameter name="accnCntct" value="Rejection received: Required application data missing. Action taken: None"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Flaky Test   <test name="Eligibility check is REJECTED/RECHK - Information Receiver Level">-->
+    <!--        <parameter name="accnId" value="QATESTER-XPR-1017-ELIG-ENGINE-001"/>-->
+    <!--        <parameter name="pyrAbbrv" value="BSIN"/>-->
+    <!--        <parameter name="accnCntct"-->
+    <!--                   value="Rejection received: Unable to Respond at Current Time. Action taken: RECHK - Re-Check Eligiblity"/>-->
+    <!--        <classes>-->
+    <!--            <class name="com.pfEngines.tests.EligibilityEngineTest">-->
+    <!--                <methods>-->
+    <!--                    <include name="testXPR_1017"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="Eligibility check is REJECTED/RECHK (P Code)">
+        <parameter name="accnId" value="A2014091902030240"/>
+        <parameter name="pyrAbbrv" value="BCBSNJ"/>
+        <parameter name="accnCntct"
+                   value="Rejection received: Unable to Respond at Current Time. Action taken: RECHK - Re-Check Eligiblity"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_2046"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is UNDETERMINED">
+        <parameter name="accnId" value="QATESTER-XPR-1018-ELIG-ENGINE-001"/>
+        <parameter name="pyrAbbrv" value="BSIN"/>
+        <parameter name="accnCntct" value="Eligibility undetermined;"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1018"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is UNREACHABLE">
+        <parameter name="accnId" value="QATESTER-XPR-1019-ELIG-ENGINE-001"/>
+        <parameter name="pyrAbbrv" value="BCBSSL"/>
+        <parameter name="accnCntct"
+                   value="Unable to successfully communicate with the requested Third Party. Please contact XIFIN customer service."/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1019"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Disabling 'translation to same payor' automation test case due to being in conflict with XP-110459 changes. -->
+
+    <!--    <test name="Primary Payor Translates to Same Payor; Insurance Type Code Translation Rule">-->
+    <!--        <parameter name="accnId" value="QATESTER20170926105953823"/>-->
+    <!--        <parameter name="pyrAbbrv" value="XYZ"/>-->
+    <!--        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>-->
+    <!--        <classes>-->
+    <!--            <class name="com.pfEngines.tests.EligibilityEngineTest">-->
+    <!--                <methods>-->
+    <!--                    <include name="testXPR_952"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="ELIGDOB Error Added For DOB Mismatch">
+        <parameter name="accnId" value="QATESTER201709271421303301"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="accnCntct" value="DOB on accession does not match DOB in eligibility response"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_953"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UNKELGRESP Error Added For Unknown Response">
+        <parameter name="accnId" value="QATESTER20170717220514719"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="accnCntct" value="Unmapped payor AETNA response(s): Active Coverage, Insurance Type Code: MB"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_954"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGMULTMAP Error Added For Multiple Response">
+        <parameter name="accnId" value="QATESTER201609141349363941"/>
+        <parameter name="pyrAbbrv" value="MCCT"/>
+        <parameter name="accnCntct" value="Unable to determine the payor to bill: "/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_955"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Primary Payor Translates to Different Payor(Service Type Code UC); Eligibility check on translated payor is INELIGIBLE">
+        <parameter name="accnId" value="QATESTER20171122"/>
+        <parameter name="pyrAbbrv" value="BSAR"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_956"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Primary Payor Moves To Secondary And New Primary Payor Is Inserted; Existing Errors Are Shuffled">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20171224-001"/>
+        <parameter name="origPyrAbbrvs" value="BSEAST,P"/>
+        <parameter name="newPyrAbbrvs" value="BCBSSL,BSEAST,P"/>
+        <parameter name="accnCntct" value="Eligibility Approved for newPyrId: BCBSSL"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_957"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient's Name, Gender, Address are updated">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180108-001"/>
+        <parameter name="pyrAbbrv" value="BSFL"/>
+        <parameter name="patientFNm" value="FIRSTNAME UPDATED"/>
+        <parameter name="patientLNm" value="LASTNAME UPDATED"/>
+        <parameter name="patientAddr1" value="ADDRESS UPDATED"/>
+        <parameter name="patientAddr2" value="APT"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="SAN DIEGO"/>
+        <parameter name="patientZipId" value="90009"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1046"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Insured Name, Gender, Address are updated">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180109-001"/>
+        <parameter name="pyrAbbrv" value="BCBSNH"/>
+        <parameter name="insuredFNm" value="INSFIRSTNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLASTNAME UPDATED"/>
+        <parameter name="insuredAddr1" value="INSURED ADDRESS UPDATED"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1047"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demographic Data is not updated">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180111-001"/>
+        <parameter name="pyrAbbrv" value="BCBSNJ"/>
+        <parameter name="patientFNm" value="PT FIRSTN"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1048"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demographic (NO EPI) Data is updated - mixed case">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180124-001"/>
+        <parameter name="pyrAbbrv" value="XYZ"/>
+        <parameter name="patientFNm" value="PT FIRSTN"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1049"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demo (EPI) Data is updated - mixed case">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180125-001"/>
+        <parameter name="pyrAbbrv" value="XYZ"/>
+        <parameter name="patientFNm" value="PT TEST"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1054"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Default Svc Type code is used if Additional svc_type_code is not in 271 file">
+        <parameter name="accnId" value="QATESTER2018061215003666"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="additionalSvcTyps" value="45"/>
+        <parameter name="defaultSvcTypCd" value="5"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1222"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="No Svc Type code EB* segment is used if Additional svc_type_code and Default are not in 271 file">
+        <parameter name="accnId" value="QATESTER2018061215003777"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="additionalSvcTyps" value="45"/>
+        <parameter name="defaultSvcTypCd" value="5"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1223"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pyr is translated, SubId updated from REF*1W if Subs ID Type set Member Id Number">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2018080101"/>
+        <parameter name="origPyrAbbrv" value="BSCNY"/>
+        <parameter name="newPyrAbbrv" value="XYZ"/>
+        <parameter name="origSubId" value="TEST1617"/>
+        <parameter name="subIdFromRef1W" value="SUBFROMREF1W"/>
+        <parameter name="accnCntct" value="Eligibility Approved for newPyrId: XYZ"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1617"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EB date consideration with system setting 3300 populated. Whether DOS is in range determines if translation occurs">
+        <parameter name="accnId" value="QATESTER20230419130618717"/>
+        <parameter name="origPyrAbbrv" value="MCCA"/>
+        <parameter name="newPyrAbbrv" value="BCBSKYHMO"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="translationEbDateConsideration"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--  Flaky test  <test name="No Transl Rule, SubId update setup-NM109 is used when Subs ID Type Fields available">-->
+    <!--        <parameter name="accnId" value="QATESTERACCNDETAIL2018080102"/>-->
+    <!--        <parameter name="origPyrAbbrv" value="BSENY"/>-->
+    <!--        <parameter name="newPyrAbbrv" value="XYZ"/>-->
+    <!--        <parameter name="origSubId" value="TEST1618"/>-->
+    <!--        <parameter name="subIdFrom271" value="SUBFROMNM109"/>-->
+    <!--        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>-->
+    <!--        <classes>-->
+    <!--            <class name="com.pfEngines.tests.EligibilityEngineTest">-->
+    <!--                <methods>-->
+    <!--                    <include name="testXPR_1618"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="No Transl Rule, SubId update setup - Rejected response - SubId is updated">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2019011501"/>
+        <parameter name="origPyrAbbrv" value="MDCA"/>
+        <parameter name="jurisdPyr" value="BCMD"/>
+        <parameter name="origSubId" value="A914022193T1619"/>
+        <parameter name="subIdFrom271" value="SUBFROMNM109"/>
+        <parameter name="accnCntct"
+                   value="Rejection received: Invalid/Missing Subscriber/Insured ID. Action taken: None"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testXPR_1619"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Client Roster Check - Patient Is On Roster For New Client">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-698"/>
+        <parameter name="origPyrAbbrv" value="UHC"/>
+        <parameter name="origClnAbbrv" value="SK2"/>
+        <parameter name="newClnAbbrv" value="XIFINZH"/>
+        <parameter name="newPyrAbbrv" value="C"/>
+        <parameter name="qTypDescr" value="Zero Balance"/>
+        <parameter name="accnCntct" value="Eligibility is Valid for census."/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_698"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payor Roster Check Is Successful, original Pyr is translated to the new Pyr">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-700"/>
+        <parameter name="originalPyrAbbrv" value="MCMN"/>
+        <parameter name="newPyrAbbrv" value="BCBSNY"/>
+        <parameter name="subId" value="23400000000700"/>
+        <parameter name="eligSvcId" value="SCAN MEDICARE"/>
+        <parameter name="accnCntct" value="Eligibility Approved for newPyrId: BCBSNY"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_700"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payor Roster Check Is Ineligible, DOS before the Effective Date - Ineligible error added">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-701"/>
+        <parameter name="originalPyrAbbrv" value="MCMN"/>
+        <parameter name="newPyrAbbrv" value="BCBSNY"/>
+        <parameter name="subId" value="2340000000070F1"/>
+        <parameter name="eligSvcId" value="SCAN MEDICARE"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_701"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hospital Admit Check Is Successful - HOSPITALADMIT is added">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-702"/>
+        <parameter name="originalPyrAbbrv" value="BSIN"/>
+        <parameter name="subId" value="23400000000702"/>
+        <parameter name="eligSvcId" value="XIFIN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_702"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hospital Admit Check Is Successful - Eligible, no error added">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-703"/>
+        <parameter name="originalPyrAbbrv" value="BSIN"/>
+        <parameter name="subId" value="23400000000703"/>
+        <parameter name="eligSvcId" value="XIFIN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_703"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payor Roster Check eligible, Ineligible error is fixed">
+        <parameter name="accnId" value="Q20220424160329375"/>
+        <parameter name="pyrAbbrv" value="MCMN"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="eligSvcId" value="SCAN MEDICARE"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineTest">
+                <methods>
+                    <include name="testPFER_704"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Reason Code" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="85"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="reasonCodeId1" value="AUTOTESTXPR1020"/>
+    <parameter name="date1" value="01/01/2041"/>
+    <parameter name="reasonCodeId2" value="AUTOTESTXPR1024"/>
+    <parameter name="reasonCodeId3" value="AUTOTESTXPR1026"/>
+    <parameter name="reasonCodeId4" value="AUTOTESTXPR1029"/>
+    <parameter name="reasonCodeId5" value="AUTOTESTXPR1030"/>
+    <parameter name="reasonCodeId6" value="AUTOTESTXPR1031"/>
+    <parameter name="reasonCodeId7" value="AUTOTESTXPR1032"/>
+    <parameter name="reasonCodeId8" value="AUTOTESTXPR1034"/>
+
+    <test name="Update reason code in Claim Status error group and ACK error type and verify Run Audit">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_789">
+                    <parameter name="errorGroup" value="Claim Status"/>
+                    <parameter name="csErrTypCd" value="ACK"/>
+                    <parameter name="reasonCodeId" value="AUTOTESTXPR789"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load Denial error code via Searches and verify Reset button">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_790">
+                    <parameter name="errorGroup" value="Denial"/>
+                    <parameter name="reasonCodeTableId" value="5010GENERIC"/>
+                    <parameter name="reasonCodeId" value="CO11"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify all Helps">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_791">
+                    <parameter name="errorGroup" value="Claim Status"/>
+                    <parameter name="csErrTypCd" value="ACK"/>
+                    <parameter name="reasonCodeId" value="A1-20"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add new Effective date for error code in Claim Status error group and DEN error type">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_1020">
+                    <parameter name="errorGroup" value="Claim Status"/>
+                    <parameter name="csErrTypCd" value="DEN"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update the error code in Denial error group">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_1024">
+                    <parameter name="errorGroup" value="Denial"/>
+                    <parameter name="reasonCodeTableId" value="5010GENERIC"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add new error code in Over-ride error group">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_1026">
+                    <parameter name="errorGroup" value="Over-ride"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete record in Overrides and Cross Reference for Unbillable Error Code">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_1029">
+                    <parameter name="errorGroup" value="Unbillable"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete Reason Code for Unpriceable error code">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_1030">
+                    <parameter name="errorGroup" value="Unpriceable"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Add record in the overrides section for Unbillable Error code">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_2063">
+                    <parameter name="errorGroup" value="Unbillable"/>
+
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Add record in the overrides section for denial Error code">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_2064">
+                    <parameter name="errorGroup" value="Denial"/>
+                    <parameter name="reasonCodeTableId" value="5010GENERIC"/>
+
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Add record in the overrides section for Claim Status Error code">
+        <classes>
+            <class name="com.newXp.tests.ReasonCodeTest"/>
+            <methods>
+                <include name="testXPR_2065">
+                    <parameter name="errorGroup" value="Claim Status"/>
+                    <parameter name="csErrTypCd" value="DEN"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

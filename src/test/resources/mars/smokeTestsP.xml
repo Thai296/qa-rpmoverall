@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Smoke Tests Parallel" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+
+ 	<!--<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-18&quot;&gt; RPM_18 - Login ">-->
+		<!--<classes>-->
+			<!--<class name="com.mars.tests.SmokeTest" />-->
+			<!--<methods>-->
+				<!--<include name="testRPM_18">-->
+					<!--<parameter name="email" value="qatester@xifin.com" />-->
+					<!--<parameter name="password" value="qatester123" />-->
+				<!--</include>-->
+			<!--</methods>-->
+		<!--</classes>-->
+	<!--</test>  -->
+
+	<!--<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-20&quot;&gt; RPM_20 RPM - Help ">-->
+		<!--<classes>-->
+			<!--<class name="com.mars.tests.SmokeTest" />-->
+			<!--<methods>-->
+				<!--<include name="testRPM_20">-->
+					<!--<parameter name="email" value="qatester@xifin.com" />-->
+					<!--<parameter name="password" value="qatester123" />	-->
+				<!--</include>-->
+			<!--</methods>-->
+		<!--</classes>-->
+	<!--</test> -->
+ 
+	<!--<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-22&quot;&gt; RPM_22 - Task Scheduler - Pricing Engine - Generate Pricing ">-->
+		<!--<classes>-->
+			<!--<class name="com.mars.tests.SmokeTest" />-->
+			<!--<methods>-->
+				<!--<include name="testRPM_22">-->
+					<!--<parameter name="email" value="qatester@xifin.com" />-->
+					<!--<parameter name="password" value="qatester123" />-->
+					<!--<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />-->
+					<!--<parameter name="testSuite" value="Accession WS-CreateAccession" />-->
+					<!--<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />-->
+					<!--<parameter name="propLevel" value="TestCase" />-->
+					<!--<parameter name="propName" value="NewAccnID" />-->
+					<!--<parameter name="wsUsername" value="clndoc" />-->
+					<!--<parameter name="wsPassword" value="clndoc" />-->
+					<!--<parameter name="eType" value="OePostingEngine" />			-->
+					<!--<parameter name="xapEnv" value="XAP" />-->
+					<!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+				<!--</include>-->
+			<!--</methods>-->
+		<!--</classes>-->
+	<!--</test>  -->
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-2&quot;&gt; RPM_2 RPM - Accession - Accession Demographics - Load Existing Accession ">
+		<classes>
+			<class name="com.mars.tests.SmokeTest" />
+			<methods>
+				<include name="testRPM_2">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+	  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-21&quot;&gt; RPM_21 RPM - Accession Processing - Super Search - Accession Client Abbrev ">
+		<classes>
+			<class name="com.mars.tests.SmokeTest" />
+			<methods>
+				<include name="testRPM_21">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+   
+</suite>

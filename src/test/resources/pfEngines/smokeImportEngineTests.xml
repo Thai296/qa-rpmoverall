@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ImportEngine" preserve-order="true" parallel="tests" thread-count="12"
+       verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="Hospital Admit - Run import engine with code type A ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_95">
+                    <parameter name="formatType" value="hospitalAdmit"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="HOSPITALADMIT-File format with doc type D and update Discharge Date to existing record ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_97">
+                    <parameter name="formatType" value="hospitalAdmit"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Hospital Admit - Run import engine with code type I ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_99">
+                    <parameter name="formatType" value="hospitalAdmit"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Hospital Admit - Run import engine with code type X ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_101">
+                    <parameter name="formatType" value="hospitalAdmit"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+        <test name="Hospital Admit - Inpatient Patient Type">
+            <classes>
+                <class name="com.pfEngines.tests.ImportEngineTest"/>
+                <methods>
+                    <include name="testHospitalAdmitPatientTypeInpatient">
+                        <parameter name="subId" value="HOSPADMITINPTSUBID"/>
+                        <parameter name="ssn" value="001020304"/>
+                        <parameter name="dob" value="1977/08/04"/>
+                        <parameter name="admitDt" value="2022/01/01"/>
+                        <parameter name="dischargeDt" value="2022/01/04"/>
+                        <parameter name="ptLastName" value="BUNNY"/>
+                        <parameter name="ptFirstName" value="BUGS"/>
+                        <parameter name="ptMi" value="H"/>
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Hospital Admit - Outpatient Patient Type">
+            <classes>
+                <class name="com.pfEngines.tests.ImportEngineTest"/>
+                <methods>
+                    <include name="testHospitalAdmitPatientTypeOutpatient">
+                        <parameter name="subId" value="HOSPADMITOUTPTSUBID"/>
+                        <parameter name="ssn" value="001020305"/>
+                        <parameter name="dob" value="1977/08/05"/>
+                        <parameter name="admitDt" value="2022/01/01"/>
+                        <parameter name="ptLastName" value="DUCK"/>
+                        <parameter name="ptFirstName" value="DONALD"/>
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+            <test name="Hospital Admit - Non-patient Patient Type">
+                <classes>
+                    <class name="com.pfEngines.tests.ImportEngineTest"/>
+                    <methods>
+                        <include name="testHospitalAdmitPatientTypeNonPatient">
+                            <parameter name="subId" value="HOSPADMITNONPTSUBID"/>
+                            <parameter name="ssn" value="001020306"/>
+                            <parameter name="dob" value="1977/08/06"/>
+                            <parameter name="admitDt" value="2022/02/01"/>
+                            <parameter name="dischargeDt" value="2022/02/10"/>
+                            <parameter name="ptLastName" value="MOUSE"/>
+                            <parameter name="ptFirstName" value="MICKEY"/>
+                        </include>
+                    </methods>
+                </classes>
+            </test>
+
+        <test name="Hospital Admit - Invalid Patient Type">
+            <classes>
+                <class name="com.pfEngines.tests.ImportEngineTest"/>
+                <methods>
+                    <include name="testHospitalAdmitPatientTypeInvalid">
+                        <parameter name="subId" value="HOSPADMITINVPTSUBID"/>
+                        <parameter name="ssn" value="001020307"/>
+                        <parameter name="dob" value="1977/08/07"/>
+                        <parameter name="admitDt" value="2022/01/07"/>
+                        <parameter name="ptLastName" value="COYOTE"/>
+                        <parameter name="ptFirstName" value="WYLE"/>
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Hospital Admit - Valid Facility ID">
+            <classes>
+                <class name="com.pfEngines.tests.ImportEngineTest"/>
+                <methods>
+                    <include name="testHospitalAdmitValidFacId">
+                        <parameter name="subId" value="HOSPADMITFACSUBID"/>
+                        <parameter name="ssn" value="001020308"/>
+                        <parameter name="dob" value="1977/08/08"/>
+                        <parameter name="admitDt" value="2022/08/01"/>
+                        <parameter name="dischargeDt" value="2022/08/10"/>
+                        <parameter name="ptLastName" value="FLINTSTONE"/>
+                        <parameter name="ptFirstName" value="FRED"/>
+                        <parameter name="facAbbrv" value="ABCLAB"/>
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+    <test name="Hospital Admit - Invalid Facility ID">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testHospitalAdmitInvalidFacId">
+                    <parameter name="subId" value="HOSPADMITBADFACSUBID"/>
+                    <parameter name="ssn" value="001020309"/>
+                    <parameter name="dob" value="1977/08/09"/>
+                    <parameter name="admitDt" value="2022/08/01"/>
+                    <parameter name="ptLastName" value="RUBBLE"/>
+                    <parameter name="ptFirstName" value="BARNEY"/>
+                    <parameter name="facAbbrv" value="INVALIDFACABBRV"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Generic-Run Engine with valid document format ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_71">
+                    <parameter name="formatType" value="generic"/>
+                    <parameter name="eligSvcId" value="118"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Generic-Update existing record with updated data; Duplicate error file generated ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_121">
+                    <parameter name="formatType" value="generic"/>
+                    <parameter name="eligSvcId" value="118"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="USPS-NCOACD !=[M,B] and accn status = 1 and no EPI on the accn ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_130">
+                    <parameter name="formatType" value="usps"/>
+                    <parameter name="accnId" value="QATESTERVBQXJ20200808173406953"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="USPS-NCOACD!=[M,B] and FK_PT_Sta_id!=[1,11,51,1010] and no EPI on the accession ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_134">-->
+    <!--						<parameter name="formatType" value="usps" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="USPS-Run import engine with newPtAd1= NEW ADDRESS ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_136">
+                    <parameter name="formatType" value="usps"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="USPS-newPtAd1=null, NcoaCd=B,AccnStatus=21, P with Self relationship ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_143">
+                    <parameter name="formatType" value="usps"/>
+                    <parameter name="accnId" value="QATESTERVVPNE20160517223535158"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    	<test name="TEVIX-Patient Payor, Relshp is Self, has PT and PT_PYR ">
+    		<classes>
+    			<class name="com.pfEngines.tests.ImportEngineTest" />
+    			<methods>
+    				<include name="testPFER_172">
+    					<parameter name="formatType" value="tevix" />
+    					<parameter name="accnId" value="QATESTERZTUUQ20150803193744546" />
+    				</include>
+    			</methods>
+    		</classes>
+    	</test>
+
+<!--    	<test name="TEVIX-Non-Patient Pyr, Relshp is Non-Self, has PT and PT_PYR ">-->
+<!--    		<classes>-->
+<!--    			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+<!--    			<methods>-->
+<!--    				<include name="testPFER_175">-->
+<!--    					<parameter name="formatType" value="tevix" />-->
+<!--    				</include>-->
+<!--    			</methods>-->
+<!--    		</classes>-->
+<!--    	</test>-->
+
+    	<test name="TEVIX-Non-Patient Pyr, Relshp is Self, has PT and PT_PYR ">
+    		<classes>
+    			<class name="com.pfEngines.tests.ImportEngineTest" />
+    			<methods>
+    				<include name="testPFER_239">
+    					<parameter name="formatType" value="tevix" />
+    					<parameter name="accnId" value="A2011061602030211" />
+    				</include>
+    			</methods>
+    		</classes>
+    	</test>
+
+    <test name="TEVIX-Non-existing AccnId ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_181">
+                    <parameter name="formatType" value="tevix"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="TEVIX-Run import Engine with duplicate fileName ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_241">
+                    <parameter name="formatType" value="tevix"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="TEVIX-Fix Bad Address error ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_237">-->
+    <!--					<parameter name="formatType1" value="usps" />-->
+    <!--					<parameter name="formatType2" value="tevix" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="TEVIX-Fix PT_PYR_SUSPEND_REASON_DT ">-->
+    <!--		<classes>--> 
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_300">-->
+    <!--					<parameter name="formatType1" value="usps" />-->
+    <!--					<parameter name="formatType2" value="tevix" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="BAI2-Run import engine with 2 transactiondetail(16) and 1st row Transaction Detail is 88 ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_187">
+                    <parameter name="formatType" value="bai2"/>
+                    <parameter name="depId" value="32005"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="BAI2-Run import engine with FileHeader is lack of one required fields ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_195">-->
+    <!--						<parameter name="formatType" value="bai2" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="BAI2-Run import engine with dublicate TransactionDetail ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_208">-->
+    <!--						<parameter name="formatType" value="bai2" /> -->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="BAI2-Run import engine with fundType is S ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_230">
+                    <parameter name="formatType" value="bai2"/>
+                    <parameter name="depId" value="32002"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="BAI2-Run import engine with fundType is V ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_231">
+                    <parameter name="formatType" value="bai2"/>
+                    <parameter name="depId" value="30818"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="BAI2-Run import engine with document name is duplicate ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_242">
+                    <parameter name="formatType" value="bai2"/>
+                    <parameter name="depId" value="30817"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="DEFAULTREFUND-ClnRefund-Run import engine with valid document format ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_255">-->
+    <!--						<parameter name="formatType" value="refund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="DEFAULTREFUND-ClnRefund-Run import engine with identifier is not ClnId ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_257">
+                    <parameter name="formatType" value="refund"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DEFAULTREFUND-ClnRefund-Run import engine with B_posted = 0 ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_258">
+                    <parameter name="formatType" value="refund"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="DEFAULTREFUND-ClnRefund-Leftover refund amount after applying to multiple cln refunds ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_294">-->
+    <!--						<parameter name="formatType" value="refund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="DEFAULTREFUND-PmtSusp-Run import engine with valid document format ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_259">-->
+    <!--						<parameter name="formatType" value="refund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="DEFAULTREFUND-AccnRefund-Run import engine when input data for require fields only ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_252">
+                    <parameter name="formatType" value="refund"/>
+                    <parameter name="refundSeqId" value="171"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DEFAULTREFUND-AccnRefund-Run import engine with identifier is not accnId ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_253">
+                    <parameter name="formatType" value="refund"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ALLINAREFUND-AccnRefund-run import engine with AccnId in Accn_refund and AMT greater than AMT_SENT ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_243">
+                    <parameter name="formatType" value="allinaRefund"/>
+                    <parameter name="refundSeqId" value="102"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ALLINAREFUND-AccnRefund-run import engine with invalid AccnID ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_283">
+                    <parameter name="formatType" value="allinaRefund"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="ALLINAREFUND-PmtSusp-Run import engine with valid document ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_284">-->
+    <!--					<parameter name="formatType" value="allinaRefund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="ALLINAREFUND-ClnRefund-run import engine with valid document ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_247">-->
+    <!--					<parameter name="formatType" value="allinaRefund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="DLSTREFUND-AccnRefund-Run import engine with valid document format ">
+        <classes>
+            <class name="com.pfEngines.tests.ImportEngineTest"/>
+            <methods>
+                <include name="testPFER_263">
+                    <parameter name="formatType" value="dlsRefund"/>
+                    <parameter name="refundSeqId" value="81"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="DLSREFUND-ClnRefund-Run import engine with valid document format ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_267">-->
+    <!--						<parameter name="formatType" value="dlsRefund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="DLSREFUND-ClnRefund-Run import engine with invalid ClnAbbrev ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_269">-->
+    <!--						<parameter name="formatType" value="dlsRefund" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="DIAGNOSIS-Run import engine with engineConfidences is Confident ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_209">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+    <!--	<test name="DIAGNOSIS-Run import engine with engineConfidences is QC ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_210">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>		-->
+
+    <!--	<test name="DIAGNOSIS-Run import engine with engineConfidences is Code ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_211">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+    <!--	<test name="DIAGNOSIS-Run import engine with engineConfidences is Review ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_212">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+    <!--	<test name="DIAGNOSIS-EngineConfidence is Insufficient Doc, Engine Assigned DiagCd is blank ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_214">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+    <!--	<test name="DIAGNOSIS-Run import engine with Date of Service is empty ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.ImportEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_222">-->
+    <!--						<parameter name="formatType" value="coderyte" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+</suite>

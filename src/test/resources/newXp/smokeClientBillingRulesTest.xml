@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Client Billing Rules" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="150"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="ssoXpUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoXpPassword" value="qatester123"/>
+
+    <test name="Verify Help Icon">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1187">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load Billing Rules with Client Id at Client Search Result page">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1188">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Reset button">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1189">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Add new record with Bill Client Id">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1190">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Add new record with Bill Payor Id">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1191">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Update record with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1192">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Delete record">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1193">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor Test EP Rules section - Add new record with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1194">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor Test EP Rules section - Update record with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1195">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor Test EP Rules section - Delete record">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1196">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor Test EP Rules section - Copy data from another ClientId">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1197">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Copy Billing Rules data from other ClientID">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1198">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Header section - Verify view document feature">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1199">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Billing Rules section - Add new multi records with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1200">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Payor Test EP Rules section - Add new multi records with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingRulesTest"/>
+            <methods>
+                <include name="testXPR_1201">
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

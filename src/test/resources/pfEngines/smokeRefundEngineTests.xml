@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-RefundEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="eType" value="RefundEngine"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+    <parameter name="formatType" value="refundEngine"/>
+
+    <!--    	 <test name="Client Refund-Generate txt file ">-->
+    <!--    		<classes>-->
+    <!--    			<class name="com.pfEngines.tests.RefundEngineTest" />-->
+    <!--    			<methods>-->
+    <!--    				<include name="testPFER_623">-->
+    <!--    					<parameter name="seqId" value="211" />-->
+    <!--    				</include>-->
+    <!--    			</methods>-->
+    <!--    		</classes>-->
+    <!--    	</test>-->
+
+    <test name="Accession Refund-Generate pdf file ">
+        <classes>
+            <class name="com.pfEngines.tests.RefundEngineTest"/>
+            <methods>
+                <include name="testPFER_621">
+                    <parameter name="seqId" value="171"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Suspense Pmt Refund-Generate both txt and pdf files ">
+        <classes>
+            <class name="com.pfEngines.tests.RefundEngineTest"/>
+            <methods>
+                <include name="testPFER_628">
+                    <parameter name="seqId" value="201"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

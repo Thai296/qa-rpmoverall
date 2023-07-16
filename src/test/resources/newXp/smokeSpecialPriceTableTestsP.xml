@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Special Price Table" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="specialPriceTableId1" value="AUTOTESTXPR1067"/>
+    <parameter name="specialPriceTableId2" value="AUTOTESTXPR1069"/>
+    <parameter name="specialPriceTableId3" value="AUTOSPT01"/>
+    <parameter name="specialPriceTableId4" value="AUTOTESTXPR1072"/>
+    <parameter name="eType" value="RetroPricingEngine" />									
+	<parameter name="xapEnv" value="XAP" />
+	<parameter name="engConfigDB" value="SSO_APP_STAGING" />
+
+    <!--	<test name="Create new Client Special Price Table from existing table, Individual option">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SpecialPriceTableTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_1067">-->
+    <!--					<parameter name="copySpecialPriceTableId" value="AUTOTESTFS01"/>-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+  
+    <test name="Create new Non-Client Special Price Table by importing file, All option">
+        <classes>
+            <class name="com.newXp.tests.SpecialPriceTableTest"/>
+            <methods>
+                <include name="createNewNonClnSpecialPrcTblByImportingFile">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load existing Special Price Table and View Clients">
+        <classes>
+            <class name="com.newXp.tests.SpecialPriceTableTest"/>
+            <methods>
+                <include name="loadExistingSpecialPrcTblAndViewCln">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Helps">
+        <classes>
+            <class name="com.newXp.tests.SpecialPriceTableTest"/>
+            <methods>
+                <include name="verifyHelps">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete Test Code">
+        <classes>
+            <class name="com.newXp.tests.SpecialPriceTableTest"/>
+            <methods>
+                <include name="deleteTestCode">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Veify that there is a new button to changing Special Price Table ID">
+		<classes>
+			<class name="com.newXp.tests.SpecialPriceTableTest" >
+				<methods>
+					<include name="verifyThereIsANewButtonToChangingSpecialPriceTableID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify that users are able to update Special Price ID In Special Price Table screen">
+		<classes>
+			<class name="com.newXp.tests.SpecialPriceTableTest" >
+				<methods>
+					<include name="verifyUsersAreAbleToUpdateSpecialPriceID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify that there is an error when users change Special Price Table ID to existing one in the system">
+		<classes>
+			<class name="com.newXp.tests.SpecialPriceTableTest" >
+				<methods>
+					<include name="verifyThereIsAnErrorWhenUsersChangeSpecialPriceTableIDToExistingOne" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Verify Retro Pricing Engine is applied for Special Price Table">
+		<classes>
+			<class name="com.newXp.tests.SpecialPriceTableTest" >
+				<methods>
+					<include name="verifyRetroPricingEngineIsAppliedForSpecialPriceTable" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite>

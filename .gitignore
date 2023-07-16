@@ -1,0 +1,11 @@
+.idea/
+target/
+*.iml
+*.ipr
+*.iws
+logger.csv
+.classpath
+.project
+.settings/
+screen-shots/
+test-output/

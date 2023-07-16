@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-PricingEngine" preserve-order="true" parallel="none" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+	<parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />  
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+
+	<test name="Verify Split Accession is work correctly with Bill reference Tests to Client type">
+		<classes>
+			<class name="com.pfEngines.tests.SplitAccessionTest" />
+			<methods>
+				<include name="verifySplitAccnWithTypeCIsWorkCorrectly">
+					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> 
+					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" />
+					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddSinggleForCSplitAccession" />
+					
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForCSplitAccession1" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!-- 	<test name="Verify Split Accession is work correctly with Combination of Flow &amp; Molecular type"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXCIsWorkCorrectly"> -->
+<!-- 					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXCSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Verify Split Accession is work correctly with Direct Billing Split type"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXDBIsWorkCorrectly"> -->
+<!-- 					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" /> -->
+<!-- 					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddProfileForXDBSplitAccession" /> -->
+<!-- 					<parameter name="project2" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite2" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase2" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXDBSplitAccession" /> -->
+<!-- 					<parameter name="testCodeID" value="C400C" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test name="Verify Split Accession is work correctly with Direct Billing Split type 1"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXDBIsWorkCorrectly"> -->
+<!-- 					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" /> -->
+<!-- 					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddProfileForXDBSplitAccession" /> -->
+<!-- 					<parameter name="project2" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite2" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase2" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXDBSplitAccession" /> -->
+<!-- 					<parameter name="testCodeID" value="5010" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test -->
+<!-- 		name="Verify Split Accession is work correctly with Non-FDA Tests to Client type"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXFIsWorkCorrectly"> -->
+<!-- 					<parameter name="project" -->
+<!-- 						value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite" -->
+<!-- 						value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase" -->
+<!-- 						value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXFSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Verify Split Accession is work correctly with Ad Hoc Bill Client"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXMIsWorkCorrectly"> -->
+<!-- 					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXMSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Verify Split Accession is work correctly with Payor/Modifier"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXPIsWorkCorrectly"> -->
+<!-- 					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> --> -->
+<!-- 					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" /> -->
+<!-- 					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddSinggleForXPSplitAccession" /> -->
+				
+<!-- 					<parameter name="project2" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite2" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase2" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXPSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Verify Split Accession is work correctly with Dialysis / ESRD"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXDIsWorkCorrectly"> -->
+<!-- 					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXDSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Verify Split Accession is work correctly with Technical Component of Physician Pathology Services type"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeXGIsWorkCorrectly"> -->
+<!-- 					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" /> -->
+<!-- 					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddSinggleForXGSplitAccession" /> -->
+<!-- 					<parameter name="project2" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite2" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase2" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForXGSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test name="Verify Split Accession is work correctly with Client Billing Rules splits type"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.pfEngines.tests.SplitAccessionTest" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="verifySplitAccnWithTypeBRIsWorkCorrectly"> -->
+<!-- 					<parameter name="project1" value="FileMaintenance-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite1" value="FileMaintenanceWS-TestCode-AddTest" /> -->
+<!-- 					<parameter name="testCase1" value="FileMaintenanceWS-TestCode-AddProfileAndSingleForBRSplitAccession" /> -->
+<!-- 					<parameter name="project2" value="Accn-WS-Prod-soapui-project-Utils.xml" /> -->
+<!-- 					<parameter name="testSuite2" value="Accession WS-CreateAccession-CreateNewAccession" /> -->
+<!-- 					<parameter name="testCase2" value="Accession WS-CreateAccession-SplitAccession-CreateNewAccessionForBRSplitAccession" /> -->
+<!-- 				</include> -->
+<!-- 			</methods> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+</suite>

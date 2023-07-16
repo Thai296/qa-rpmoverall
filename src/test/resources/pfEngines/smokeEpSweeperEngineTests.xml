@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpSweeperEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener' />
+	</listeners>
+
+ 	<test name="INVALID CLIENT(Error Code 1128)">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_319">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWOClient" />
+					<parameter name="errChkId" value="374627" />
+					<parameter name="note" value="Invalid ClientId : AUTOCLN7YSX7B" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="INVALID TEST CONSTRAINT (Error Code 1164)-Single Test">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_321">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithInvalidTest" />
+					<parameter name="errChkId" value="371834" />
+					<parameter name="note" value="Invalid Test Id  : IHC26" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--  	<test name="ESRDCLN (Error Code 1229)">-->
+<!--		<classes>-->
+<!--			<class name="com.pfEngines.tests.EpSweeperEngineTest" />-->
+<!--			<methods>-->
+<!--				<include name="testPFER_330">-->
+<!--					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />-->
+<!--					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />-->
+<!--					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithESRDCLNErr" />-->
+<!--					<parameter name="errChkId" value="372785" />-->
+<!--					<parameter name="ptSeqId" value="702" />				-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes> -->
+<!--	</test>-->
+
+ 	<test name="INVALID PROFILE (Error Code 1135)">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_331">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithINVPROFErr" />
+					<parameter name="errChkId" value="388897" />
+					<parameter name="note" value="Invalid Profile Id  : 1000P" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+  	<test name="INVALID FACILITY (Error Code 1140)">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_335">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithINVFACErr" />
+					<parameter name="errChkId" value="661564" />
+					<parameter name="note" value="Invalid Facility Id  : AUTOTEST" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Process payment posting status (41) Accessions">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_336">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithINVFACErr" />
+					<parameter name="errChkId" value="661564" />
+					<parameter name="note" value="Invalid Facility Id  : AUTOTEST" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Skip Zbal (51) Accessions">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_337">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithINVFACErr" />
+					<parameter name="errChkId" value="661564" />
+					<parameter name="note" value="Invalid Facility Id  : AUTOTEST" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="PYRGRPEXCEL (Error Code 1277)">-->
+<!--		<classes>-->
+<!--			<class name="com.pfEngines.tests.EpSweeperEngineTest" />-->
+<!--			<methods>-->
+<!--				<include name="testPFER_338">-->
+<!--					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />-->
+<!--					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />-->
+<!--					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithPYRGRPEXCLErr" />-->
+<!--					<parameter name="errChkId" value="417909" />-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	 <test name="INVALID TEST CONSTRAINT (Error Code 1164)-Profile">
+		<classes>
+			<class name="com.pfEngines.tests.EpSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_355">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithInvalidTest" />
+					<parameter name="errChkId" value="375005" />
+					<parameter name="note" value="Invalid Test Id  : 1000" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Sequential Suite-->
+<suite name="Client Transaction Detail" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+	<listeners>
+    	<listener class-name='com.xifin.utils.RetryListener' />   
+  	</listeners>
+
+	<test name="Client Accn Detail-Client Adjustments-Create Client adj with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_377">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Client Accn Detail-Client Adjust-Add Client Adj with require field is empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_378">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Client Adjustment-Verify Canned Note button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_379">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Search Client - Verify Keep Search Open Checkbox in Search result page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_343">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements- View the file">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_357">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements-Verify Hide icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_360">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Client Adjust-Edit Client with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_382">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Uncheck Check box keep result">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_392">
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+</suite>

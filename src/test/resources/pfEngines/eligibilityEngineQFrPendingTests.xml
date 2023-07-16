@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Eligibility Engine QFRPending" preserve-order="true" parallel="tests" thread-count="10"
+       verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="120"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <!-- Disabling 'translation to same payor' automation test case due to being in conflict with XP-110459 changes. -->
+
+<!--    <test name="QFrPending-Accn Prim Pyr Translated To Same Pyr - B_check_elig Enabled">-->
+<!--        <parameter name="accnId" value="QATESTERAKSHJ20191210095843590"/>-->
+<!--        <parameter name="pyrAbbrv" value="BSAR"/>-->
+<!--        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_992050"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="QFrPending-Accn Prim Pyr Translated To Different Pyr - B_check_elig Enabled">
+        <parameter name="accnId" value="QATESTERVJOUY2020021306433122"/>
+        <parameter name="origPyrAbbrv" value="BSEAST"/>
+        <parameter name="newPyrAbbrv" value="BLCH"/>
+        <parameter name="origSubId" value="UIAITDQGA"/>
+        <parameter name="subIdFromIg" value="SUBIG11"/>
+        <parameter name="accnCntct" value="Eligibility Approved for newPyrId: BLCH"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992051"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Ineligible status">
+        <parameter name="accnId" value="QATESTERJGHSL20200224064327500"/>
+        <parameter name="pyrAbbrv" value="BLCH"/>
+        <parameter name="accnCntct" value="Transaction Acknowledged. Eligibility denied."/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992052"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-AAA Rejection with Next Action Recheck">
+        <parameter name="accnId" value="QATESTERQQOYC20191017102923983"/>
+        <parameter name="pyrAbbrv" value="BLCH"/>
+        <parameter name="accnCntct"
+                   value="Rejection received: Unable to Respond at Current Time. Action taken: RECHK - Re-Check Eligiblity"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992053"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Elig DOB mismatch">
+        <parameter name="accnId" value="QATESTER20190402102634896"/>
+        <parameter name="pyrAbbrv" value="BLCH"/>
+        <parameter name="accnCntct"
+                   value="DOB on accession does not match DOB in eligibility response. DOB in Eligibility Response: 04/03/1989"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992054"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Unreachable">
+        <parameter name="accnId" value="QATESTERMSVJF20200220064324312"/>
+        <parameter name="pyrAbbrv" value="BCBSSL"/>
+        <parameter name="accnCntct"
+                   value="Unable to successfully communicate with the requested Third Party. Please contact XIFIN customer service."/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992055"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Circular Elig">
+        <parameter name="accnId" value="QATESTERHMDIK20200216064329787"/>
+        <parameter name="origPyrAbbrv" value="AETNA"/>
+        <parameter name="newPyrAbbrv" value="CIGNA"/>
+        <parameter name="accnCntct1" value="Eligibility Approved for newPyrId: CIGNA"/>
+        <parameter name="accnCntct2" value="Eligibility Approved for newPyrId: AETNA"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992056"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Undetermined">
+        <parameter name="accnId" value="QATESTERWUWDG20200227064325911"/>
+        <parameter name="pyrAbbrv" value="BSIN"/>
+        <parameter name="accnCntct"
+                   value="Eligibility undetermined; the benefit information does not contain either the service type inquired on or Health Benefit Plan Coverage. "/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992071"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Translate-NoEligCheckNext">
+        <parameter name="accnId" value="QATESTERJBMSM2020020306432610"/>
+        <parameter name="origPyrAbbrv" value="BSEAST"/>
+        <parameter name="newPyrAbbrv" value="BCBSNENY"/>
+        <parameter name="origSubId" value="UIAITDQGR"/>
+        <parameter name="subIdFromIg" value="SUBIG11"/>
+        <parameter name="accnCntct" value="Eligibility Approved for newPyrId: BCBSNENY"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992072"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Hospital Admit">
+        <parameter name="accnId" value="QATESTERSRNZL2020020206432729"/>
+        <parameter name="originalPyrAbbrv" value="BSIN"/>
+        <parameter name="subId" value="A927639653"/>
+        <parameter name="eligSvcId" value="XIFIN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992073"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="QFrPending-Client Roster">
+        <parameter name="accnId" value="QATESTERCXAGN20200201064326262"/>
+        <parameter name="origPyrAbbrv" value="UHC"/>
+        <parameter name="origClnAbbrv" value="SK2"/>
+        <parameter name="newClnAbbrv" value="XIFINZH"/>
+        <parameter name="newPyrAbbrv" value="C"/>
+        <parameter name="accnCntct" value="Eligibility is Valid for census."/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineQFrPendingTest">
+                <methods>
+                    <include name="testPFER_992074"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

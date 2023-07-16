@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Consolidation Rules" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="70"/>
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener'/>
+	</listeners>
+
+	<test name="Update Consolidation Rule with add new Payor Info">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_528">
+					<parameter name="description" value="Consolidation Description"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Add new Consolidation Result">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_531">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Add new Consolidation Rule that is not in level section">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_532">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Deleted Procedure code in requirement table">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_539">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Deleted Consolidation Result">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_540">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation rules with input valid data for Level section only">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_520">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation rules with multi consolidation results">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_524">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation Rule with multi Proc Code for Requirements and Links table">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_525">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation rule without add Level information">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_526">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify Help Icon">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_556">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation-Test Consolidation Rules with valid AccnId">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_557">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<!--
+        <test name="Search Consolidation Rule-Search With all data">
+            <classes>
+                <class name="com.newXp.tests.SmokeConsolidationRulesTest" />
+                <methods>
+                    <include name="testXPR_544">
+                        <parameter name="email" value="qatester@xifin.com" />
+                        <parameter name="password" value="qatester123" />
+                    </include>
+                </methods>
+            </classes>
+        </test>
+    -->
+	<test name="Search Consolidation rule with valid Description">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_545">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Consolidation rules with Payor Group">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_546">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Consolidatio rule with input valid consolidated Proc Code">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_549">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Consolidation rule with Deleted radio button is checked">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_550">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search consolidation rule with Inactive radio button is checked">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_552">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Consolidation rule - Reset data">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_554">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Consolidation rule - Help icon">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_555">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="Update consolidation rule - Add more diagnosis with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_529">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation Rules with Proc Code in Requirements table is not in Link tabl">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_535">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation Rule with Proc Code in Links table but it's not in Result table">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_573">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Delete Level">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_542">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rule - Verify Run Audit button">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_572">
+					<parameter name="email" value="qatester@xifin.com"/>
+					<parameter name="password" value="qatester123"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation-Add multi Client account Info ">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_530">
+					<parameter name="description" value="Consolidation Description"/>
+					<parameter name="minProcCodeMatch" value="1"/>
+					<parameter name="maxService" value="10"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Consolidation Rules - Update PayorGroup with date is overlapping">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_559">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Consolidation Rules with input valid data for all fields">
+		<classes>
+			<class name="com.newXp.tests.SmokeConsolidationRulesTest"/>
+			<methods>
+				<include name="testXPR_519">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<!--	<test name="&Update Consolidation Rule - Reset the update">-->
+	<!--		<classes>-->
+	<!--			<class name="com.newXp.tests.SmokeConsolidationRulesTest" />-->
+	<!--			<methods>-->
+	<!--				<include name="testXPR_541">-->
+	<!--					<parameter name="email" value="qatester@xifin.com" />-->
+	<!--					<parameter name="password" value="qatester123" />-->
+	<!--				</include>-->
+	<!--			</methods>-->
+	<!--		</classes>-->
+	<!--	</test>-->
+</suite>

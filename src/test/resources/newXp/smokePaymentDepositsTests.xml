@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Deposits" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="version" value="ANY" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="ssoXpUsername" value="qatester@xifin.com" />
+    <parameter name="ssoXpPassword" value="qatester123" />
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Add A New Deposit With Required Fields">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="addDepWithReqFields">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add A New Deposit With Required Fields and checked Post Non-AR Amt column At Batches tbl">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="addDepPostNonARAmtChecked">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add A New Deposit With All Fields">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="addDepWithAllFields">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update a record in Batches tbl and values in Note field">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="updRecInBatchesTable">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update value in Bank Transaction ID field">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="updValInBankTransIdFld">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Deposits - Delete A Record in Batches tbl">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="dltRecInBatchesTbl">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Deposits - Delete A Deposit">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="deleteDeposit">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Deposits - Verify The Reset Button">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="verifyResetBtn">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify the Deposit Amount Not Equals the Total Batch Amount of Batches tbl">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="verifyDepAmtNotEqlsTotalBatchAmt">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Field Validation popup is displayed when required fields are empty">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="verifyPopUp">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify DepositId exist in Dep_Batch with FK_STA_ID = 4 (FK_DEP_BATCH_TYP_ID != 5)">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="verifyDepExistInDepBatch">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify DepositId exist in Dep_Batch with FK_DEP_BATCH_TYP_ID = 5">
+        <classes>
+            <class name="com.newXp.tests.PaymentDepositsTest" />
+            <methods>
+                <include name="verifyDepExistInDepBatchTyp">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

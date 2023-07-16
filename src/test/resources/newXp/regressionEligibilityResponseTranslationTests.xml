@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Eligibility Translation"
+	   preserve-order="true" parallel="tests" thread-count="12" verbose="15">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="60" />
+	<parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+	<parameter name="disableBrowserPlugins" value="true" />
+
+	<test	name="Add new Rule in Eligibility Response Translation for XIFIN Elig svc">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BCBSWY" />
+		<parameter name="newPyrAbbrev" value="BLCA" />
+		<parameter name="response" value="TESTXPR_1081" />
+		<parameter name="matchType" value="Entity Code - Facility" />
+		<parameter name="benefitType" value="Active - Full Risk Capitation" />
+		<parameter name="serviceTypeCode" value="1 - Medical Care" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1081" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Payor Translation Rule fot XIFIN elig svc on Eligibility Response Translation jsp">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BCBSTNC" />
+		<parameter name="newPyrAbbrev" value="BSFE" />
+		<parameter name="response" value="TESTXPR_1082" />
+		<parameter name="updatedPyrAbbrev" value="BCBSSL" />
+		<parameter name="matchType" value="Plan Name" />
+		<parameter name="benefitType" value="Inactive" />
+		<parameter name="subscrIdTyp" value="Plan Number" />
+		<parameter name="subscriberOverrideType" value="Group or Policy Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1082" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Payor Translation Rule for XIFIN elig svc on Eligibility Response Translation jsp">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="MCAZ" />
+		<parameter name="response" value="TESTXPR_1083" />
+		<parameter name="subscrIdTyp" value="Group or Policy Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1083"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Veryfy Help page on XIFIN Eligibility Service Elig Response Translation grid">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BLCA" />
+		<parameter name="response" value="TESTXPR_1084" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1084"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Payor Translation Rule and Reset on XIFIN Eligibility Config jsp - rule is not saved">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="WWW" />
+		<parameter name="response" value="TESTXPR_1085" />
+		<parameter name="matchType" value="Insurance Type Code" />
+		<parameter name="benefitType" value="Active Coverage" />
+		<parameter name="subscrIdTyp" value="Plan Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1085"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create 2 new Rules, Second is duplicate and See Error Message 'A duplicate record was entered'">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BA65" />
+		<parameter name="response" value="TESTXPR_1086" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1086" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Duplicate Payor Translation Rule and See Error Message 'A duplicate record was entered'">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BSMO" />
+		<parameter name="response" value="TESTXPR_1087" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1087" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify filters">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BCPB" />
+		<parameter name="newPyrAbbrev" value="BA65" />
+		<parameter name="response" value="TESTXPR_1088" />
+		<parameter name="matchType" value="Entity Code - Vendor" />
+		<parameter name="benefitType" value="Spend Down" />
+		<parameter name="subscrIdTyp" value="Medicaid Recipient Identification Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1088" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- afa: temporarily disabling the locking tests due to syncronization issues -->
+	 <!-- <test-->
+			<!--name="Verify that Loading particular Elig Service and Payor Id locks XIFIN Eligibility Config jsp for Elig Svc and Pyr">-->
+		<!--<parameter name="eligSvcId" value="XIFIN" />-->
+		<!--<parameter name="pyrAbbrev" value="BLCH" />-->
+		<!--<parameter name="response" value="TESTXPR_1089" />-->
+		<!--<classes>-->
+			<!--<class name="com.newXp.tests.EligibilityResponseTranslationTests">-->
+				<!--<methods>-->
+					<!--<include name="testXPR_1089" />-->
+				<!--</methods>-->
+			<!--</class>-->
+		<!--</classes>-->
+	<!--</test>-->
+
+	<!--<test-->
+			<!--name="Verify that (Error Msg) if same Elig Service and Payor Id entered in the previous TC">-->
+		<!--<parameter name="eligSvcId" value="XIFIN" />-->
+		<!--<parameter name="pyrAbbrev" value="BLCH" />-->
+		<!--<parameter name="response" value="TESTXPR_1090" />-->
+		<!--<classes>-->
+			<!--<class name="com.newXp.tests.EligibilityResponseTranslationTests">-->
+				<!--<methods>-->
+					<!--<include name="testXPR_1090" />-->
+				<!--</methods>-->
+			<!--</class>-->
+		<!--</classes>-->
+	<!--</test>-->
+
+	<test name="Verify Eligibility Services Id = HUMANA, Add new Pyr Trnaslation Rule">
+		<parameter name="eligSvcId" value="HUMANA" />
+		<parameter name="pyrAbbrev" value="BCBSKC" />
+		<parameter name="response" value="TESTXPR_1091" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1091" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add Payor Translation Rule fot XIFIN elig svc with Subs ID Type">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="BCBSNE" />
+		<parameter name="newPyrAbbrev" value="MDNJ" />
+		<parameter name="response" value="TESTXPR_1589" />
+		<parameter name="matchType" value="Entity Code - Facility" />
+		<parameter name="benefitType" value="Active - Full Risk Capitation" />
+		<parameter name="subscrIdTyp" value="Member Identification Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1589" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Error message: 'Cannot select Subscriber ID Type without Match Type ID' on Eligibility Response Translation jsp">
+		<parameter name="eligSvcId" value="XIFIN" />
+		<parameter name="pyrAbbrev" value="MCAR" />
+		<parameter name="response" value="TESTXPR_1612" />
+		<parameter name="subscrIdTyp" value="Plan Number" />
+		<classes>
+			<class name="com.newXp.tests.EligibilityResponseTranslationTests">
+				<methods>
+					<include name="testXPR_1612" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

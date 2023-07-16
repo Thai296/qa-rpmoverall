@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Code Regression Suites" preserve-order="true" verbose="1">
+
+		<suite-files>
+			<!--Parallel Suite-->
+ 			<suite-file path="regressionTestCodeTestsP.xml" />
+			<!--Sequential Suite-->
+		 	<suite-file path="regressionTestCodeTestsS.xml" />
+		</suite-files>
+
+</suite>

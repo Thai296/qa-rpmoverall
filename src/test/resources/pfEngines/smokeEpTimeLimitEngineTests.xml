@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpTimeLimitEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+  	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="15" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />     
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+	<parameter name="eType1" value="EpWorkFlowEngine" />
+	<parameter name="eType2" value="EpTimeLimitEngine" />									
+	<parameter name="xapEnv" value="XAP" />
+	<parameter name="engConfigDB" value="SSO_APP_STAGING" />	
+	<parameter name="errCdId" value="2136" /> 	
+
+	<test name="The accn is moved to the next queue based on the prioritized actions ">
+		<classes>
+			<class name="com.pfEngines.tests.EpTimeLimitEngineTest" />
+			<methods>
+				<include name="testPFER_564">		
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-EPTimeLimit-CreatePriced3rdPartyPyrAccnsWithSUBIDError" />
+					<parameter name="propLevel" value="TestCase" />						
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />				
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

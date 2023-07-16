@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-BillingAssignmentEngine" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener' />
+	</listeners>
+
+    <test name="Client is assigned to Insurance and flaged to perform Billing Assignment">
+        <classes>
+            <class name="com.pfEngines.tests.BillingAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_19">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNewAccessionWithClnPerformBillingAssignmentOn"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Priced Accn backed out pricing after changing the billing assignment">
+        <classes>
+            <class name="com.pfEngines.tests.BillingAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_20">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNewAccessionWithClnPerformBillingAssignmentOn"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add remark to a Client billed Accn with Test Xref set to BILLCLN">
+        <classes>
+            <class name="com.pfEngines.tests.BillingAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_25">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNewClnPyrAccnWithClnBillingAssignmentOnBillClnTestXref"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Split and add remarks to Accns when billing assign changed from Ins to Cln">
+        <classes>
+            <class name="com.pfEngines.tests.BillingAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_26">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNew3rdPartyPyrAccnWithClnBillingAssignOnBillClnTestXref"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Two tests on the Accn when billing assignment changed from Ins to Cln">
+        <classes>
+            <class name="com.pfEngines.tests.BillingAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_27">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNew3rdPartyPyrAccnWithTwoTestsClnBillingAssignOnBillClnTestXref"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

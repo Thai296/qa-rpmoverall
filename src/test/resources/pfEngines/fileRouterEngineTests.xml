@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-FileRouterEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <test name="S-Fax Client Statement PDF from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_01">
+                    <parameter name="submFileName" value="StdClnStmt-sFax_DENISE_RECONCILED_20210228_00_00_00.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="S-Fax Client Letter from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_02">
+                    <parameter name="correspFileName" value="SFAX_7162715083_DENISE_20210212_14_06_58.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="S-Fax Appeal Letter from DocStore (S3)">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_12">
+                    <parameter name="correspFileName" value="Appeal_UHC_A201202160203035_20221208_520238.pdf"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="S-Fax Attachment PDF">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_13">
+                    <parameter name="submFileName" value="CLAIMATTACH-sFax_ACME_20221208_09_05_17.pdf"/>
+                    <parameter name="pyrAbbrev" value="AETNA"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="E-Fax Client Letter from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_03">
+                    <parameter name="correspFileName" value="EFAX_8005554445_DENISE_20210205_08_35_34.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="E-Fax Appeal Letter from DocStore (S3)">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_04">
+                    <parameter name="correspFileName" value="Appeal_BSFE_QATESTER20190313173859415_20221208_520237.pdf"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="E-Fax Client Statement PDF from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_05">
+                    <parameter name="submFileName" value="StdClnStmt-eFax_DENISE_RECONCILED_20210131_06_57_31.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="E-Fax Attachment PDF">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_06">
+                    <parameter name="submFileName" value="CLAIMATTACH-eFax_ACME_20221208_08_45_23.pdf"/>
+                    <parameter name="pyrAbbrev" value="AETNA"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Attachment statement with address override is sent correctly (E-Fax)">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="testAttachmentStatementWithAddressOverride">
+                    <parameter name="submFileName" value="CLAIMATTACH-eFax_ACME_20221208_12_05_20.pdf"/>
+                    <parameter name="pyrAbbrev" value="AETNA"/>
+                    <parameter name="faxNumber" value="5555550001"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Appeal letter with address override is sent correctly (E-Fax)">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="testAppealLetterWithAddressOverride">
+                    <parameter name="correspFileName" value="Appeal_AETNA_Q20210903155825261_20221208_520242.pdf"/>
+                    <parameter name="faxNumber" value="5555550010"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="E-Fax Daily Weekly Notification Letter from DocStore">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="testDailyWeeklyNotificationLetter">
+                    <parameter name="correspFileName" value="CLIENT_NOTIFICATION_CA_200_20221207.pdf"/>
+                    <parameter name="clnAbbrev" value="200"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!-- LuxSci test account may become disabled -->
+<!--    <test name="LuxSci Client Letter from Local Storage">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_07">-->
+<!--                    <parameter name="correspFileName" value="Client_20210210_08_38_45.pdf"/>-->
+<!--                    <parameter name="clnAbbrev" value="DENISE"/>-->
+<!--                    <parameter name="emailAddr" value="eng.ediscrum.team@xifin.com"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="LuxSci Appeal Letter from DocStore (S3)">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_08">-->
+<!--                    <parameter name="correspFileName" value="Appeal_20210210_460203.pdf"/>-->
+<!--                    <parameter name="emailAddr" value="eng.ediscrum.team@xifin.com"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="LuxSci Client Statement PDF from Local Storage">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_09">-->
+<!--                    <parameter name="submFileName" value="StdClnStmt-LuxSci_DENISE_RECONCILED_20210131_00_00_00.pdf"/>-->
+<!--                    <parameter name="clnAbbrev" value="DENISE"/>-->
+<!--                    <parameter name="emailAddr" value="eng.ediscrum.team@xifin.com"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="LuxSci Attachment PDF">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_10">-->
+<!--                    <parameter name="submFileName" value="CLAIMATTACH-LuxSci_ACME_20210318_15_36_50.pdf"/>-->
+<!--                    <parameter name="pyrAbbrev" value="AETNA"/>-->
+<!--                    <parameter name="emailAddr" value="eng.ediscrum.team@xifin.com"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="LuxSci Client Statement Undeliverable Email">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_11">-->
+<!--                    <parameter name="submFileName" value="StdClnStmt-LuxSci_DENISE_RECONCILED_20210131_14_48_32.pdf"/>-->
+<!--                    <parameter name="clnAbbrev" value="DW4"/>-->
+<!--                    <parameter name="emailAddr" value="bad.email@no.such.domain"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="LuxSci Email To Multiple Recipients">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.FileRouterEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="test_ENG101660_11">-->
+<!--                    <parameter name="submFileName" value="StdClnStmt-LuxSci_DENISE_RECONCILED_20210131_14_48_32.pdf"/>-->
+<!--                    <parameter name="clnAbbrev" value="DW4"/>-->
+<!--                    <parameter name="emailAddr" value="bad.email@no.such.domain"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Concord Client Letter from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_14">
+                    <parameter name="correspFileName" value="Client_20210225_09_23_07.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Concord Appeal Letter from DocStore (S3)">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_15">
+                    <parameter name="correspFileName" value="Appeal_CONCORDFAXTEST_QATESTER20210212022806233_20230103_526418.pdf"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Concord Client Statement PDF from Local Storage">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_16">
+                    <parameter name="submFileName" value="StdClnStmt-Concord_DENISE_RECONCILED_20210131_00_00_00.pdf"/>
+                    <parameter name="clnAbbrev" value="DENISE"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Concord Attachment PDF">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_17">
+                    <parameter name="submFileName" value="CLAIMATTACH-Concord_ACME_20230103_16_05_19.pdf"/>
+                    <parameter name="pyrAbbrev" value="CONCORDFAXTEST"/>
+                    <parameter name="faxNumber" value="8884732963"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Concord Client Statement Undeliverable Fax">
+        <classes>
+            <class name="com.pfEngines.tests.FileRouterEngineTest"/>
+            <methods>
+                <include name="test_ENG101660_18">
+                    <parameter name="submFileName" value="StdClnStmt-Concord_DW4_RECONCILED_20150630_00_00_00.pdf"/>
+                    <parameter name="clnAbbrev" value="DW4"/>
+                    <parameter name="faxNumber" value="5555551212"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

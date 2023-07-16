@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Non-Client Adjustments" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="email" value="qatester@xifin.com" />
+	<parameter name="password" value="qatester123" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+	<test name="Upload new file with invalid accession id">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_502">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+     <test name="Upload a file contians > 10 rows and verify the pager navigation buttons">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_503">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+    <test name="Upload file without any informations">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_504">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify Help icon in Non-Client Adjustments table">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_509">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify Help icon in Edit Record popup">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_510">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+    <test name="Verify filter functions">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_513">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+    <test name="Upload a CSV file that has invalid Adjustment Payor">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_515">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify Reset button">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_516">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Upload a CSV file contains the Proc Code not on the Accession">
+		<classes>
+			<class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+			<methods>
+				<include name="testXPR_517">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

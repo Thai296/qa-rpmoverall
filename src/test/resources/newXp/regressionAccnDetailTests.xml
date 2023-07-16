@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Accession Detail" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="email" value="qatester@xifin.com"/>
+    <parameter name="password" value="qatester123"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="Log into RPM and load an existing accn in Detail and Reset">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_1">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Backout pricing by checking Reprice checkbox">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_4">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ValidationLogic-Payor field requirement error">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_6">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-EPTimeLimit-CreatePriced3rdPartyPyrAccnsWithSUBIDError"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Create a new EPI">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_15">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    <test name="Add new non-primary accn payor">-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.RegressionAccnDetailTest"/>-->
+<!--            <methods>-->
+<!--                <include name="testXPR_20">-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Validation Logic for Medicare payors">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_8">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add Occurrence Codes and Value Codes">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_11">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Add Employer info in Chain of Custody grid">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_13">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Add Clinical Trial">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_17">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Helps">
+        <classes>
+            <class name="com.newXp.tests.RegressionAccnDetailTest"/>
+            <methods>
+                <include name="testXPR_32">
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

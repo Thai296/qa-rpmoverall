@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="XifinPortal-Patient Demographics" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="75" />
+	<parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoXpUsername" value="qatester@xifin.com"  />
+    <parameter name="ssoXpPassword" value="qatester123" />
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1781&quot;&gt; XPR-1781: Accn Payment Demographics - Accession Detail page is displayed when click on AccnId link at All Accessions for this Patient grid &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1781">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<!-- todo fix!-->
+<!--	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1782&quot;&gt; XPR-1782: Accn Payment Demographics - Add a new record to Associated Patient IDs table &lt;/a&gt;">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.PatientDemographicsTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_1782">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1783&quot;&gt; XPR-1783: Accn - PaymentDemographics - Load Patient Demographics page with new EPI, SSN with all required fields &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1783">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<!-- todo fix!-->
+<!--	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1784&quot;&gt; XPR-1784: Accn-PaymentDemographics-Delete an existed record at Associated Patient IDs table &lt;/a&gt;">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.PatientDemographicsTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_1784">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1785&quot;&gt; XPR-1785: Accn - PaymentDemographics - Create new Patient and input all patient information &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1785">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1786&quot;&gt; XPR-1786: Accn-PaymentDemographics-Update Patient information with create a bad address record &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1786">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1787&quot;&gt; XPR-1787: Accn-PaymentDemographics-Verify Dialysis Information displayed correct data &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1787">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1788&quot;&gt; XPR-1788: Accn - PaymentDemographics - Update full data in Insurance Information section &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1788">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1789&quot;&gt; XPR-1789: Accn-PaymentDemographics-Add new record to Non-RPM Dialysis Patient History table &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1789">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1790&quot;&gt; XPR-1790: Accn - PaymentDemographics - Update record at Non - RPM Dialysis Patient History table &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1790">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1791&quot;&gt; XPR-1791: Accn-PaymentDemographics-Add new [Effective Date] in Insurance Information section &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1791">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=XPR&amp;item=testcase&amp;id=XPR-1792&quot;&gt; XPR-1792: Accn - PaymentDemographics - Check [Suspended] checkbox in Insurance Information section &lt;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.PatientDemographicsTest" />
+			<methods>
+				<include name="testXPR_1792">
+				</include>
+			</methods>
+		</classes>
+	</test>
+</suite>

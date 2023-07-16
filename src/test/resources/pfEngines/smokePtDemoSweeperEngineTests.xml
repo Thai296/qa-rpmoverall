@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-PtDemoSweeperEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="UpdatedPerformingFacId" value="1"/>
+	<parameter name="pyrAbbrv" value="MCNJ"/>// pyr with grp id =1
+	<parameter name="jurisPyrAbbrev" value="BCVA"/> //pyr with grp id =10
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+ 	<test name="Status = 0, Accn is Final Reported, Suspend Pt and PT_DEMO_CHK.Eff_Dt is null ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_318">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Status=2, Accn is Final Reported, Suspend Pt, and PT_DEMO_CHK.eff_Dt is not null ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_329">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Status=2,Priced Accn,Suspend Pt,PT_DEMO_CHK.eff_dt not null, Reassess Accn ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_340">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewPriced3rdPartyPyrAccnWithNewEPI" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Status=2, Process Patient Standing Order ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_333">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewPriced3rdPartyPyrAccnWithNewEPI" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!-- 	<test name="Status=2, Jurisdiction Payor ">-->
+<!--		<classes>-->
+<!--			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />-->
+<!--			<methods>-->
+<!--				<include name="testPFER_339">-->
+<!--					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />-->
+<!--					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />-->
+<!--					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewPriced3rdPartyPyrAccnWithNewEPI" />-->
+<!--					<parameter name="propLevel" value="TestCase" />-->
+<!--					<parameter name="propName" value="NewAccnID" />-->
+<!--					<parameter name="wsUsername" value="clndoc" />-->
+<!--					<parameter name="wsPassword" value="clndoc" />-->
+<!--					<parameter name="isSuspend" value="true" />-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+ 	<test name="Status=0, FinalReported Accn, Non-Suspend Pt, Validate Accn ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_347">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWithUNKPYR" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="false" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Staus = 0, Priced Accn, Resubmit ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_334">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewPriced3rdPartyPyrAccnWithNewEPI" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Status=2, Priced Accn, Suspend Pt, Pt got unSuspended and Accn is in Q_ACCN_SUBM ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_353">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-PricingEngine-CreateNewFinalReportedPtPyrAccnWithNewEPISingleTest" />
+					<parameter name="isSuspend" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+  	<test name="Status=0, FinalReported Accn, Non-Suspend Pt, copy PT_DIAG to ACCN_DIAG ">
+		<classes>
+			<class name="com.pfEngines.tests.PtDemoSweeperEngineTest" />
+			<methods>
+				<include name="testPFER_354">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-CreateNewPricedPtPyrAccnWithNewEPI" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="isSuspend" value="false" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

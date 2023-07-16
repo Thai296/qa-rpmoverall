@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Payor Exclusions" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+  	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="15" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />   
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="xapEnv" value="XAP" />
+	<parameter name="disableBrowserPlugins" value="true"/>
+	<parameter name="clientId1" value="AUTOCLN6ME79V"/>
+
+	<test name="Add new and delete Payor Exclusion and Payor Group Exclusion">
+		<classes>
+			<class name="com.newXp.tests.PayorExclusionsTest" />
+			<methods>
+				<include name="testXPR_1619">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-PatientNotificationEngine" parallel="tests" thread-count="3" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="120"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Patient Enrollment Notification Success">
+        <parameter name="phoneNumber" value="8589999999"/>
+        <classes>
+            <class name="com.pfEngines.tests.PtNotificationEngineTest">
+                <methods>
+                    <include name="testPatientEnrollmentNotificationSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Patient Enrollment Notification Invalid">
+        <parameter name="phoneNumber" value="8589990000"/>
+        <classes>
+            <class name="com.pfEngines.tests.PtNotificationEngineTest">
+                <methods>
+                    <include name="testPatientEnrollmentNotificationInvalid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Patient Enrollment Notification Opt-Out">
+        <parameter name="phoneNumber" value="8589995555"/>
+        <classes>
+            <class name="com.pfEngines.tests.PtNotificationEngineTest">
+                <methods>
+                    <include name="testPatientEnrollmentNotificationOptOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

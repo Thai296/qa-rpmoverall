@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-AttachmentStatementEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+	<parameter name="forcePdfDownload" value="true"/>
+
+	<test name="create Claim attachment ready for File Transfer tool">
+		<classes>
+			<class name="com.pfEngines.tests.AttachmentStatementEngineTest" />
+			<methods>
+				<include name="testPFER_454">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="CreateNewAccnForAttachmentStatement" />
+					<parameter name="filename" value="attachmentStatementEngineTest454.txt" />
+					<parameter name="claimSubmSvc" value="CAPARIO5010A1"/>
+					<parameter name="attachSubmSvc" value="JOPARI-275"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test create combined PDF attachment">
+		<classes>
+			<class name="com.pfEngines.tests.AttachmentStatementEngineTest" />
+			<methods>
+				<include name="testCreateCombinedPdfAttachment">
+					<parameter name="accnId" value="Q20220330150157244" />
+					<parameter name="claimSubmSvc" value="CAPARIO5010A1"/>
+					<parameter name="attachSubmSvc" value="GENPDFCLMATTACH" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test S3 upload and download">
+		<classes>
+			<class name="com.pfEngines.tests.AttachmentStatementEngineTest" />
+			<methods>
+				<include name="testS3UploadAndDownload">
+					<parameter name="accnId" value="Q20220304161930150" />
+					<parameter name="claimSubmSvc" value="CAPARIO5010A1"/>
+					<parameter name="attachSubmSvc" value="GENPDFCLMATTACH" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-PatientEstimationEngine" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="120"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Payor date table in-network for DOS, use in-network coverage calculation">
+        <parameter name="accnId" value="QATESTERVXZUF20200327030016222"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992298"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payor date table in-network for DOS, use out-of-network coverage calculation">
+        <parameter name="accnId" value="QATESTERQWTUR20200327030002249"/>
+        <parameter name="pyrAbbrv" value="BSIN-OON"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992299"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payor date table in-network for DOS, elig only has out-of-network, no benefit record">
+        <parameter name="accnId" value="QATESTERHJZYW20200327025231463"/> <!--This accn, QATESTERHJZYW20200327025231463, has a file modified for this case with no in-network results -->
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992302"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Re-run Eligibility check with new primary pyr (translation)">
+        <parameter name="accnId" value="QATESTERDIMGU20200327021232710"/>
+        <parameter name="pyrAbbrv" value="BSIN-OON"/>
+        <parameter name="eligPyrAbbrv" value="BSIN-IN"/>
+        <parameter name="ptEstPyrAbbrv" value="BSIN-OON"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992366"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGPE error is added when translated payor does not have Elig enabled">
+        <parameter name="accnId" value="QATESTERCMUKP20200327021953212"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="eligPyrAbbrv" value="BSIN-NOELIG"/>
+        <parameter name="ptEstPyrAbbrv" value="BSIN-NOELIG"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992367"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Patient estimation is performed for Q_PT_ESTIMATION">
+        <parameter name="accnId" value="QATESTERMPOUZ20200327022000862"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="accnCntct" value="Eligibility is Valid. Response: Eligibility check successful"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testRpmNew992368"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGPE error is added for QELIG accession when Payor is not configuredd">
+        <parameter name="accnId" value="QATESTERRPSUY20200501044135331"/>
+        <parameter name="pyrAbbrv" value="BCBSOHA"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testELIGPEErrorIsAdded"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGPE Error Is Not Added For Patient Payor">
+        <parameter name="accnId" value="QATESTEREQHGG20200501051435730"/>
+        <parameter name="pyrAbbrv" value="P-NOSUBIDREQ"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testELIGPEErrorNotAddedForPatientPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGPE Error Is Not Added For UNK Payor">
+        <parameter name="accnId" value="QATESTER20200706022223621"/>
+        <parameter name="pyrAbbrv" value="UNK"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testELIGPEErrorNotAddedForUNKPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ELIGPE error is not added for QELIG accession when eligibility check is Ineligible">
+        <parameter name="accnId" value="Q2020072709564109"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="accnCntct" value="Transaction Acknowledged. Eligibility denied."/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testELIGPEErrorNotAddedWhenEligCheckIsIneligible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Coinsurance rates greater than 100%">
+        <parameter name="accnId" value="Q20201020095846894"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testCoinsuranceRateOver100Pct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Accession Is Validated after Estimation">
+        <parameter name="accnId" value="QATESTERZJTVB20201116034211728"/>
+        <parameter name="ptDob" value="19900327"/>
+        <parameter name="pyrAbbrv" value="PYRAUTH"/>
+        <parameter name="accnPyrErr" value="PROCAUTHPYR"/>
+        <parameter name="errNote" value="80011x1"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="testAccnIsValidatedAfterEstimation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Apply coinsurance for service type 30">
+        <parameter name="accnId" value="QATESTER20210904071921967"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="coinsuranceRate" value="0.5"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="applyCoinsuranceForServiceType30"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Prioritize coinsurance for matching  service type">
+        <parameter name="accnId" value="QATESTER20210601014649948"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="coinsuranceRate" value="0.75"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="prioritizeCoinsuranceForMatchingServiceType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Apply copay for service type 30">
+        <parameter name="accnId" value="QATESTER20210904003157760"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="copayAmt" value="20"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="applyCopayForServiceType30"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Prioritize copay for matching  service type">
+        <parameter name="accnId" value="QATESTER20210904003157717"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="copayAmt" value="25"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="prioritizeCopayForMatchingServiceType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Calculate minimum patient responsibility when SS 18005 is False">
+        <parameter name="accnId" value="QATESTER20221211065238906"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="copayAmt" value="0"/>
+        <parameter name="coinsuranceRate" value="0.00"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="calculateMinimumPatientResponsibility"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Calculate maximum patient responsibility when SS 18005 is True">
+        <parameter name="accnId" value="QATESTER20221211065238906"/>
+        <parameter name="pyrAbbrv" value="BSIN-IN"/>
+        <parameter name="copayAmt" value="15"/>
+        <parameter name="coinsuranceRate" value="0.10"/>
+        <classes>
+            <class name="com.pfEngines.tests.PatientEstimationEngineTest">
+                <methods>
+                    <include name="calculateMaximumPatientResponsibility"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

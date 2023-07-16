@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Payment Payments Tests Parallel" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-401&quot;&gt; RPM-401:Verify that valid values will be accepted by the date range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_401">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+ 
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-402&quot;&gt; RPM-402:Verify that Invalid values entered in the date range fields will result in an error ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_402">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-403&quot;&gt; RPM-403:Verify that Invalid Deposit values cannot be submitted ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_403">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-404&quot;&gt; RPM-404:Verify that Valid deposit values can be submitted ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_404">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-405&quot;&gt; RPM-405:Payment - Payments - Deposit Search - Deposit Date Range To date before the From date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_405">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-406&quot;&gt;  RPM-406:Payment - Payments - Deposite Search - From value higher than To value in Deposit Amount Range field ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_406">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-407&quot;&gt; RPM-407 : RPM - 'Remittance File Name' search criteria available ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_407">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-408&quot;&gt; RPM-408:RPM - Search Results for Remittance File Name criteria ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_408">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-409&quot;&gt; RPM-409 : RPM - Search Results when Remittance File Name is excluded ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_409">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-410&quot;&gt; RPM-410:Payment - Payments - Deposite Search - Deposit Period ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_410">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-440&quot;&gt; RPM-440:RPM-Payment-Deposit Search JSP-Verify that the Deposit Period works ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_440">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-479&quot;&gt; RPM-479:Payment - Payment Search - Search Results open in a new pop-up window ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_479">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-483&quot;&gt; RPM-483:Payment - Payment Search - Payment Search Results show when specify a Check # ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_483">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-640&quot;&gt; RPM-640:Payment - Payments - Deposit Search - Deposit Date Range To date after the From date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_640">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-641&quot;&gt; RPM-641:Payment - Payments - Deposit Search - Deposit Date Range To date equals to the From date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_641">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-642&quot;&gt; RPM-642:Payment - Payments - Deposite Search - Payor ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_642">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-643&quot;&gt; RPM-643:Payment - Payments - Deposite Search - EFT ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_643">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-644&quot;&gt; RPM-644:Payment - Payments - Deposite Search - Deposite Date Range fields accespt 01.1.2014 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_644">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-645&quot;&gt; RPM-645:Payment - Payments - Deposite Search - Deposite Date Range fields accespt 01/01/2014 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_645">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-646&quot;&gt; RPM-646:Payment - Payments - Deposite Search - Deposite Date Range fields accespt t ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_646">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-647&quot;&gt; RPM-647:Payment - Payments - Deposite Search - Deposite Date Range fields accept y ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_647">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-648&quot;&gt; RPM-648:Payment - Payments - Deposite Search - Deposite Date Range fields accept t-10 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_648">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-650&quot;&gt; RPM-650:Payment - Payments - Deposite Search - Invalid value 30/1/2014 in Deposite Date Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_650">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+     <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-651&quot;&gt; RPM-651:Payment - Payments - Deposite Search - Invalid value adsfadf in Deposite Date Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_651">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+     <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-652&quot;&gt; RPM-652:Payment - Payments - Deposite Search - Invalid value 123123 in Deposite Date Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_652">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+ 
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-652&quot;&gt; RPM-653:Payment - Payments - Deposite Search - Invalid value 01/01/114 in Deposite Date Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_653">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 	
+   
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-655&quot;&gt; RPM-655:Payment - Payments - Deposite Search - Invalid value asd in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_655">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-656&quot;&gt; RPM-656:Payment - Payments - Deposite Search - Invalid value 1.1.1 in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_656">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+  
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-657&quot;&gt; RPM-657:Payment - Payments - Deposite Search - Valid value 0 in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_657">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-658&quot;&gt; RPM-658:Payment - Payments - Deposite Search - Valid value 123.123 in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_658">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-659&quot;&gt; RPM-659:Payment - Payments - Deposite Search - From value equals To value in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_659">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-660&quot;&gt; RPM-660:Payment - Payments - Deposite Search - From value lower than To in Deposit Amount Range fields ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_660">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-736&quot;&gt; RPM-736:Payment - Payment Search - Payor Search Results - PayorId ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_736">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-737&quot;&gt; RPM-737:Payment - Payment Search - Payor Search Page - Displays ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_737">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />							
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-738&quot;&gt; RPM-738:Payment - Payment Search - Payor Search Results - Payor Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_738">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="payorName" value="ABC Insurance" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-739&quot;&gt; RPM-739:Payment - Payment Search - Payor Search Results - Payor Denial Tbl Descr ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_739">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />		
+					<parameter name="payorDenial" value="5010 GENERIC" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-740&quot;&gt; RPM-740:Payment - Payment Search - Payor Search Results - Payor City ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_740">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="payorCity" value="SAN DIEGO" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-741&quot;&gt; RPM-741:Payment - Payment Search - Payor Search Results - Payor Zip ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_741">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />
+					<parameter name="payorZip" value="92121" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-742&quot;&gt; RPM-742:Payment - Payment Search - Payor Search Results - Payor Country ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_742">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />		
+					<parameter name="payorCountry" value="USA" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-743&quot;&gt; RPM-743:Payment - Payment Search - Payor Search Results - Payor Group ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_743">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="payorGroup" value="Contracted" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-744&quot;&gt; RPM-744:Payment - Payment Search - Payor Search Results - Payor Suspended ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_744">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="payorSuspended" value="no" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-745&quot;&gt; RPM-745:Payment - Payment Search - Payor Search Results - Payor Clearinghouse Id ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_745">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="payorClearinghouseId" value="abc" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-746&quot;&gt; RPM-746:Payment - Payment Search - Payor Search Results - Payor Address 1 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_746">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="addr1" value="123 ABC WAY" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-747&quot;&gt; RPM-747:Payment - Payment Search - Payor Search Results - Payor Address 2 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_747">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="addr2" value="456 ABC WAY" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-748&quot;&gt; RPM-748:Payment - Payment Search - Payor Search Results - Payor Phone ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_748">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="ABC" />	
+					<parameter name="phone" value="(619) 222-3333" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-749&quot;&gt; RPM-749:Payment - Payment Search - Payor Search Results - New Search ">
+		<classes>
+			<class name="com.mars.tests.RegressionPaymentPaymentsTest" />
+			<methods>
+				<include name="testRPM_749">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="payorId" value="*" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+</suite>

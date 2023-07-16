@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SmokeXPTests" preserve-order="true" parallel="tests" thread-count="2" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="100"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Verify login to XP">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyLoginToXP">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Client Audit Log Page Loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyClientAuditLogPageLoads">
+                    <parameter name="clnID" value="100"/>
+                    <parameter name="auditDetailText" value="Audit Detail"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Adjustment code page loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyAdjustmentCodePageLoads">
+                    <parameter name="AdjCd" value="TEST"/>
+                    <parameter name="AdjCodeTblTitle" value="Adjustment Code"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Payor Page Loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyPayorPageLoads">
+                    <parameter name="PayorID" value="TEST"/>
+                    <parameter name="contDetailText" value="Contact Detail"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Accession Diagnosis Page Loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyAccessionDiagnosisPageLoads">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Payments Page Displays">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyPaymentsPageDisplay">
+                    <parameter name="batchID" value="14118:1"/>
+                    <parameter name="clnPayments" value="Client Payments"/>
+                    <parameter name="clnPaymentsDetail" value="Client Payments Detail"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Diagnosis Code Page Loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyDiagnosisCodePageLoads">
+                    <parameter name="DiagCode" value="Diagnosis Code"/>
+                    <parameter name="DiagCodeInfoTitle" value="Diagnosis Code Information"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Patient Estimation page loads">
+        <classes>
+            <class name="com.newXp.tests.SmokeXPTests"/>
+            <methods>
+                <include name="verifyPatientEstimationPageLoads">
+                    <parameter name="EstId" value="347"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

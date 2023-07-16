@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-PricingEngine" preserve-order="true" parallel="none" thread-count="3" verbose="10">
+
+ 	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+  	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+ 	<parameter name="version" value="ANY" />  
+ 	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+
+	 <test name="Price a Patient Payor Single Test accn ">
+		<classes>
+			<class name="com.pfEngines.tests.PricingEngineTest" />
+			<methods>
+				<include name="testPFER_557">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-PricingEngine-CreateNewFinalReportedPtPyrAccnWithNewEPISingleTest" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+	 <test name="Split-Ad Hoc Bill Client-XM ">
+		<classes>
+			<class name="com.pfEngines.tests.PricingEngineTest" />
+			<methods>
+				<include name="testPFER_559">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-PricingEngine-CreateNewFinalReportedPtPyrAccnWithNewEPITwoSingleTests" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="Join Logic ">
+		<classes>
+			<class name="com.pfEngines.tests.PricingEngineTest" />
+			<methods>
+				<include name="testPFER_558">
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="testCase" value="Accession WS-CreateAccession-PricingEngine-CreateTwoNewFinalReportedPtPyrAccnWithTheSameEPISingleTest" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+</suite>

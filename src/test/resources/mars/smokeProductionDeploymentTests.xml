@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Smoke Production Deployment Tests Parallel" preserve-order="true" parallel="tests" thread-count="4" verbose="10">
+
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+  
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-783&quot;&gt; RPM-783:SSO Login-Accn Transaction Detail-Accn Search-XP Detail ">
+		<classes>
+			<class name="com.mars.tests.ProductionDeploymentTest" />
+			<methods>
+				<include name="testRPM_783">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-784&quot;&gt; RPM-784:SSO Login-XP Test Code-XP Test Code Search ">
+		<classes>
+			<class name="com.mars.tests.ProductionDeploymentTest" />
+			<methods>
+				<include name="testRPM_784">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-785&quot;&gt; RPM-785:SSO Login-EOM WebApp-EOM by Facility Closing Package ">
+		<classes>
+			<class name="com.mars.tests.ProductionDeploymentTest" />
+			<methods>
+				<include name="testRPM_785">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+<!-- 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-787&quot;&gt; RPM-787:SSo Login-PF Order Entry ">
+		<classes>
+			<class name="com.mars.tests.ProductionDeploymentTest" />
+			<methods>
+				<include name="testRPM_787">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test>
+ -->	     
+</suite>

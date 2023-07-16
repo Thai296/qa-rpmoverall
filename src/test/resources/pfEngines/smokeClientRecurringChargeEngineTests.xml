@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ClnRecurringChargesEngine" preserve-order="true" parallel="tests" thread-count="13" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="Freq_Typ_id=1(SemiMonthly),Cln_subm has data ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_455">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=1(SemiMonthly),cln_bal_hist and cln_subm has data ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_456">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=1(SemiMonthly), no data in Cln_subm ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_457">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=1(SemiMonthly), SS#1.Day>15, no data in Cln_subm ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_458">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=2(Monthly),SS1Day greater than 15,no data in Cln_Subm,Cln_bal_hist tables ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_459">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=2(Monthly), Cln_Bal_hist has data ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_460">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_Typ_id=2(Monthly), Cln_subm.pk_subm_dt!=SS#1 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_461">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_typ_id=3(Weekly), SS#1.dayOfMonth less than or equals to 22 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_462">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_typ_id=3(Weekly), SS#1.dayOfMonth less or equals to 15 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_463">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_typ_id=3(Weekly), SS#1.dayOfMonth less or equals to 7 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_464">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_typ_id=3(Weekly), SS#1.dayOfMonth greater than 22 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_465">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Freq_typ_id=3(Weekly), SS#1.dayOfMonth greater than 22,ClnBalHist.Eff_dt less than SS#1 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_466">
+                    <parameter name="project" value="Client-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Client WS-AddClient"/>
+                    <parameter name="testCase" value="AddClient-AddNewClientWithRequiredFieldsOnly"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Reset SS1 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientRecurringChargeEngineTest"/>
+            <methods>
+                <include name="testPFER_472">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

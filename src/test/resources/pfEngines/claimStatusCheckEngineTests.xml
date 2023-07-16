@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-ClaimStatusCheckEngine" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="First Check Claim created outside of wait time is queued">
+        <parameter name="accnId" value="CLAIMSTATUSCHECKENGINE-001"/>
+        <parameter name="pyrAbbrv" value="BCBSNY-AUTOCSI"/>
+        <parameter name="docSeqId" value="1342587"/>
+        <classes>
+            <class name="com.pfEngines.tests.ClaimStatusCheckEngineTest">
+                <methods>
+                    <include name="testPFER_770"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="User ID Is Correct in Real Time Claim Status Request">
+        <parameter name="accnId" value="Q20200723095656160"/>
+        <parameter name="pyrAbbrv" value="AETNA-AUTOCSI"/>
+        <parameter name="docSeqId" value="1343717"/>
+        <classes>
+            <class name="com.pfEngines.tests.ClaimStatusCheckEngineTest">
+                <methods>
+                    <include name="testRealTimeClaimStatusCheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Claim Status Check is only performed for specific claim">
+        <parameter name="accnId" value="Q20210519155825302"/>
+        <parameter name="pyrAbbrv" value="AETNA-AUTOCSI"/>
+        <parameter name="claimSuffixIds" value="03,04"/>
+        <classes>
+            <class name="com.pfEngines.tests.ClaimStatusCheckEngineTest">
+                <methods>
+                    <include name="testConfigOptions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

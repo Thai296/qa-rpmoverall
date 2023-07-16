@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Client Transaction Detail" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+	<listeners>
+    	<listener class-name='com.xifin.utils.RetryListener' />
+  	</listeners>
+
+
+	<test name="Load Client - Load valid ClientID">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_335">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Load Client - Load invalid ClientID">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_336">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search Client with valid data for full fields">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_337">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search Client with valid data for Cross Site Section">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_339">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="Search Client - Search Client with valid data for Address info Section">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_340">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Search Client - Search all client in the system">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_341">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search invalid client">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_342">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Verify Footer button in Search result page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_344">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Verify New Search button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_345">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Verify Reset button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_346">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI - Search Client with empty data">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_347">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI - Search NPI with entity is Facility;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_349">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI - Search NPI with entity is Physician;/a&gt;">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_350">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Clietn - Search NPI - Search NPI with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_351">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI - Verify Reset button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_352">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI - Verify New Search button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_353">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Account Aging Balances - Verify Hide button">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_355">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements-Verify footer icon in the grid">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_361">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Client Adjust-Cancel New Client Adjustment">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_380">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Client Adjust-Reset new Client Adjustment">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_381">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!--	<test name="Client Accn Detail-Client Adjust-Verify user cannot edit save row">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_383">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Client Accn Detail - Client Adjust - Verify the Filter function">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_384">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Adjust - Verify the Hide icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_385">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Adjust - Verify the Sort function">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_386">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Verify Accession Detail page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_387">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - View Accn detail page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_388">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Verify Hide icon in the Accn page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_389">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Verify filter in Accn detail page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_390">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Verify Footer buttons">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_391">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+<!-- 	 <test name="Client Accession Detail - Client Bill Accession - Check footer icons">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_397">-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name=" Client Accn Detail - Client Bill Accn - Check ClientID link">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_393">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Client Accn Detail - Client Bill Accn - Verify filter function">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_394">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Verify Hide icon">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_395">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - Check sort function">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_396">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Load another ClientID in Client-Transaction Detail page">
+		<classes>
+			<class name="com.newXp.tests.RegressionClientTransactionDetailTest" />
+			<methods>
+				<include name="testXPR_398">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

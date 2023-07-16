@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ClnSubmEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="eType" value="ClnSubmEngine"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+
+	<test name="creates CLN_STATEMENT_STAGE, CLN_SUBM_FILE and SUBM_FILE records">
+		<classes>
+			<class name="com.pfEngines.tests.ClientSubmissionEngineTest" />
+			<methods>
+				<include name="testPFER_562">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+</suite>

@@ -1,0 +1,2018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Payor WS_Prodv7_Smoke Tests" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" id="110248ec-7eaa-4d0d-baa7-825ed20cc522" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="payorSoap11" type="wsdl" bindingName="{http://www.xifin.com/schema/payor}payorSoap11" soapVersion="1_1" anonymous="optional" definition="https://www.xifinqa.com/prod/payorv604/payor.wsdl" id="fbe386e9-ede1-4699-b63a-9f6ff244f4d1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.xifinqa.com/prod/payorv604/payor.wsdl"><con:part><con:url>https://www.xifinqa.com/prod/payorv604/payor.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.xifin.com/schema/payor" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.xifin.com/schema/payor" xmlns:sch1="http://www.xifin.com/schema/msgHeader" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xifin.com/schema/payor">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/payor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/payor" xmlns:msgHeader="http://www.xifin.com/schema/msgHeader">
+      <xs:import namespace="http://www.xifin.com/schema/msgHeader"/>
+      <xs:element name="RequestMessage">
+        <xs:annotation>
+          <xs:documentation>Soap request message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element ref="AddPayor"/>
+                  <xs:element ref="UpdatePayor"/>
+                  <xs:element ref="AddPayorContract"/>
+                  <xs:element ref="UpdatePayorContract"/>
+                  <xs:element ref="GetPayor"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResponseMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element name="Status" type="StatusType"/>
+                  <xs:element name="GetPayorResponse" type="GetPayorResponse"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddPayor">
+        <xs:annotation>
+          <xs:documentation>Root level for addPayor entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PayorID" type="IdType"/>
+            <xs:element name="PayorName" type="PayorNameType"/>
+            <xs:element name="PayorGroup" type="PayorGroupType">
+              <xs:annotation>
+                <xs:documentation>The available PayorGroups can be obtained using typetables
+                            webservice where tablename =PayorGroup.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="EffectiveDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="SignatureForHCFA" type="SignatureForHCFAType"/>
+            <xs:element minOccurs="0" name="Website" type="WebsiteType"/>
+            <xs:element minOccurs="0" name="XRefs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="XRef" type="XRefType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="BillingAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="RefundAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="AppealAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPayor">
+        <xs:annotation>
+          <xs:documentation>Root level for GetPayor entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PayorId" type="IdType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatePayor">
+        <xs:annotation>
+          <xs:documentation>Root level for updatePayor entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PayorID" type="IdType"/>
+            <xs:element minOccurs="0" name="PayorName" type="PayorNameType"/>
+            <xs:element minOccurs="0" name="SignatureForHCFA" type="SignatureForHCFAType"/>
+            <xs:element minOccurs="0" name="Website" type="WebsiteType"/>
+            <xs:element minOccurs="0" name="XRefs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="XRef" type="XRefType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="PricingSuspend" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="BillingAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="RefundAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="AppealAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddPayorContract">
+        <xs:annotation>
+          <xs:documentation>Root level for addPayorContract entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="PayorContractLink" type="PayorContractLinkType"/>
+            <xs:element name="PayorContract" type="PayorContractType"/>
+            <xs:element minOccurs="0" name="ContractContact" type="PayorContactType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatePayorContract">
+        <xs:annotation>
+          <xs:documentation>Root level for updatePayorContract entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="PayorContractLink" type="PayorContractLinkType"/>
+            <xs:element minOccurs="0" name="PayorContract" type="PayorContractType"/>
+            <xs:element minOccurs="0" name="ContractContact" type="PayorContactType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="XRefType">
+        <xs:sequence>
+          <xs:element name="XRefID" type="IdType"/>
+          <xs:element name="XRefType" type="XRefDescriptionType">
+            <xs:annotation>
+              <xs:documentation>The available XRefTypes can be obtained using typetables
+                        webservice where tablename =PyrXRefType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="XRefDescription" type="XRefDescriptionType"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PayorContactType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element name="Contact" type="ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="PreferredContactMethod" type="PreferredContactMethodType">
+            <xs:annotation>
+              <xs:documentation>The available PreferredContactMethods can be obtained using typetables
+                        webservice where tablename =PreferredContactMethodType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Name" type="NameType"/>
+          <xs:element minOccurs="0" name="Phone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="Fax" type="FaxType"/>
+          <xs:element minOccurs="0" name="Email" type="EmailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BillingAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element minOccurs="0" name="Contact1" type="ContactType"/>
+          <xs:element minOccurs="0" name="Contact2" type="ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element name="AddressLine1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddressLine2">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="City">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="State">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="ZIP">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CountryCode">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PayorContractLinkType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PayorID" type="IdType"/>
+          <xs:element name="EffectiveDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PayorContractType">
+        <xs:sequence>
+          <xs:element name="ContractID" type="ContractIDType"/>
+          <xs:element name="ContractName" type="ContractNameType"/>
+          <xs:element name="ContractCoverage" type="ContractCoverageType">
+            <xs:annotation>
+              <xs:documentation>The available ContractCoverages can be obtained using typetables
+                        webservice where tablename =ContractCoverage.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element default="2000-01-01" name="EffectiveDate" type="xs:date"/>
+          <xs:element default="2099-12-31" name="ExpirationDate" type="xs:date"/>
+          <xs:element default="2000-01-01" name="ReviewDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element minOccurs="0" name="StatusMessage" type="StatusMessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="XRefDescriptionType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PhoneNumberType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FaxType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="IdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PayorNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PayorGroupType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SignatureForHCFAType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="WebsiteType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContractIDType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="20"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContractNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContractCoverageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContactMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusCodeType">
+        <xs:restriction base="xs:integer">
+          <xs:maxExclusive value="9999"/>
+          <xs:minExclusive value="-9999"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PreferredContactMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="GetPayorResponse">
+        <xs:annotation>
+          <xs:documentation>Get Payor Response message structure</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PayorName" type="PayorNameType"/>
+          <xs:element name="PayorGroupName" type="PayorGroupType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/msgHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/msgHeader">
+      <xs:element name="MessageHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SequenceNumber" type="xs:positiveInteger"/>
+            <xs:element name="UserId">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SourceApplication" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Name of the source application</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="OrgAlias" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ResponseMessage">
+    <wsdl:part element="tns:ResponseMessage" name="ResponseMessage"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RequestMessage">
+    <wsdl:part element="tns:RequestMessage" name="RequestMessage"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="payor">
+    <wsdl:operation name="RequestMessage">
+      <wsdl:input message="tns:RequestMessage" name="RequestMessage"></wsdl:input>
+      <wsdl:output message="tns:ResponseMessage" name="ResponseMessage"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="payorSoap11" type="tns:payor">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RequestMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RequestMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ResponseMessage">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="payorService">
+    <wsdl:port binding="tns:payorSoap11" name="payorSoap11">
+      <soap:address location="https://www.xifinqa.com/prod/payor/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#endpoint}</con:endpoint><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="RequestMessage" bindingOperationName="RequestMessage" type="Request-Response" outputName="ResponseMessage" inputName="RequestMessage" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="2a971e26-b84d-4e2b-a298-e760b9c75b5b"><con:settings/><con:call name="Request 1" id="32085f7c-d095-4130-84bd-0c50330115a7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payor" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:RequestMessage>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:OrganizationName>?</msg:OrganizationName>
+            <!--Optional:-->
+            <msg:SequenceNumber>?</msg:SequenceNumber>
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+        <pay:Payload>
+            <!--You have a CHOICE of the next 5 items at this level-->
+            <pay:AddPayor>
+               <pay:PayorID>?</pay:PayorID>
+               <pay:PayorName>?</pay:PayorName>
+               <pay:PayorGroup>?</pay:PayorGroup>
+               <pay:EffectiveDate>?</pay:EffectiveDate>
+            </pay:AddPayor>
+            <pay:UpdatePayor>
+               <pay:PayorID>?</pay:PayorID>
+            </pay:UpdatePayor>
+            <pay:AddPayorContract>
+               <pay:PayorContract>
+                  <pay:ContractID>?</pay:ContractID>
+                  <pay:ContractName>?</pay:ContractName>
+                  <pay:ContractCoverage>?</pay:ContractCoverage>
+                  <pay:EffectiveDate>2000-01-01</pay:EffectiveDate>
+                  <pay:ExpirationDate>2099-12-31</pay:ExpirationDate>
+                  <pay:ReviewDate>2000-01-01</pay:ReviewDate>
+               </pay:PayorContract>
+            </pay:AddPayorContract>
+            <pay:UpdatePayorContract/>
+            <pay:GetPayor>
+               <pay:PayorId>?</pay:PayorId>
+            </pay:GetPayor>
+         </pay:Payload>
+      </pay:RequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payor/payor/RequestMessage"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2" id="3538370d-5ef9-442a-b852-b8510b97f7ed"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payor" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:RequestMessage>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <!--type: string-->
+            <msg:OrganizationName>?</msg:OrganizationName>
+            <!--Optional:-->
+            <!--type: positiveInteger-->
+            <msg:SequenceNumber>?</msg:SequenceNumber>
+            <!--anonymous type-->
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <!--type: string-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <!--type: string-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+         <pay:Payload>
+            <!--You have a CHOICE of the next 5 items at this level-->
+            <pay:AddPayor>
+               <!--type: IdType-->
+               <pay:PayorID>?</pay:PayorID>
+               <!--type: PayorNameType-->
+               <pay:PayorName>?</pay:PayorName>
+               <!--type: PayorGroupType-->
+               <pay:PayorGroup>?</pay:PayorGroup>
+               <!--type: date-->
+               <pay:EffectiveDate>?</pay:EffectiveDate>
+               <!--Optional:-->
+               <!--type: SignatureForHCFAType-->
+               <pay:SignatureForHCFA>?</pay:SignatureForHCFA>
+               <!--Optional:-->
+               <!--type: WebsiteType-->
+               <pay:Website>?</pay:Website>
+               <!--Optional:-->
+               <pay:XRefs>
+                  <!--Zero or more repetitions:-->
+                  <pay:XRef>
+                     <!--type: IdType-->
+                     <pay:XRefID>?</pay:XRefID>
+                     <!--type: XRefDescriptionType-->
+                     <pay:XRefType>?</pay:XRefType>
+                     <!--type: XRefDescriptionType-->
+                     <pay:XRefDescription>?</pay:XRefDescription>
+                     <!--Optional:-->
+                     <!--type: date-->
+                     <pay:EffectiveDate>?</pay:EffectiveDate>
+                     <!--Optional:-->
+                     <!--type: date-->
+                     <pay:ExpirationDate>?</pay:ExpirationDate>
+                  </pay:XRef>
+               </pay:XRefs>
+               <!--Optional:-->
+               <pay:BillingAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+                  <!--Optional:-->
+                  <pay:Contact1>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact1>
+                  <!--Optional:-->
+                  <pay:Contact2>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact2>
+               </pay:BillingAddress>
+               <!--Optional:-->
+               <pay:RefundAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+               </pay:RefundAddress>
+               <!--Optional:-->
+               <pay:AppealAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+               </pay:AppealAddress>
+            </pay:AddPayor>
+            <pay:UpdatePayor>
+               <!--type: IdType-->
+               <pay:PayorID>?</pay:PayorID>
+               <!--Optional:-->
+               <!--type: PayorNameType-->
+               <pay:PayorName>?</pay:PayorName>
+               <!--Optional:-->
+               <!--type: SignatureForHCFAType-->
+               <pay:SignatureForHCFA>?</pay:SignatureForHCFA>
+               <!--Optional:-->
+               <!--type: WebsiteType-->
+               <pay:Website>?</pay:Website>
+               <!--Optional:-->
+               <pay:XRefs>
+                  <!--Zero or more repetitions:-->
+                  <pay:XRef>
+                     <!--type: IdType-->
+                     <pay:XRefID>?</pay:XRefID>
+                     <!--type: XRefDescriptionType-->
+                     <pay:XRefType>?</pay:XRefType>
+                     <!--type: XRefDescriptionType-->
+                     <pay:XRefDescription>?</pay:XRefDescription>
+                     <!--Optional:-->
+                     <!--type: date-->
+                     <pay:EffectiveDate>?</pay:EffectiveDate>
+                     <!--Optional:-->
+                     <!--type: date-->
+                     <pay:ExpirationDate>?</pay:ExpirationDate>
+                  </pay:XRef>
+               </pay:XRefs>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <pay:PricingSuspend>?</pay:PricingSuspend>
+               <!--Optional:-->
+               <pay:BillingAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+                  <!--Optional:-->
+                  <pay:Contact1>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact1>
+                  <!--Optional:-->
+                  <pay:Contact2>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact2>
+               </pay:BillingAddress>
+               <!--Optional:-->
+               <pay:RefundAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+               </pay:RefundAddress>
+               <!--Optional:-->
+               <pay:AppealAddress>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+               </pay:AppealAddress>
+            </pay:UpdatePayor>
+            <pay:AddPayorContract>
+               <!--Zero or more repetitions:-->
+               <pay:PayorContractLink>
+                  <!--Optional:-->
+                  <!--type: IdType-->
+                  <pay:PayorID>?</pay:PayorID>
+                  <!--type: date-->
+                  <pay:EffectiveDate>?</pay:EffectiveDate>
+               </pay:PayorContractLink>
+               <pay:PayorContract>
+                  <!--type: ContractIDType-->
+                  <pay:ContractID>?</pay:ContractID>
+                  <!--type: ContractNameType-->
+                  <pay:ContractName>?</pay:ContractName>
+                  <!--type: ContractCoverageType-->
+                  <pay:ContractCoverage>?</pay:ContractCoverage>
+                  <!--type: date-->
+                  <pay:EffectiveDate>2000-01-01</pay:EffectiveDate>
+                  <!--type: date-->
+                  <pay:ExpirationDate>2099-12-31</pay:ExpirationDate>
+                  <!--type: date-->
+                  <pay:ReviewDate>2000-01-01</pay:ReviewDate>
+               </pay:PayorContract>
+               <!--Optional:-->
+               <pay:ContractContact>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+                  <pay:Contact>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact>
+               </pay:ContractContact>
+            </pay:AddPayorContract>
+            <pay:UpdatePayorContract>
+               <!--Zero or more repetitions:-->
+               <pay:PayorContractLink>
+                  <!--Optional:-->
+                  <!--type: IdType-->
+                  <pay:PayorID>?</pay:PayorID>
+                  <!--type: date-->
+                  <pay:EffectiveDate>?</pay:EffectiveDate>
+               </pay:PayorContractLink>
+               <!--Optional:-->
+               <pay:PayorContract>
+                  <!--type: ContractIDType-->
+                  <pay:ContractID>?</pay:ContractID>
+                  <!--type: ContractNameType-->
+                  <pay:ContractName>?</pay:ContractName>
+                  <!--type: ContractCoverageType-->
+                  <pay:ContractCoverage>?</pay:ContractCoverage>
+                  <!--type: date-->
+                  <pay:EffectiveDate>2000-01-01</pay:EffectiveDate>
+                  <!--type: date-->
+                  <pay:ExpirationDate>2099-12-31</pay:ExpirationDate>
+                  <!--type: date-->
+                  <pay:ReviewDate>2000-01-01</pay:ReviewDate>
+               </pay:PayorContract>
+               <!--Optional:-->
+               <pay:ContractContact>
+                  <!--Optional:-->
+                  <pay:Address>
+                     <!--anonymous type-->
+                     <pay:AddressLine1>?</pay:AddressLine1>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:AddressLine2>?</pay:AddressLine2>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:City>?</pay:City>
+                     <!--Optional:-->
+                     <!--anonymous type-->
+                     <pay:State>?</pay:State>
+                     <!--anonymous type-->
+                     <pay:ZIP>?</pay:ZIP>
+                     <!--anonymous type-->
+                     <pay:CountryCode>?</pay:CountryCode>
+                  </pay:Address>
+                  <pay:Contact>
+                     <!--Optional:-->
+                     <!--type: PreferredContactMethodType-->
+                     <pay:PreferredContactMethod>?</pay:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--type: NameType-->
+                     <pay:Name>?</pay:Name>
+                     <!--Optional:-->
+                     <!--type: PhoneNumberType-->
+                     <pay:Phone>?</pay:Phone>
+                     <!--Optional:-->
+                     <!--type: FaxType-->
+                     <pay:Fax>?</pay:Fax>
+                     <!--Optional:-->
+                     <!--type: EmailType-->
+                     <pay:Email>?</pay:Email>
+                  </pay:Contact>
+               </pay:ContractContact>
+            </pay:UpdatePayorContract>
+            <pay:GetPayor>
+               <!--type: IdType-->
+               <pay:PayorId>?</pay:PayorId>
+            </pay:GetPayor>
+         </pay:Payload>
+      </pay:RequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payor/payor/RequestMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="payorSearchSoap11" type="wsdl" bindingName="{http://www.xifin.com/schema/payorSearch}payorSearchSoap11" soapVersion="1_1" anonymous="optional" definition="https://www.xifinqa.com/prod/payorv604/payorSearch.wsdl" id="ec31ac56-8e68-40e3-a498-75e3b79a51bb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.xifinqa.com/prod/payorv604/payorSearch.wsdl"><con:part><con:url>https://www.xifinqa.com/prod/payorv604/payorSearch.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.xifin.com/schema/payorSearch" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.xifin.com/schema/payorSearch" xmlns:sch1="http://www.xifin.com/schema/types" xmlns:sch2="http://www.xifin.com/schema/msgHeader" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xifin.com/schema/payorSearch">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/payorSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/payorSearch" xmlns:msgHeader="http://www.xifin.com/schema/msgHeader" xmlns:types="http://www.xifin.com/schema/types">
+      <xs:import namespace="http://www.xifin.com/schema/types"/>
+      <xs:import namespace="http://www.xifin.com/schema/msgHeader"/>
+      <xs:element name="PayorSearchRequest">
+        <xs:annotation>
+          <xs:documentation>Payor Search Request Message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element ref="PayorSearchRequestMessage"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PayorSearchResponse">
+        <xs:annotation>
+          <xs:documentation>Soap response message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element name="Status" type="types:StatusType"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="PayorSearchResponseMessage"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PayorSearchRequestMessage">
+        <xs:annotation>
+          <xs:documentation>By default response will contain maximum of 100 records, if more than one records need to
+                be retrieved
+                send the start and end row numbers.
+                The data will returned between start and end record row numbers.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="PayorId" type="xs:string"/>
+            <xs:element minOccurs="0" name="PayorName" type="xs:string"/>
+            <xs:element minOccurs="0" name="PayorGroupName" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClearingHouseId" type="xs:string"/>
+            <xs:element minOccurs="0" name="Address" type="types:AddressType"/>
+            <xs:element minOccurs="0" name="Phone" type="xs:string"/>
+            <xs:element minOccurs="0" name="EffectiveDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="XrefType" type="xs:string"/>
+            <xs:element minOccurs="0" name="XrefMember" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>XrefMember is deprecated and is being replaced by XRefDescription.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="DisplayCrossReferenceData" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="IncludeSuspendedPayors" type="xs:boolean"/>
+            <xs:element default="1" minOccurs="0" name="StartRowNumber" type="xs:integer"/>
+            <xs:element default="100" minOccurs="0" name="EndRowNumber" type="xs:integer"/>
+            <xs:element minOccurs="0" name="XRefDescription" type="types:DescriptionType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PayorSearchResponseMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RowId" type="xs:int"/>
+            <xs:element name="PayorId" type="types:IdType"/>
+            <xs:element name="PayorName" type="types:LongDescriptionType"/>
+            <xs:element minOccurs="0" name="DenialTable" type="types:DescriptionType"/>
+            <xs:element minOccurs="0" name="Address" type="types:AddressType"/>
+            <xs:element minOccurs="0" name="Phone" type="xs:string"/>
+            <xs:element minOccurs="0" name="PayorGroupName" type="types:LongDescriptionType"/>
+            <xs:element minOccurs="0" name="ClearingHouseId" type="xs:string"/>
+            <xs:element minOccurs="0" name="PayorSuspended" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="XrefMember" type="types:NoteType">
+              <xs:annotation>
+                <xs:documentation>XrefMember is deprecated and can be replaced by combining XRefType and XRefId.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="XRefId" type="types:IdType"/>
+            <xs:element minOccurs="0" name="XRefDescription" type="types:DescriptionType"/>
+            <xs:element minOccurs="0" name="XRefType" type="types:DescriptionType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/types" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/types">
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressLine1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddressLine2">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="City">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="State">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ZIP">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="CountryCode">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="PayorIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CardTypeType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DelayReasonCodeType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AmtType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="12"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AccessionIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element minOccurs="0" name="StatusMessage" type="StatusMessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="StatusCodeType">
+        <xs:restriction base="xs:integer">
+          <xs:maxExclusive value="9999"/>
+          <xs:minExclusive value="-9999"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="PhoneType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HomePhone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="WorkPhone" type="PhoneNumberType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NPIType">
+        <xs:restriction base="xs:nonNegativeInteger">
+          <xs:totalDigits value="10"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SSNType">
+        <xs:restriction base="xs:nonNegativeInteger">
+          <xs:totalDigits value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="IdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="MSPTypeType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NameIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TestNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DescriptionType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LongDescriptionType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NoteType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="4000"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PhoneNumberType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="NameType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FirstName" type="NameIdType"/>
+          <xs:element minOccurs="0" name="LastName" type="NameIdType"/>
+          <xs:element minOccurs="0" name="MiddleName" type="NameIdType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="UnitsType">
+        <xs:restriction base="xs:integer">
+          <xs:totalDigits value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NarrativeDiagTyp">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ProcedureNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientProductType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="20"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CommentsType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="PersonType">
+        <xs:sequence>
+          <xs:element name="Name" type="NameType"/>
+          <xs:element minOccurs="0" name="DateOfBirth" type="xs:date"/>
+          <xs:element minOccurs="0" name="Gender" type="DescriptionType"/>
+          <xs:element minOccurs="0" name="SSN" type="SSNType"/>
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element minOccurs="0" name="HomePhone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="WorkPhone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="Email" type="DescriptionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Contact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactName" type="DescriptionType"/>
+          <xs:element minOccurs="0" name="Phone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="Fax" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="UserIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="20"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimeOfService">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="20"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TimeType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PayorPriorityType">
+        <xs:restriction base="xs:int">
+          <xs:totalDigits value="2"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AbbrevType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AmountType">
+        <xs:restriction base="xs:decimal">
+          <xs:totalDigits value="12"/>
+          <xs:fractionDigits value="2"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PaymentMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientStatusType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ShortStrType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="10"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SmallInt">
+        <xs:restriction base="xs:integer">
+          <xs:minExclusive value="0"/>
+          <xs:maxExclusive value="50"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/msgHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/msgHeader">
+      <xs:element name="MessageHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SequenceNumber" type="xs:positiveInteger"/>
+            <xs:element name="UserId">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SourceApplication" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Name of the source application</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="OrgAlias" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PayorSearchResponse">
+    <wsdl:part element="tns:PayorSearchResponse" name="PayorSearchResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PayorSearchRequest">
+    <wsdl:part element="tns:PayorSearchRequest" name="PayorSearchRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="payorSearch">
+    <wsdl:operation name="PayorSearch">
+      <wsdl:input message="tns:PayorSearchRequest" name="PayorSearchRequest"></wsdl:input>
+      <wsdl:output message="tns:PayorSearchResponse" name="PayorSearchResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="payorSearchSoap11" type="tns:payorSearch">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayorSearch">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PayorSearchRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PayorSearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="payorSearchService">
+    <wsdl:port binding="tns:payorSearchSoap11" name="payorSearchSoap11">
+      <soap:address location="https://www.xifinqa.com/prod/payor/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#endpoint}</con:endpoint><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="PayorSearch" bindingOperationName="PayorSearch" type="Request-Response" outputName="PayorSearchResponse" inputName="PayorSearchRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="6b9e7ede-605d-4927-9452-2a48b8ce2304"><con:settings/><con:call name="Request 1" id="ab560077-a317-4f32-a666-944cc898f1a2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payorSearch" xmlns:msg="http://www.xifin.com/schema/msgHeader" xmlns:typ="http://www.xifin.com/schema/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:PayorSearchRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:OrganizationName>?</msg:OrganizationName>
+            <!--Optional:-->
+            <msg:SequenceNumber>?</msg:SequenceNumber>
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+         <pay:Payload>
+            <pay:PayorSearchRequestMessage>
+               <!--Optional:-->
+               <pay:PayorId>?</pay:PayorId>
+               <!--Optional:-->
+               <pay:PayorName>?</pay:PayorName>
+               <!--Optional:-->
+               <pay:PayorGroupName>?</pay:PayorGroupName>
+               <!--Optional:-->
+               <pay:ClearingHouseId>?</pay:ClearingHouseId>
+               <!--Optional:-->
+               <pay:Address>
+                  <!--Optional:-->
+                  <typ:AddressLine1>?</typ:AddressLine1>
+                  <!--Optional:-->
+                  <typ:AddressLine2>?</typ:AddressLine2>
+                  <!--Optional:-->
+                  <typ:City>?</typ:City>
+                  <!--Optional:-->
+                  <typ:State>?</typ:State>
+                  <!--Optional:-->
+                  <typ:ZIP>?</typ:ZIP>
+                  <!--Optional:-->
+                  <typ:CountryCode>?</typ:CountryCode>
+               </pay:Address>
+               <!--Optional:-->
+               <pay:Phone>?</pay:Phone>
+               <!--Optional:-->
+               <pay:EffectiveDate>?</pay:EffectiveDate>
+               <!--Optional:-->
+               <pay:XrefType>?</pay:XrefType>
+               <!--Optional:-->
+               <pay:XrefMember>?</pay:XrefMember>
+               <!--Optional:-->
+               <pay:DisplayCrossReferenceData>?</pay:DisplayCrossReferenceData>
+               <!--Optional:-->
+               <pay:IncludeSuspendedPayors>?</pay:IncludeSuspendedPayors>
+               <!--Optional:-->
+               <pay:StartRowNumber>1</pay:StartRowNumber>
+               <!--Optional:-->
+               <pay:EndRowNumber>100</pay:EndRowNumber>
+            </pay:PayorSearchRequestMessage>
+         </pay:Payload>
+      </pay:PayorSearchRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payorSearch/payorSearch/PayorSearchRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="payoreditsSoap11" type="wsdl" bindingName="{http://www.xifin.com/schema/payoredits}payoreditsSoap11" soapVersion="1_1" anonymous="optional" definition="https://www.xifinqa.com/prod/payorv604/payorEdits.wsdl" id="33c2826b-ac43-4980-875c-0cf9033221a0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.xifinqa.com/prod/payorv604/payorEdits.wsdl"><con:part><con:url>https://www.xifinqa.com/prod/payorv604/payorEdits.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.xifin.com/schema/payoredits" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.xifin.com/schema/payoredits" xmlns:sch1="http://www.xifin.com/schema/msgHeader" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xifin.com/schema/payoredits">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/payoredits" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/payoredits" xmlns:msgHeader="http://www.xifin.com/schema/msgHeader">
+      <xs:import namespace="http://www.xifin.com/schema/msgHeader"/>
+      <xs:element name="GetPayorEditsRequest">
+        <xs:annotation>
+          <xs:documentation>Soap request message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PayorId" type="xs:string"/>
+                  <xs:element name="ProductType" type="ProductType"/>
+                  <xs:element name="DateOfService" type="xs:date"/>
+                  <xs:element minOccurs="0" name="ClientId" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetEligibilityPayorsRequest">
+        <xs:annotation>
+          <xs:documentation>This method returns all payors that are configured to check eligibility</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetEligibilityPayorsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element minOccurs="0" name="Status" type="StatusType"/>
+                  <xs:element maxOccurs="unbounded" name="EligibilityPayors" type="EligibilityPayors"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EligibilityPayors">
+        <xs:sequence>
+          <xs:element name="PayorId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Xifin Payor ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PayorName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Xifin Payor Name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ExternalPayorId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>External Payor Id is the Id that payor accepts to check eligibility</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetPayorEditsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element minOccurs="0" name="Status" type="StatusType"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="GetPayorEdits" type="GetPayorEdits"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetPayorEdits">
+        <xs:sequence>
+          <xs:element name="FieldName" type="FieldNameType"/>
+          <xs:element name="FieldPattern" type="FieldPatternType"/>
+          <xs:element name="ErrorMessage" type="ErrorMessageType"/>
+          <xs:element name="RequirementType" type="RequirementType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ProductType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Order Entry Lab"/>
+          <xs:enumeration value="Order Entry PSC"/>
+          <xs:enumeration value="Order Entry Phys"/>
+          <xs:enumeration value="Order Entry Billing"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element minOccurs="0" name="StatusMessage" type="StatusMessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="StatusCodeType">
+        <xs:restriction base="xs:integer">
+          <xs:maxExclusive value="9999"/>
+          <xs:minExclusive value="-9999"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RequirementType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Always Required"/>
+          <xs:enumeration value="Optional"/>
+          <xs:enumeration value="Recommended"/>
+          <xs:enumeration value="Conditionally Required"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FieldNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FieldPatternType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ErrorMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ValidateFieldRequest">
+        <xs:annotation>
+          <xs:documentation>Validate field request message structure.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ValidateFieldRequestMessage" type="ValidateFieldRequestMessage"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateFieldResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element minOccurs="0" name="Status" type="StatusType"/>
+                  <xs:element ref="ValidateFieldResponseMessage"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ValidateFieldRequestMessage">
+        <xs:sequence>
+          <xs:element name="FieldName" type="FieldNameType"/>
+          <xs:element name="FieldValue" type="FieldValueType"/>
+          <xs:element name="PayorId" type="xs:string"/>
+          <xs:element name="ProductType" type="ProductType"/>
+          <xs:element name="DateOfService" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ValidateFieldResponseMessage">
+        <xs:annotation>
+          <xs:documentation>Validate Field response message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ValidFieldData" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="FieldPattern" type="FieldPatternType"/>
+            <xs:element minOccurs="0" name="ErrorMessage" type="ErrorMessageType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="FieldValueType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/msgHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/msgHeader">
+      <xs:element name="MessageHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SequenceNumber" type="xs:positiveInteger"/>
+            <xs:element name="UserId">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SourceApplication" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Name of the source application</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="OrgAlias" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateFieldRequest">
+    <wsdl:part element="tns:ValidateFieldRequest" name="ValidateFieldRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ValidateFieldResponse">
+    <wsdl:part element="tns:ValidateFieldResponse" name="ValidateFieldResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetEligibilityPayorsRequest">
+    <wsdl:part element="tns:GetEligibilityPayorsRequest" name="GetEligibilityPayorsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPayorEditsResponse">
+    <wsdl:part element="tns:GetPayorEditsResponse" name="GetPayorEditsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetEligibilityPayorsResponse">
+    <wsdl:part element="tns:GetEligibilityPayorsResponse" name="GetEligibilityPayorsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPayorEditsRequest">
+    <wsdl:part element="tns:GetPayorEditsRequest" name="GetPayorEditsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="payoredits">
+    <wsdl:operation name="ValidateField">
+      <wsdl:input message="tns:ValidateFieldRequest" name="ValidateFieldRequest"></wsdl:input>
+      <wsdl:output message="tns:ValidateFieldResponse" name="ValidateFieldResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibilityPayors">
+      <wsdl:input message="tns:GetEligibilityPayorsRequest" name="GetEligibilityPayorsRequest"></wsdl:input>
+      <wsdl:output message="tns:GetEligibilityPayorsResponse" name="GetEligibilityPayorsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayorEdits">
+      <wsdl:input message="tns:GetPayorEditsRequest" name="GetPayorEditsRequest"></wsdl:input>
+      <wsdl:output message="tns:GetPayorEditsResponse" name="GetPayorEditsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="payoreditsSoap11" type="tns:payoredits">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateField">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ValidateFieldRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateFieldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibilityPayors">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetEligibilityPayorsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetEligibilityPayorsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayorEdits">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetPayorEditsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPayorEditsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="payoreditsService">
+    <wsdl:port binding="tns:payoreditsSoap11" name="payoreditsSoap11">
+      <soap:address location="https://www.xifinqa.com/prod/payor/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#endpoint}</con:endpoint><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="GetEligibilityPayors" bindingOperationName="GetEligibilityPayors" type="Request-Response" outputName="GetEligibilityPayorsResponse" inputName="GetEligibilityPayorsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a9968fca-7117-42d8-b85f-341704e9eb75"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordDigest" id="a27ecf49-3845-44e5-ab9b-ebef38f62f45"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payoredits" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:GetEligibilityPayorsRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:OrganizationName>Web Services Testing</msg:OrganizationName>
+            <!--Optional:-->
+            <msg:SequenceNumber>1111</msg:SequenceNumber>
+            <msg:UserId>chava</msg:UserId>
+            <!--Optional:-->
+
+            <!--Optional:-->
+            <msg:OrgAlias>webservicetest</msg:OrgAlias>
+         </msg:MessageHeader>
+      </pay:GetEligibilityPayorsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>webservicetest</con:username><con:password>webservicetest</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payoredits/payoredits/GetEligibilityPayorsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="GetPayorEdits" bindingOperationName="GetPayorEdits" type="Request-Response" outputName="GetPayorEditsResponse" inputName="GetPayorEditsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="ea22717a-cd24-4181-b604-994b27a59b21"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordDigest" id="d3bf46ee-ea02-443d-ac49-de24698ff7ae"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payoredits" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:GetPayorEditsRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:SequenceNumber>1111</msg:SequenceNumber>
+            <msg:UserId>${#Project#UserId}</msg:UserId>
+            <!--Optional:-->
+            <msg:OrgAlias>${#Project#OrgAlias}</msg:OrgAlias>
+         </msg:MessageHeader>
+         <pay:Payload>
+            <pay:PayorId>MDMOsd</pay:PayorId>
+            <pay:ProductType>Order Entry Billing</pay:ProductType>
+            <pay:DateOfService>2000-01-01</pay:DateOfService>
+
+
+         </pay:Payload>
+      </pay:GetPayorEditsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>webservicetest</con:username><con:password>webservicetest</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payoredits/payoredits/GetPayorEditsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="ValidateField" bindingOperationName="ValidateField" type="Request-Response" outputName="ValidateFieldResponse" inputName="ValidateFieldRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="cfbbbcf8-82e1-442c-befa-6d67f682b454"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordDigest" id="a778c9b5-9126-4777-bcee-c2dbf65e2fe0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payoredits" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:ValidateFieldRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:SequenceNumber>1111</msg:SequenceNumber>
+            <msg:UserId>${#Project#UserId}</msg:UserId>
+            <!--Optional:-->
+            <msg:OrgAlias>${#Project#OrgAlias}</msg:OrgAlias>
+
+         </msg:MessageHeader>
+         <pay:Payload>
+            <pay:ValidateFieldRequestMessage>
+               <pay:FieldName>Patient Date of Birth</pay:FieldName>
+               <pay:FieldValue></pay:FieldValue>
+               <pay:PayorId>MDMO</pay:PayorId>
+               <pay:ProductType>Order Entry Billing</pay:ProductType>
+               <pay:DateOfService>2000-01-01</pay:DateOfService>
+            </pay:ValidateFieldRequestMessage>
+         </pay:Payload>
+      </pay:ValidateFieldRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>webservicetest</con:username><con:password>webservicetest</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payoredits/payoredits/ValidateFieldRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="payoreligSoap11" type="wsdl" bindingName="{http://www.xifin.com/schema/payorelig}payoreligSoap11" soapVersion="1_1" anonymous="optional" definition="https://www.xifinqa.com/prod/payorv604/payorElig.wsdl" id="2d5579cd-6494-451d-a16f-5efe930abfbe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.xifinqa.com/prod/payorv604/payorElig.wsdl"><con:part><con:url>https://www.xifinqa.com/prod/payorv604/payorElig.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.xifin.com/schema/payorelig" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.xifin.com/schema/payorelig" xmlns:sch1="http://www.xifin.com/schema/msgHeader" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xifin.com/schema/payorelig">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/payorelig" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/payorelig" xmlns:msgHeader="http://www.xifin.com/schema/msgHeader">
+      <xs:import namespace="http://www.xifin.com/schema/msgHeader"/>
+      <xs:element name="GetEligibilityPayorsRequest">
+        <xs:annotation>
+          <xs:documentation>This method returns all payors that are configured to check eligibility</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetEligibilityPayorsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element minOccurs="0" name="Status" type="StatusType"/>
+                  <xs:element minOccurs="0" name="EligibilityPayors" type="EligibilityPayors"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EligibilityPayors">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="EligibilityPayor" type="EligibilityPayor"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EligibilityPayor">
+        <xs:sequence>
+          <xs:element name="PayorId" type="IdType">
+            <xs:annotation>
+              <xs:documentation>Xifin Payor ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PayorName" type="IdType">
+            <xs:annotation>
+              <xs:documentation>Xifin Payor Name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ExternalPayorId" type="IdType">
+            <xs:annotation>
+              <xs:documentation>External Payor Id is the Id that payor accepts to check eligibility</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LISPayorId" type="IdType">
+            <xs:annotation>
+              <xs:documentation>This will not be used when XIFIN and LIS has same payor Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element minOccurs="0" name="StatusMessage" type="StatusMessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="StatusCodeType">
+        <xs:restriction base="xs:integer">
+          <xs:maxExclusive value="9999"/>
+          <xs:minExclusive value="-9999"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="IdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/msgHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/msgHeader">
+      <xs:element name="MessageHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SequenceNumber" type="xs:positiveInteger"/>
+            <xs:element name="UserId">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SourceApplication" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Name of the source application</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="OrgAlias" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEligibilityPayorsResponse">
+    <wsdl:part element="tns:GetEligibilityPayorsResponse" name="GetEligibilityPayorsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetEligibilityPayorsRequest">
+    <wsdl:part element="tns:GetEligibilityPayorsRequest" name="GetEligibilityPayorsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="payorelig">
+    <wsdl:operation name="GetEligibilityPayors">
+      <wsdl:input message="tns:GetEligibilityPayorsRequest" name="GetEligibilityPayorsRequest"></wsdl:input>
+      <wsdl:output message="tns:GetEligibilityPayorsResponse" name="GetEligibilityPayorsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="payoreligSoap11" type="tns:payorelig">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetEligibilityPayors">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetEligibilityPayorsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetEligibilityPayorsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="payoreligService">
+    <wsdl:port binding="tns:payoreligSoap11" name="payoreligSoap11">
+      <soap:address location="https://www.xifinqa.com/prod/payor/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.20.18.22:8080/payor/services</con:endpoint><con:endpoint>http://quyenvupc:8088/mockpayoreligSoap11</con:endpoint><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="GetEligibilityPayors" bindingOperationName="GetEligibilityPayors" type="Request-Response" outputName="GetEligibilityPayorsResponse" inputName="GetEligibilityPayorsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3f342efc-898c-4843-8ac6-905155d4be36"><con:settings/><con:call name="Request 1" id="c5fb096b-184a-46b7-aaaf-045f5b276d11"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payorelig" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:GetEligibilityPayorsRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+
+            <!--Optional:-->
+            <msg:SequenceNumber>1111</msg:SequenceNumber>
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+      </pay:GetEligibilityPayorsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payorelig/payorelig/GetEligibilityPayorsRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1" id="e811be82-d3f7-4c8d-90c4-6622b0f45fbd"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/payor/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payorelig" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:GetEligibilityPayorsRequest>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:OrganizationName>?</msg:OrganizationName>
+            <!--Optional:-->
+            <msg:SequenceNumber>?</msg:SequenceNumber>
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+      </pay:GetEligibilityPayorsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/payorelig/payorelig/GetEligibilityPayorsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Payor WS_RequestMessage_CreatePayor" id="cab379d3-fda3-4292-948d-f9aa6676bff9"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Payor WS-RequestMessage-CreatePayor-CreateNewPayor" searchProperties="true" id="5c34cd29-bafc-4b7c-80a5-9885a067736b"><con:settings/><con:testStep type="groovy" name="Step1:Payor WS-CreateNewPayor-TestDataSetup" id="ef8b1a96-9f36-4663-bdef-1341d662dd25"><con:settings/><con:config><script>import com.xifin.utils.*;
+    import com.xifin.accnws.dao.*;
+    import com.xifin.qa.config.*;
+    import com.xifin.mars.dao.*;
+    import com.xifin.qa.dao.rpm.*;
+    import com.xifin.payorws.dao.*;
+    import com.xifin.filemaintenancews.dao.*;
+    import com.xifin.qa.config.Configuration;
+    import com.xifin.qa.config.ConfigurationLoader;
+
+    //======== Get values =========
+    //Get dbEnv Project-level property value
+    def dbEnv = null
+    def orgAlias = testRunner.testCase.testSuite.project.getPropertyValue ("OrgAlias")
+    log.info "dbEnv = " + dbEnv
+
+    Configuration configuration = ConfigurationLoader.loadConfiguration(orgAlias);
+    daoManagerPayorWS = new DaoManagerPayorWS(configuration.getRpmDatabase())
+    daoManagerFileMaintenanceWS = new DaoManagerFileMaintenanceWS(configuration.getRpmDatabase())
+    randomCharacter = new RandomCharacter()
+    timeStamp = new TimeStamp();
+
+    //Get payorId value
+    def newpayorId = "AUTOPYRWS" + randomCharacter.getRandomAlphaNumericString(5).toUpperCase()
+    //======== Set TestCase level property values ========
+    //Set payorID TestCase-level value
+    testRunner.testCase.setPropertyValue ("newpayorId", newpayorId)
+    log.info "newpayorId = " + newpayorId
+
+    //Get payorName value
+    def payorName = randomCharacter.getRandomAlphaString(5)
+    //======== Set TestCase level property values ========
+    //Set payorName TestCase-level value
+    testRunner.testCase.setPropertyValue ("payorName", payorName)
+    log.info "payorName = " + payorName
+
+    //Get payorGroupName value
+    def payorGroupName = daoManagerPayorWS.getPayorGroupNameByPayorId("", dbEnv)
+    //======== Set TestCase level property values ========
+    //Set payorGroupName TestCase-level value
+    testRunner.testCase.setPropertyValue ("payorGroupName", payorGroupName)
+    log.info "payorGroupName = " + payorGroupName
+
+    //get effectiveDate
+    def effectiveDate = timeStamp.getCurrentDate("yyyy-MM-dd");
+    //======== Set TestCase level property values ========
+    //Set effectiveDate TestCase-level value
+    testRunner.testCase.setPropertyValue ("effectiveDate", effectiveDate)
+    log.info "effectiveDate = " + effectiveDate
+
+    def zipInfo =[]
+    zipInfo = daoManagerPayorWS.getZipInfo(dbEnv)
+
+    //get zip code
+    def zipCode = zipInfo[0]
+    //======== Set TestCase level property values ========
+    //Set XrefDes TestCase-level value
+    testRunner.testCase.setPropertyValue ("zipCode", zipCode)
+    log.info "zipCode = " + zipCode
+
+    //get state
+    def state = zipInfo[1]
+    //======== Set TestCase level property values ========
+    //Set XrefDes TestCase-level value
+    testRunner.testCase.setPropertyValue ("state", state)
+    log.info "state = " + state
+
+    //get city
+    def city = zipInfo[2]
+    //======== Set TestCase level property values ========
+    //Set XrefDes TestCase-level value
+    testRunner.testCase.setPropertyValue ("city", city)
+    log.info "city = " + city
+
+
+    //get country code
+    def countryCode = daoManagerPayorWS.getCountryCode(dbEnv)
+    //======== Set TestCase level property values ========
+    //Set XrefDes TestCase-level value
+    testRunner.testCase.setPropertyValue ("countryCode", countryCode)
+    log.info "countryCode = " + countryCode
+</script></con:config></con:testStep><con:testStep type="request" name="Step2:Payor WS-RequestMessage-CreateNewPayor" id="dfde71c1-5c54-4e71-a8d1-fa17e746d7eb"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>payorSoap11</con:interface><con:operation>RequestMessage</con:operation><con:request name="Step2:Payor WS-RequestMessage-CreateNewPayor" wssPasswordType="PasswordDigest" id="530545b6-9274-4180-9241-f6097edb7635" sslKeystore=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.xifin.com/schema/payor" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:RequestMessage>
+         <msg:MessageHeader>
+            <msg:SequenceNumber>1</msg:SequenceNumber>
+            <msg:UserId>${#Project#UserId}</msg:UserId>
+            <msg:OrgAlias>${#Project#OrgAlias}</msg:OrgAlias>
+         </msg:MessageHeader>
+         <pay:Payload>
+            <pay:AddPayor>
+               <pay:PayorID>${#TestCase#newpayorId}</pay:PayorID>
+               <pay:PayorName>${#TestCase#payorName}</pay:PayorName>
+               <pay:PayorGroup>${#TestCase#payorGroupName}</pay:PayorGroup>
+               <pay:EffectiveDate>${#TestCase#effectiveDate}</pay:EffectiveDate>
+               <pay:SignatureForHCFA>true</pay:SignatureForHCFA>
+               <pay:BillingAddress>
+                  <pay:Address>
+                     <pay:AddressLine1>RefundADDR1${#TestCase#payorId}</pay:AddressLine1>
+                     <pay:City>${#TestCase#city}</pay:City>
+                     <pay:State>${#TestCase#state}</pay:State>
+                     <pay:ZIP>${#TestCase#zipCode}</pay:ZIP>
+                     <pay:CountryCode>${#TestCase#countryCode}</pay:CountryCode>
+                  </pay:Address>
+               </pay:BillingAddress>
+            </pay:AddPayor>
+         </pay:Payload>
+      </pay:RequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aaf6ed75-00fe-4180-8888-8eed319e6a37"/><con:assertion type="XPath Match" name="StatusMessage Validation" id="d890c0a2-8f80-4f2f-93d0-eca7099f0560"><con:configuration><path>declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+    declare namespace ns2='http://www.xifin.com/schema/msgHeader';
+    declare namespace ns3='http://www.xifin.com/schema/payor';
+
+    //ns3:Payload[1]/ns3:Status[1]/ns3:StatusMessage[1]/text()</path><content>Success</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username>${#Project#Username}</con:username><con:password>${#Project#Password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3:Payor WS-CreateNewPayor-VerifyDataInDB" id="c8a84437-edc0-48fb-aef2-09502bb3f5bd"><con:settings/><con:config><script>import com.xifin.mars.dao.*;
+    import com.xifin.qa.config.Configuration;
+    import com.xifin.qa.config.ConfigurationLoader;
+
+    def dbEnv = context.expand('${#Project#dbEnv}')
+    log.info dbEnv
+    def orgAlias = testRunner.testCase.testSuite.project.getPropertyValue("orgalias")
+    log.info "orgAlias="+orgAlias
+    Configuration configuration = ConfigurationLoader.loadConfiguration(orgAlias)
+
+    def newPayorId = context.expand('${#TestCase#newpayorId}')
+    log.info "newPayorId = " + newPayorId
+
+    daoManagerXifinRpm = new DaoManagerXifinRpm(configuration.getRpmDatabase())
+
+    //verify new payor was created in database
+    def result = daoManagerXifinRpm.checkPayorInfo(newPayorId, dbEnv)
+    log.info "result = " + result
+
+    assert result == true : "Step2:Payor WS-RequestMessage-CreateNewPayor failed"
+
+    //*****************
+    //Set StatusMessage value
+    //Create groovyUtils and XmlHolder for response
+    def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+    def holder = groovyUtils.getXmlHolder( "Step2:Payor WS-RequestMessage-CreateNewPayor#Response" )
+
+    //If the desired content is namespace qualified (very likely for SOAP responses), you need to define the namespace first.
+    holder.namespaces["ns3"] = "http://www.xifin.com/schema/payor"
+
+    def  StatusMessage = holder.getNodeValue( "//ns3:StatusMessage[1]/text()" )
+    //Set DOS TestCase-level value
+    testRunner.testCase.setPropertyValue ("StatusMessage", StatusMessage)
+    log.info "StatusMessage = " + StatusMessage
+    assert StatusMessage == "Success" : "Step2:Payor WS-RequestMessage-CreateNewPayor failed"</script></con:config></con:testStep><con:properties><con:property><con:name>payorId</con:name><con:value>WRL</con:value></con:property><con:property><con:name>payorName</con:name><con:value>KAVLG</con:value></con:property><con:property><con:name>payorGroupName</con:name><con:value>Medicare</con:value></con:property><con:property><con:name>effectiveDate</con:name><con:value>2021-01-19</con:value></con:property><con:property><con:name>XrefAbbrev</con:name><con:value>Auto1JEKDC</con:value></con:property><con:property><con:name>XrefType</con:name><con:value>ZHNNUDNAMUXYQAB</con:value></con:property><con:property><con:name>XrefDes</con:name><con:value>AutoTest1MPXMD</con:value></con:property><con:property><con:name>zipCode</con:name><con:value>08074</con:value></con:property><con:property><con:name>state</con:name><con:value>NJ</con:value></con:property><con:property><con:name>city</con:name><con:value>RICHWOOD</con:value></con:property><con:property><con:name>countryCode</con:name><con:value>PH</con:value></con:property><con:property><con:name>newpayorId</con:name><con:value>AUTOPYRWSN9IGH</con:value></con:property><con:property><con:name>StatusMessage</con:name><con:value>Success</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>OrgAlias</con:name><con:value>qa07</con:value></con:property><con:property><con:name>UserId</con:name><con:value>infonam</con:value></con:property><con:property><con:name>endpoint</con:name><con:value>http://localhost:8080/payor/services</con:value></con:property><con:property><con:name>dbEnv</con:name><con:value>qa07</con:value></con:property><con:property><con:name>Username</con:name><con:value>webservicetest</con:value></con:property><con:property><con:name>Password</con:name><con:value>webservicetest</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

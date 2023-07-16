@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Generate Statement" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="email" value="qatester@xifin.com"/>
+    <parameter name="password" value="qatester123"/>
+      <test name="Generate statement for Third Party Payor Accession">
+        <classes>
+            <class name="com.EndToEndTests.Statement"/>
+            <methods>
+                <include name="generateStmtFor3rdPartyPyrAccn">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccnWith3rdPartyPayor"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Generate statement for patient billed accession">
+        <classes>
+            <class name="com.EndToEndTests.Statement"/>
+            <methods>
+                <include name="generateStmtForPatientBilledAccn">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewFinalReported3rdPartyPyrAccnWithNewEPI"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Generate client statement">
+        <classes>
+            <class name="com.EndToEndTests.Statement"/>
+            <methods>
+                <include name="generateClientStatement">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccnWithClientBilledPayorC"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

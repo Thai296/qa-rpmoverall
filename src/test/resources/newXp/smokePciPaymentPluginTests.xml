@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PCI Plugin Test Harness" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+<!--      <parameter name="hub" value="http://localhost:"/>-->
+    <!--<parameter name="hub" value="http://127.0.0.1:"/>-->
+    <parameter name="port" value="4444"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="timeout" value="30"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="performXpHealthCheck" value="false"/>
+    <parameter name="gatewayName" value="null" />
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Verify Default Configurations">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1949"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ACH Prepayment">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1951"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Credit Card Prepayment">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1950"/>
+                    <parameter name="gatewayName" value="Braintree" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Load Iframe with CC Payments Disabled">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1952"/>
+                    <parameter name="gatewayName" value="Braintree" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Load Iframe with ACH Payments Disabled">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1953"/>
+                    <parameter name="gatewayName" value="Braintree" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify PayPal Configurations">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1954"/>
+                    <parameter name="gatewayName" value="Braintree" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify PayPalLater Configurations">
+        <classes>
+            <class name="com.newXp.tests.PciPluginEmbedTest">
+                <methods>
+                    <include name="testXPR_1955"/>
+                    <parameter name="gatewayName" value="Braintree" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

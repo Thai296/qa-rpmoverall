@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-ClaimStatusEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="60"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+
+	<test name="Unfixed Pyr level DEN Error is populated by Engine">
+		<parameter name="accnId" value="QATESTERCLAIMSTA01"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="procErrs" value=""/>
+		<parameter name="pyrErrs" value="AETNA:F4-6:1"/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_587"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Proc level Errors: Acknowledgment - fixed, Denial unfixed - populated by Eng">
+		<parameter name="accnId" value="QATESTERCLAIMSTA08"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="procErrs" value="AETNA:00580:A4-88:1,AETNA:33236:F1-65:1"/>
+		<parameter name="pyrErrs" value=""/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_588"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unfixing existing pyr and proc level DEN errors if errors already there fixed">
+		<parameter name="accnId" value="QATESTERCLAIMSTA09"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="procErrs" value="AETNA:00580:A4-88:1"/>
+		<parameter name="pyrErrs" value="AETNA:F4-6:1"/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_589"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Skipping Claim Status Check by the Engine - Pyr is not Setup">
+		<parameter name="accnId" value="QATESTERCLAIMSTA10"/>
+		<parameter name="pyrAbbrv" value="BSIN"/>
+		<parameter name="message" value="Unable to queue for claim status check - claim status not available due to accession status or payor configuration."/>
+		<parameter name="userFrom" value="system"/>
+		<parameter name="procErrs" value=""/>
+		<parameter name="pyrErrs" value=""/>
+		<parameter name="statusDate" value="03292018"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_590"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Skipping Claim Status Check for zbal accn, pyr setup for Real Time Claim Status Check">
+		<parameter name="accnId" value="QATESTERCLAIMSTA14"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="message" value="Unable to queue for claim status check - claim status not available due to accession status or payor configuration."/>
+		<parameter name="userFrom" value="system"/>
+		<parameter name="procErrs" value=""/>
+		<parameter name="pyrErrs" value=""/>
+		<parameter name="statusDate" value="03292018"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_591"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Skipping Claim Status Check for final reported accn">
+		<parameter name="accnId" value="QATESTERCLAIMSTA13"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="message" value="Unable to queue for claim status check - claim status not available due to accession status or payor configuration."/>
+		<parameter name="userFrom" value="system"/>
+		<parameter name="procErrs" value=""/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="pyrErrs" value=""/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_592"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Performing Claim Status Check for the secondary Pyr">
+		<parameter name="accnId" value="QATESTERCLAIMSTA11"/>
+		<parameter name="primPyrAbbrv" value="AETNA"/>
+		<parameter name="secondPyrAbbrv" value="MDWV"/>
+		<parameter name="procErrs" value="MDWV:83080:F2-95:2"/>
+		<parameter name="pyrErrs" value="MDWV:A4-88:2"/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_593"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add the error with action to move accn to EP_OUT_AGNCY_PRE_CORRESP">
+		<parameter name="accnId" value="QATESTERCLAIMSTA12"/>
+		<parameter name="primPyrAbbrv" value="AETNA"/>
+		<parameter name="procErrs" value=""/>
+		<parameter name="pyrErrs" value="AETNA:F2-95:1"/>
+		<parameter name="statusDate" value="03292018"/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_603"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Skipping Claim Status Check for zbal accn, pyr setup for Claim Status Batch Check">
+		<parameter name="accnId" value="QATESTERCLAIMSTA15"/>
+		<parameter name="message" value="Unable to queue for claim status check - claim status not available due to accession status or payor configuration."/>
+		<parameter name="userFrom" value="system"/>
+		<parameter name="pyrAbbrv" value="BCBSNY"/>
+		<parameter name="submSvcAbbrev" value="TEST-212"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_640"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Accn with pyr setup for Claim Status Batch 276 is queued up for Submission">
+		<parameter name="accnId" value="QATESTERCLAIMSTA16"/>
+		<parameter name="pyrAbbrv" value="BCBSNY"/>
+		<parameter name="submSvcAbbrev" value="TEST-212"/>
+		<parameter name="submSvcAbbrev837" value="BCCA5010A1"/>
+		<parameter name="message" value="Queued (batch claim status request queued)="/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_641"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Accn with pyr setup for Batch 276 is queued up / other submissions">
+		<parameter name="accnId" value="QATESTERCLAIMSTA17"/>
+		<parameter name="pyrAbbrv" value="BCBSNY"/>
+		<parameter name="claimSubmSvc" value="TEST-212"/>
+		<parameter name="subId" value="11111111111642"/>
+		<parameter name="pyrSvcSubmSvcAbbrev" value="BCCA5010A1"/>
+		<parameter name="message" value="Queued (batch claim status request queued)="/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_647"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Skipping Claim Status Check accn - pyr setup for Batch Claim Status Check">
+		<parameter name="accnId" value="QATESTERCLAIMSTA18"/>
+		<parameter name="message" value="Skipped (claim status request pending)="/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<parameter name="pyrAbbrv" value="BCBSNY"/>
+		<parameter name="submSvcAbbrev" value="TEST-212"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_653"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Report in-progress batch Claim Status Check, Batch Pending - Receipt Acknowledged">
+		<parameter name="accnId" value="QATESTERCLAIMSTA19"/>
+		<parameter name="pyrAbbrv" value="BCBSNY"/>
+		<parameter name="claimSubmSvc" value="TEST-212"/>
+		<parameter name="subId" value="11111111111704"/>
+		<parameter name="pyrSvcSubmSvcAbbrev" value="BCCA5010A1"/>
+		<parameter name="message" value="successfully processed=["/>
+		<parameter name="userFrom" value="ClaimStatusEngine"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="testPFR_704"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Claim Status Engine Processes Specific Claim ID">
+		<parameter name="accnId" value="Q20210518155829170"/>
+		<parameter name="pyrAbbrv" value="AETNA"/>
+		<parameter name="claimSuffixIds" value="01,02"/>
+		<classes>
+			<class name="com.pfEngines.tests.ClaimStatusEngineTest">
+				<methods>
+					<include name="test_ClaimStatusEngineProcessesSpecificClaim"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

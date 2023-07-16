@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Eligibility Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-704&quot;&gt; RPM-704:RPM - Accession - Accession Demographic - Eligible Subscriber Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_704">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGGZRLX20150908114303295" />
+					<parameter name="pyrAbbrev" value="UHC" />			
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-706&quot;&gt; RPM-706:RPM - Accession - Accession Demographic - Ineligible Subscriber Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_706">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGAOLGZ20150914153334694" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="disableBrowserPlugins" value="true" />		
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-705&quot;&gt; RPM-705:RPM - Accession - Accession Demographic - Eligible Dependant Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_705">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGDMBCU20150914163830399" />
+					<parameter name="pyrAbbrev" value="UHC" />		
+					<parameter name="disableBrowserPlugins" value="true" />	
+				</include>
+			</methods>
+		</classes>
+	</test>  
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-707&quot;&gt; RPM-707:RPM - Accession - Accession Demographic - Ineligible Dependant Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_707">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGZFMDV2015091416571912" />
+					<parameter name="pyrAbbrev" value="UHC" />		
+					<parameter name="disableBrowserPlugins" value="true" />			
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-713&quot;&gt; RPM-713:RPM - Accession - Accession Demographic - Subscriber Eligibility Check will update Pt Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_713">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGAFXGJ20150918125848716" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="ptLName" value="ELIGTESTLNAME" />
+					<parameter name="ptFName" value="AUTOTESTFNAME" />				
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-716&quot;&gt; RPM-716:RPM - Accession - Accession Demographic - Subscriber Eligibility Check that translates the payor ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_716">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGGZJDC20150929164044272" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="translatedPyrAbbrev" value="BCBSUNY" />		
+					<parameter name="disableBrowserPlugins" value="true" />
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-710&quot;&gt; RPM-710:RPM - Accession - Accession Demographic - Accn sent to Eligibility Engine ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_710">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="accnId" value="AUTOELIGWZJPB2015091417394890" />
+					<parameter name="pyrAbbrev" value="UHC" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-711&quot;&gt; RPM-711:RPM - Accession - Accession Demographic - Eligible Subscriber Eligibility Check through Elig Engine ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_711">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="accnId" value="AUTOELIGKFBXV20150914174034269" />		
+					<parameter name="pyrAbbrev" value="UHC" />			
+				</include>
+			</methods>
+		</classes>
+	</test>
+ 
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-731&quot;&gt; RPM-731:File Maintenance - Task Scheduler - Eligibility Engine - Eligibility Payor Roster Logic ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_731">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />	
+					<parameter name="pyrAbbrev" value="MCMN" />		
+					<parameter name="subsId" value="A925337679" />	
+					<parameter name="transPyrAbbrev" value="BCBSNY" />		
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-708&quot;&gt; RPM-708:RPM - Accession - Accession Demographic - Eligible Roster Eligibility Check ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_708">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-709&quot;&gt; RPM-709:RPM - Accession - Accession Demographic - Ineligible Roster Eligibility Check ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_709">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-714&quot;&gt; RPM-714:RPM - Accession - Accession Demographic - Subscriber Eligibility Check will update Subscriber ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_714">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGOKTFE20150921113034876" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="subsId" value="SUBID123456" />									
+				</include>
+			</methods>
+		</classes>
+	</test>  
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-715&quot;&gt; RPM-715:RPM - Accession - Accession Demographic - Subscriber Eligibility Check will update Relationship ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_715">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGJRYEM2015092116425715" />
+					<parameter name="pyrAbbrev" value="UHC" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-717&quot;&gt;  RPM-717:RPM - Accession - Accession Demographic - Subscriber Eligibility Check that translates and adds Q_ELIG ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_717">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGGSHUS2015093010422736" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="translatedPyrAbbrev" value="BCBSUNY" />		
+				</include>
+			</methods>
+		</classes>
+	</test>  
+
+</suite>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Login Tests" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+    
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-729&quot;&gt; RPM-729:SSO Services widget display ">
+		<classes>
+			<class name="com.mars.tests.RegressionLoginTest" />
+			<methods>
+				<include name="testRPM_729">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+	
+     <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-750&quot;&gt; RPM-750:SSO Services widget can be opened ">
+		<classes>
+			<class name="com.mars.tests.RegressionLoginTest" />
+			<methods>
+				<include name="testRPM_750">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+ 
+</suite>

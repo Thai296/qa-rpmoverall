@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine CMS Format" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+    
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Cms1500 Box 33B displays from statement config">
+        <parameter name="accnId" value="QATESTERNONCLNT01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="subId" value="000000101"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="tpiStmtConfig" value="STMTCONFIGOVERRIDE"/>
+        <parameter name="stmtConfig" value="60065"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCMSTest">
+                <methods>
+                    <include name="testPFER_566"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Cms1500 Box 33B - pyr_subm_svc.ext_recvr_id ">
+        <parameter name="accnId" value="QATESTERNONCLNT02"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="000000102"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="npiBillingOverride" value="1235363052"/>
+        <parameter name="tpiExtReciveId" value="EXTRECIVERID"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCMSTest">
+                <methods>
+                    <include name="testPFER_565"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cms1500 Box 31 is displaying signature from SS 4003 when PYR.HCFA_SIGNATURE is empty ">
+        <parameter name="accnId" value="QATESTERNONCLNT010"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCMSTest">
+                <methods>
+                    <include name="testPFER_737"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	
+	<test name="Verify generate 5010 without orderPhysOverride xref, correct proc code displayed ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17487"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Generate 5010 with orderPhysOverride xref, allow print Ordering Provider ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17489"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Generate 5010 with orderPhysOverride xref, do not allow print Ordering Provider ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17491"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Verify generate CMS1500 without orderPhysOverride xref, correct proc code displayed ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17488"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Generate CMS1500 with orderPhysOverride xref, allow print Ordering Provider, Box 17 ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17490"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Generate CMS1500 with orderPhysOverride xref, do not allow print Ordering Provider,Box 17 ">
+        <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+	    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	    <parameter name="propLevel" value="TestCase" />
+	    <parameter name="propName" value="NewAccnID" />
+	    <parameter name="engineSource"     value="D:\EDI_Project\pf-nonclnstmtengine" />
+ 		<parameter name="runEngineBatFile" value="run-engine" />
+ 		<parameter name="timeWaitEngine"   value="200" />
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testRPM_New_17492"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

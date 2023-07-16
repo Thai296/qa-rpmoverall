@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Accession Patient Processing Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-552&quot;&gt; RPM-553:Accession - Patient Processing - Patient Demographics - Load an existing EPI by Search ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_552">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-554&quot;&gt; RPM-554:Accession - Patient Processing - Patient Demographics - Create a new EPI ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_554">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-565&quot;&gt; RPM-565:Accession - Patient Processing - Patient Demographics - Add Exp Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_565">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-17&quot;&gt; RPM-17:Accession - Patient Processing - Patient Demographics - Dialysis Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_17">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-555&quot;&gt; RPM-555:Accession - Patient Processing - Patient Demographics - Add Associated Patient IDs ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_555">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	 
+
+ 
+ <!--  RPM CR45307 - Client Associated Patient ID can not be deleted from Patient Demo jsp. Facility Patient ID has no such issue. was entered
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-562&quot;&gt; RPM-562:Accession - Patient Processing - Patient Demographics - Remove Associated Patient IDs ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_562">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="testDb" value="QABL_CP_DOCUP" />	
+				</include>
+			</methods>
+		</classes> 
+	</test>	 
+-->		
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-563&quot;&gt; RPM-563:Accession - Patient Processing - Patient Demographics - Modify Associated Patient IDs ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_563">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-556&quot;&gt; RPM-556:Accession - Patient Processing - Patient Demographics - Patient Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_556">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-557&quot;&gt; RPM-557:Accession - Patient Processing - Patient Demographics - Patient Contact Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_557">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-579&quot;&gt;  RPM-579:Accession - Patient Processing - Patient Demographics - Patient Address Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_579">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-580&quot;&gt; RPM-580: Accession - Patient Processing - Patient Demographics - Patient Comments and MSP DOS Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_580">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-560&quot;&gt; RPM-560:Accession - Patient Processing - Patient Demographics - Update Patient Demo Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_560">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+		
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-581&quot;&gt; RPM-581: Accession - Patient Processing - Patient Demographics - Update Patient Address Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_581">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-582&quot;&gt; RPM-582:Accession - Patient Processing - Patient Demographics - Update Patient Contact Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_582">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+		
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-583&quot;&gt; RPM-583:Accession - Patient Processing - Patient Demographics - Update Patient Comments and MSP DOS Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_583">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-566&quot;&gt; RPM-566:Accession - Patient Processing - Patient Demographics - Create a new Insurance Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_566">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+		
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-567&quot;&gt; RPM-567:Accession - Patient Processing - Patient Demographics - Delete Insurance Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_567">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-584&quot;&gt; RPM-584:Accession - Patient Processing - Patient Demographics - Update Dialysis Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_584">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-16&quot;&gt; RPM-16:Accession - Patient Processing - Patient Demographics - All Accessions display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_16">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>	 	
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-559&quot;&gt; RPM-559:Accession - Patient Processing - Patient Demographics - Modify EPI ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_559">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-15&quot;&gt; RPM-15:Accession - Patient Processing - Patient Demographics - Insurance Payor Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_15">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-597&quot;&gt; RPM-597:Accession - Patient Processing - Patient Demographics - Update Insurance Payor Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_597">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-585&quot;&gt; RPM-585:Accession - Patient Processing - Patient Demographics - Insurance Insured Demo Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_585">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-591&quot;&gt; RPM-591:Accession - Patient Processing - Patient Demographics - Update Insurance Insured Demo Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_591">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+		
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-586&quot;&gt; RPM-586:Accession - Patient Processing - Patient Demographics - Insurance Insured Address Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_586">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>		 
+  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-592&quot;&gt; RPM-592:Accession - Patient Processing - Patient Demographics - Update Insurance Insured Address Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_592">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-587&quot;&gt; RPM-587:Accession - Patient Processing - Patient Demographics - Insurance Insured Contact Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_587">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-593&quot;&gt; RPM-593:Accession - Patient Processing - Patient Demographics - Update Insurance Insured Contact Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_593">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes> 
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-588&quot;&gt; RPM-588:Accession - Patient Processing - Patient Demographics - Insurance Other Infos display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_588">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-594&quot;&gt; RPM-594:Accession - Patient Processing - Patient Demographics - Update Insurance Other Infos ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_594">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-589&quot;&gt; RPM-589:Accession - Patient Processing - Patient Demographics - Insurance Employer Address Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_589">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+		
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-595&quot;&gt; RPM-595:Accession - Patient Processing - Patient Demographics - Update Insurance Employer Address Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_595">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-590&quot;&gt; RPM-590:Accession - Patient Processing - Patient Demographics - Insurance Employer Contact Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_590">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-596&quot;&gt; RPM-596:Accession - Patient Processing - Patient Demographics - Update Insurance Employer Contact Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_596">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-14&quot;&gt; RPM-14:Accession - Patient Processing - Patient Demographics - Suspend for Bad Address ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_14">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-598&quot;&gt; RPM-598:Accession - Patient Processing - Patient Demographics - Fix Suspend for Bad Address ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_598">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-49&quot;&gt; RPM-49:Accession - Patient Processing - Patient Demographics - Suspend Patient Insurance ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_49">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-599&quot;&gt; RPM-599:Accession - Patient Processing - Patient Demographics - Fix Suspend Patient Insurance ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_599">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-10&quot;&gt; RPM-10:Accession - Patient Processing - Patient Demographics - Load Patient Demo from Accession Demo ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_10">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-600&quot;&gt; RPM-600:Accession - Patient Processing - Standing Order - Create new Standing Order ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_600">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-601&quot;&gt; RPM-601:Accession - Patient Processing - Standing Order - Delete Standing Order ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_601">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-602&quot;&gt; RPM-602:Accession - Patient Processing - Standing Order - Copy Standing Order ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_602">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-603&quot;&gt; RPM-603:Accession - Patient Processing - Standing Order - Client Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_603">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-604&quot;&gt; RPM-604:Accession - Patient Processing - Standing Order - Patient Info displays ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_604">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-605&quot;&gt; RPM-605:Accession - Patient Processing - Standing Order - Physician Info displays ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_605">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-607&quot;&gt; RPM-607:Accession - Patient Processing - Standing Order - Signature Info displays ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_607">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-611&quot;&gt; RPM-611:Accession - Patient Processing - Standing Order - Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_611">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-606&quot;&gt; RPM-606:Accession - Patient Processing - Standing Order - Test Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_606">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-608&quot;&gt; RPM-608:Accession - Patient Processing - Standing Order - Invalid NPI validation error ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_608">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-609&quot;&gt; RPM-609:Accession - Patient Processing - Standing Order - Authorization date validation error ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_609">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-610&quot;&gt; RPM-610:Accession - Patient Processing - Standing Order - Test validation error ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionPatientProcessingTest" />
+			<methods>
+				<include name="testRPM_610">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>	
+
+</suite>

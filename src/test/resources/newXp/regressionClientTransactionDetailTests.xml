@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Client Transaction Detail Regression Suites" preserve-order="true" verbose="1">
+
+		<suite-files>
+			<!--Paraller Suite-->
+ 			<suite-file path="regressionClientTransactionDetailTestsP.xml" />
+			<!--Sequential Suite-->
+		 	<suite-file path="regressionClientTransactionDetailTestsS.xml" />
+		</suite-files>
+		
+</suite>

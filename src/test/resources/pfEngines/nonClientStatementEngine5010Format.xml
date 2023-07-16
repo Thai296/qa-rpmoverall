@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine 5010 Format" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+    
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+<!-- Flaky test   <test name="STMTSUBIDGRPID error added when SubId is equal to GrpId">-->
+<!--        <parameter name="accnId" value="QATESTERRECONC06"/>-->
+<!--        <parameter name="pyrAbbrv" value="UHC"/>-->
+<!--        <parameter name="subId" value="0000001"/>-->
+<!--        <parameter name="grpId" value="0000001"/>-->
+<!--        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>-->
+<!--        <parameter name="errorCdId" value="266"/>-->
+<!--        <parameter name="supportedBillTypes" value="141,147,148"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_577"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="STMTSUBIDGRPID error IS NOT added when SubId is different to GrpId">
+        <parameter name="accnId" value="QATESTERNONCLNT04"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="000000567"/>
+        <parameter name="grpId" value="A55555"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <parameter name="supportedBillTypes" value="141,147,148"/>
+        <parameter name="npiStmtConfig" value="1235363052"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_578"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="5010 Institutional statement - no blank HI* segment when Occurrence Code is set for different pyr">-->
+<!--        <parameter name="accnId" value="QATESTERNONCLNT05"/>-->
+<!--        <parameter name="primPyrAbbrv" value="MCUGS"/>-->
+<!--        <parameter name="secondPyrAbbrv" value="MBHP"/>-->
+<!--        <parameter name="subId" value="0000000000"/>-->
+<!--        <parameter name="submSvcAbbrev" value="JVHL5010A1-I"/>-->
+<!--        <parameter name="occurCode" value="01 - Accident/Medical Coverage"/>-->
+<!--        <parameter name="supportedBillTypes" value="131,137,138"/>-->
+<!--        <parameter name="npi" value="1235363052"/>-->
+<!--        <parameter name="facAbbrv" value="ACME"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_579"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="5010 Institutional statement - matching Occurrence code in HI segment when Occurrence code setup for pyr">
+        <parameter name="accnId" value="QATESTERNONCLNT06"/>
+        <parameter name="primPyrAbbrv" value="MCUGS"/>
+        <parameter name="subId" value="000000001"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <parameter name="occurCode1" value="A1 - Birthdate-Insured A"/>
+        <parameter name="occurCode2" value="C1 - Birthdate-Insured C"/>
+        <parameter name="npi" value="1235363052"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_580"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+   <test name="5010 Institutional statement - Claim Type 85X is supported">
+        <parameter name="accnId" value="QATESTERNONCLNT12"/>
+        <parameter name="primPyrAbbrv" value="BSMO"/>
+        <parameter name="subId" value="00000000608"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <parameter name="supportedBillTypes13" value="131,137,138"/>
+        <parameter name="supportedBillTypes85" value="851,857,858"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_629"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--  Flaky test  <test name="5010 Institutional statement - Performing fac is fac_type=4 - Performing fac is used on 5010 Instit Statement">-->
+<!--        <parameter name="accnId" value="QATESTERNONCLNT13"/>-->
+<!--        <parameter name="pyrAbbrv" value="BSMO"/>-->
+<!--        <parameter name="subId" value="000000000630"/>-->
+<!--        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>-->
+<!--        <parameter name="supportedBillTypes13" value="131,137,138"/>-->
+<!--        <parameter name="supportedBillTypes85" value="851,857,858"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_630"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="5010 Institutional statement / statement_config override is on">
+        <parameter name="accnId" value="QATESTERNONCLNT14"/>
+        <parameter name="pyrAbbrv" value="BSMO"/>
+        <parameter name="subId" value="0000000633"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <parameter name="billingFac" value="1"/>
+        <parameter name="stmtConf201024" value="9999999"/>
+        <parameter name="stmtConfig220032" value="5555555"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_631"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="5010 Institutional statement / statement_config is off">
+        <parameter name="accnId" value="QATESTERNONCLNT15"/>
+        <parameter name="pyrAbbrv" value="HUMPPO"/>
+        <parameter name="subId" value="000000000634"/>
+        <parameter name="submSvcAbbrev" value="HUMANA5010A1"/>
+        <parameter name="billingFac" value="1682"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_632"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!-- Flaky test   <test name="5010 Professional statement / statement_config override is on">-->
+<!--        <parameter name="accnId" value="QATESTERNONCLNT16"/>-->
+<!--        <parameter name="pyrAbbrv" value="AETNA"/>-->
+<!--        <parameter name="subId" value="00000000632"/>-->
+<!--        <parameter name="submSvcAbbrev" value="CAPARIO5010A1"/>-->
+<!--        <parameter name="billingFac" value="987"/>-->
+<!--        <parameter name="stmtConf201024" value="3333333"/>-->
+<!--        <parameter name="stmtConfig220032" value="2222222"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_633"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="5010 Professional statement / statement_config override is off">
+        <parameter name="accnId" value="QATESTERNONCLNT17"/>
+        <parameter name="pyrAbbrv" value="ABC"/>
+        <parameter name="subId" value="000000631"/>
+        <parameter name="submSvcAbbrev" value="BCCA5010A1"/>
+        <parameter name="billingFac" value="1"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_634"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!-- Flaky test   <test name="print taxonomy code when it's available for Ordering Phys">-->
+<!--        <parameter name="accnId" value="QATESTERNONCLNT27"/>-->
+<!--        <parameter name="pyrAbbrv" value="UHC"/>-->
+<!--        <parameter name="subId" value="11111111653"/>-->
+<!--        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>-->
+<!--        <parameter name="taxonomyCd" value="2085R0202X"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_663"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--  Flaky test  <test name="5010 Institutional statement - Payments and Adjustments balanced to bill price of the TAX proc - 5010 Stat secondary pyr">-->
+<!--        <parameter name="accnId" value="QATESTERNONCLNT31"/>-->
+<!--        <parameter name="primPyrAbbrv" value="AETNA"/>-->
+<!--        <parameter name="secondPyrAbbrv" value="WWW"/>-->
+<!--        <parameter name="subId" value="A91402219TC664"/>-->
+<!--        <parameter name="submSvcAbbrev" value="CAPARIO5010A1"/>-->
+<!--        <parameter name="expected5010File" value="NonClientStat5010TEST_PFER_664.txt"/>-->
+<!--            <classes>-->
+<!--            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">-->
+<!--                <methods>-->
+<!--                    <include name="testPFER_664"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="1 of multiple procs on accession has Pyr override - 2 files created: 837 and CMS1500">
+        <parameter name="accnId" value="QATESTERNONCLNT38"/>
+        <parameter name="pyrAbbrv" value="WWW"/>
+        <parameter name="subId" value="A91402219TC66433"/>
+        <parameter name="submSvcAbbrev" value="CAPARIO5010A1"/>
+        <parameter name="expected5010File" value="CAPARIO5010A1_ACME_20190712_15_25_17.txt"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_735"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Proc Level MolDX Z-codes match accn procs - included on 5010">
+        <parameter name="accnId" value="QATESTERNONCLNT39"/>
+        <parameter name="pyrAbbrv" value="BCMD"/>
+        <parameter name="subId" value="234"/>
+        <parameter name="submSvcAbbrev" value="BCCA5010A1"/>
+        <parameter name="expected5010File" value="BCCA5010A1_ACME_20190716_11_40_38.txt"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPFER_736"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Suppress loop2310A in Ver5010A1837Stmt (SUPPRESSPHYS Ordering PHYS_XREF)">
+        <parameter name="accnId" value="QATESTER20200805021605474"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="A424861537"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1"/>
+        <parameter name="expected5010Data" value="NM1*DN*1*COVID*SUPPRESS PHYS****XX*9438718543~"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testRpmNew_992893"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Non-Client Statement Engine - Test DOS Range on Professional 837">
+        <parameter name="accnId" value="QATESTER20210318030125171"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="A123456788"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1"/>
+        <parameter name="expected5010File" value="UHC5010A1_ACME_20210319_07_21_38.txt"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testDosRange"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="5010 Professional - With Payor Address Override Applied">
+        <parameter name="accnId" value="Q20210905155847359"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="CAPARIO5010A1"/>
+        <parameter name="overrideAddress" value="AETNA|60054|26 SOUTH AVE|UNIT 32|YOUNGSTOWN|NY|14174-0000"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testPayorAddressOverride"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Duplicate submissions are not triggered when LCNOABN error is resolved">
+        <parameter name="accnId" value="QATESTER20230225105127909"/>
+        <parameter name="pyrAbbrv" value="MCCALCNOABN"/>
+        <parameter name="lcNoAbnProc" value="71010"/>
+        <parameter name="submittedProc" value="88381"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testNoDuplicateWhenLcnoabnIsResolved"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Proc Code is translated when required diagnosis code is present">
+        <parameter name="accnId" value="QATESTERC20230104140124766"/>
+        <parameter name="origDocSeqId" value="1882626"/>
+        <parameter name="pyrAbbrv" value="MCCAPROCTX"/>
+        <parameter name="subId" value="1234567890"/>
+        <parameter name="submSvcAbbrev" value="MCCA"/>
+        <parameter name="expected5010File" value="MCCA_ACME_20230406_08_09_34.txt"/>
+        <parameter name="origProcId" value="82947"/>
+        <parameter name="translatedProcId" value="89050"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testProcCodeTranslation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test Super Search Force to Resubmit With Specific Payor">
+        <parameter name="accnId" value="QATESTERYYNPQ20230424105717734"/>
+        <parameter name="pyrAbbrv" value="MCCA"/>
+        <parameter name="procForPayor" value="76700"/>
+        <parameter name="procNotForPayor" value="82947"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testSuperSearchForceToResubmitWithSpecificPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test Super Search Force to Resubmit Without Specific Payor">
+        <parameter name="accnId" value="QATESTER20230501101247794"/>
+        <parameter name="procForPayor1" value="76700"/>
+        <parameter name="procForPayor2" value="71010"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngine5010Test">
+                <methods>
+                    <include name="testSuperSearchForceToResubmitWithoutSpecificPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

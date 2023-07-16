@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpOutsideAgencyEngine" preserve-order="true" verbose="1">
+
+    <suite-files>
+        <!--Parallel Suite-->
+        <suite-file path="smokeEPOutsideAgencyEngineTestsP.xml"/>
+        <!--Sequential Suite-->
+        <suite-file path="smokeEPOutsideAgencyEngineTestsS.xml"/>
+    </suite-files>
+</suite>

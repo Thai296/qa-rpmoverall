@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpOutsideAgencyEngine" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="eType1" value="OePostingEngine"/>
+    <parameter name="eType2" value="PricingEngine"/>
+    <parameter name="eType3" value="EpWorkFlowEngine"/>
+    <parameter name="eType4" value="EpOutsideAgencyEngine"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+
+    <test name="FR-ADD(TevixMD)-Verify file can be generated">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_582">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyPyrAccnWithPtZipErr" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="FR-INS-Verify file can be generated">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_584">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyAccnWithSUBIDError" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="CodeRyte-Verify file can be generated ">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_583">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyAccnWithAUTHErr" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

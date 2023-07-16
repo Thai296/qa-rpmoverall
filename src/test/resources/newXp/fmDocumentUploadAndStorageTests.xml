@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Document Upload and Storage" preserve-order="true" arallel="tests" thread-count="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Upload duplicate single file with different category">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_768">>
+                    <parameter name="filename" value="dsuploadtest768.txt"/>
+                    <parameter name="category" value="Client"/>
+                    <parameter name="categoryId" value="100"/>
+                    <parameter name="documentType" value="LabResults"/>
+                    <parameter name="contentType" value="text/plain"/>
+                    <parameter name="uploadBy" value="xqatester"/>
+                    <parameter name="filename2" value="dsuploadtest768_samecontent.txt"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Upload with empty document file">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_770">
+                    <parameter name="filename" value="dsuploadempty.txt"/>
+                    <parameter name="documentType" value="LabResults"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Upload single valid file without category">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_759">
+                    <parameter name="filename" value="dsuploadtest759.txt"/>
+                    <parameter name="category" value="Accession"/>
+                    <parameter name="categoryId" value="BADACCNID759"/>
+                    <parameter name="documentType" value="LabResults"/>
+                    <parameter name="contentType" value="text/plain"/>
+                    <parameter name="uploadBy" value="xqatester"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Upload duplicate Single file without category">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_761">
+					<parameter name="filename" value="dsuploadtest761.txt"/>
+                    <parameter name="category" value="Accession"/>
+                    <parameter name="categoryId" value="BADACCNID761"/>
+					<parameter name="documentType" value="LabResults"/>
+					<parameter name="contentType" value="text/plain"/>
+					<parameter name="uploadBy" value="xqatester"/>
+					<parameter name="filename2" value="dsuploadtest761_samecontent.txt"/>
+                    <parameter name="categoryId2" value="BADACCNID761X2"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete uploaded file">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_760">
+                    <parameter name="filename" value="dsuploadtest760.txt"/>
+                    <parameter name="category" value="Accession"/>
+                    <parameter name="categoryId" value="BADACCNID760"/>
+                    <parameter name="documentType" value="LabResults"/>
+                    <parameter name="contentType" value="text/plain"/>
+                    <parameter name="uploadBy" value="xqatester"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Upload valid single file with category is Accession">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testRPM_763">
+                    <parameter name="filename" value="dsuploadtest763.txt"/>
+                    <parameter name="categoryId" value="QATESTERNONCLIENTDUNCYCLE01"/>
+                    <parameter name="documentType" value="LabResults"/>
+                    <parameter name="contentType" value="text/plain"/>
+                    <parameter name="uploadBy" value="xqatester"/>
+                    <parameter name="comment" value="This is a test document for testRPM_763"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Upload Accession Document To S3">
+        <classes>
+            <class name="com.mars.tests.FileMaintenanceDocUploadStorage"/>
+            <methods>
+                <include name="testUploadAccessionDocumentToS3">
+                    <parameter name="filename" value="testUploadAccessionDocumentToS3.txt"/>
+                    <parameter name="categoryId" value="QATESTERNONCLIENTDUNCYCLE01"/>
+                    <parameter name="documentType" value="PhysOrder"/>
+                    <parameter name="contentType" value="text/plain"/>
+                    <parameter name="uploadBy" value="xqatester"/>
+                    <parameter name="comment" value="This is a test document for testUploadAccessionDocumentToS3"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--   <test name="Upload duplicate single file with the same category">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_769">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />					-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+
+    <!--   <test name="Upload document with different document name but same file contents">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_774">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName1" value="dsuploadtest.txt" />		-->
+    <!--					<parameter name="fileName2" value="dsuploadtestsamecontents.txt" />				-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Upload single valid file with category is Payor">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_762">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--
+         <test name="Verify user can view Engine upload files">
+            <classes>
+                <class name="com.mars.tests.SmokeTestFileMaintenanceDocUploadStorage" />
+                <methods>
+                    <include name="testRPM_779">
+                        <parameter name="email" value="qatester@xifin.com" />
+                        <parameter name="password" value="qatester123" />
+                        <parameter name="engineLocationJar" value="C:\DocuploadEngine\XFN\DocumentUploadEngine" />
+                        <parameter name="engineBatFile" value="run-document-engine" />
+                        <parameter name="timeOutWaitForEngine" value="30" />
+                        <parameter name="inboundLocation" value="C:\DocuploadEngine\webservicetest\inbound" />
+                        <parameter name="completedLocation" value="C:\DocuploadEngine\webservicetest\completed" />
+                    </include>
+                </methods>
+            </classes>
+        </test>
+      -->
+    <!-- -->
+    <!--   <test name="Edit existing document with new category">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_771">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Edit existing document with new category and invalid categoryId">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_772">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+    <!-- -->
+    <!--   <test name="Edit Existing document with new document type">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_773">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Upload Single valid file with Category is System">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_764">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Upload single valid file with Category is Client">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_765">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Upload the same file name that was deleted before">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_766">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtest.txt" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Upload with non-white list documents">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_767">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="fileName" value="dsuploadtestnonwhitelist.xml" />									-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Verify parsing functionality for file name convention as 'AccnAccnIDDocumentType'">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_775">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="accnId" value="A201304110203027" />		-->
+    <!--					<parameter name="dsType" value="ACCNREFUND" />							-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Verify parsing functionality for file name convention as 'ClnClientIDDocumentType'">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_777">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="clnId" value="100" />		-->
+    <!--					<parameter name="dsType" value="CLNREFUND" />							-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--   <test name="Verify parsing functionality for uploading multiple files that name conventions as 'AccnAccnIDDocumentType' and 'ClnClientIDDocumentType' ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.mars.tests.FileMaintenanceDocUploadStorage" />-->
+    <!--			<methods>-->
+    <!--				<include name="testRPM_778">-->
+    <!--					<parameter name="email" value="qatester@xifin.com" />-->
+    <!--					<parameter name="password" value="qatester123" />-->
+    <!--					<parameter name="accnId" value="A201304110203027" />-->
+    <!--					<parameter name="clnId" value="100" />		-->
+    <!--					<parameter name="accnDSType" value="ACCNREFUND" />-->
+    <!--					<parameter name="clnDSType" value="CLNREFUND" />							-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+</suite>

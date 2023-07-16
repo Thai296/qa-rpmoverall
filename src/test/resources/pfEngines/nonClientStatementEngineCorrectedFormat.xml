@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine Corrected Format" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Corrected Institutional Claim - match the previous payment and submission on SubscriberId">
+        <parameter name="accnId" value="QATESTER20191028102543484"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="A914022193"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCorrectedTest">
+                <methods>
+                    <include name="testPFER_759"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corrected Institutional 5010 Claim - match the previous payment and submission on ICN">
+        <parameter name="accnId" value="QATESTER20191028130500292"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="A913332155"/>
+        <parameter name="submSvcAbbrev" value="UHC5010A1-I"/>
+        <parameter name="icn" value="1010101011"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCorrectedTest">
+                <methods>
+                    <include name="testPFER_760"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cancelled Institutional 5010 Claim - submit claim when all procs 0 priced">
+        <parameter name="accnId" value="QATESTER20180821235933762"/>
+        <parameter name="pyrAbbrv" value="BCBSKYHMO"/>
+        <parameter name="subId" value="123456789A"/>
+        <parameter name="submSvcAbbrev" value="AVAILITY5010A2"/>
+        <parameter name="icn" value="2111007303 0011805387"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCorrectedTest">
+                <methods>
+                    <include name="testPFER_761"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cancelled Professional Crossover Claim Is Generated">
+        <parameter name="accnId" value="QATESTER20200706022104369"/>
+        <parameter name="pyrAbbrv" value="BCBSNH"/>
+        <parameter name="subId" value="A424861537"/>
+        <parameter name="submSvcAbbrev" value="BCCA5010A1"/>
+        <parameter name="claimId" value="QATESTER20200706022104369Z01"/>
+        <parameter name="icn" value="2111007304 ICNPYRPRIO2"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCorrectedTest">
+                <methods>
+                    <include name="testCancelledProfessionalCrossoverClaim"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Replacement Institutional 5010 Claim is generated when Test has been added">
+        <parameter name="accnId" value="QATESTER20210825015836820"/>
+        <parameter name="pyrAbbrv" value="BCBSKYHMO"/>
+        <parameter name="submSvcAbbrev" value="AVAILITY5010A2"/>
+        <parameter name="claimId" value="QATESTER20210825015836820Z01"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineCorrectedTest">
+                <methods>
+                    <include name="testInstitutionalReplacementClaimIsGeneratedWhenTestIsAdded"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

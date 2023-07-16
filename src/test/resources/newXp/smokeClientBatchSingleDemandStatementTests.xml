@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Client Batch Single Demand Statement" preserve-order="true" parallel="tests" thread-count="2" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <!--	 <test name="Generate client statement with Client without SubClient">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_624">-->
+    <!--					<parameter name="formatType" value="clientsubm" />	-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test> -->
+
+    <!--	 <test name="Generate client statement with Client has SubClient">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_622">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	 <test name="Generate multiple Client statements that have setup EXCEL">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_626">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	 <test name="Generate Client statements by adding multiple clients">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_705">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	 <test name="Delete Clients in Table">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_628">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	 <test name="Cancel deleting Clients in Table">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_630">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="Load a Client with no activity or balance due = 0">
+        <classes>
+            <class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest"/>
+            <methods>
+                <include name="testXPR_625">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	 <test name="Generate Client Statement by updating Client">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_629">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Load Client ID via Client Search">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_641">-->
+    <!--					<parameter name="formatType" value="clientsubm" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <test name="Verify Help file can be opened properly">
+        <classes>
+            <class name="com.newXp.tests.SmokeClientBatchSingleDemandStatementTest"/>
+            <methods>
+                <include name="testXPR_631">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

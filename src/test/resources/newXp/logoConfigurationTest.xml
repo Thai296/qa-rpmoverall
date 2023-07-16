@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Logo Configuration" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="15" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="version" value="ANY" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="ssoXpUsername" value="qatester@xifin.com" />
+    <parameter name="ssoXpPassword" value="qatester123" />
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Annual Disclosure letter - Update Logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="annualDisclosureLetterUpdateLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Annual Disclosure letter - Upload Logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="annualDisclosureLetterUploadLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Annual Disclosure letter - Delete logo file">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="annualDisclosureLetterDeleteLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+
+    <test name="Appeal Letter - Update logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="appealLetterUpdateLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Appeal Letter - Upload logo.">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="appealLetterUploadLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client Statement - Update logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="clientStatementUpdateLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Client Statement - Upload logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="clientStatementUploadLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="EP Letter - Update logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="epLetterUpdateLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="EP Letter - Upload logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="epLetterUploadLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Welcome Letter - Update logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="welcomeLetterUpdateLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Welcome Letter - Upload logo">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="welcomeLetterUploadLogo">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Help icon">
+        <classes>
+            <class name="com.newXp.tests.LogoConfigurationTest" />
+            <methods>
+                <include name="verifyHelpIcon">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

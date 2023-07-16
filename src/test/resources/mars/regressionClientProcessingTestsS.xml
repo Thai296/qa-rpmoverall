@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Client Processing Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-443&quot;&gt; RPM-443:RPM-Client-Payor Exclusions JSP-Verify that new Payor exclusion can be added ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_443">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+	
+     <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-444&quot;&gt; RPM-444:RPM-Client-Payor Exclusions JSP-Verify that new Payor Group exclusion can be added ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_444">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-446&quot;&gt; RPM-446:RPM-Client-Payor Exclusions JSP-Verify that modified Payor exclusion can be saved ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_446">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-447&quot;&gt; RPM-447:RPM-Client-Payor Exclusions JSP-Verify that modified Payor Group exclusion can be saved ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_447">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-502&quot;&gt; RPM-502:Client - Audit Log JSP- Tooltip displays full text ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_502">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ 
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-503&quot;&gt; RPM-503:Client - Audit Log JSP- Client info display properly when loaded a Client ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_503">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-504&quot;&gt; RPM-504:Client - Audit Log JSP- Reset button clear the page ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_504">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-623&quot;&gt; RPM-623:Client - Client Processing - Physician Assignment - Client Name and Account Type display ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_623">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-629&quot;&gt; RPM-629:Client - Client Processing - Physician Assignment - Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_629">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-628&quot;&gt; RPM-628:Client - Client Processing - Physician Assignment - Help ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_628">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-624&quot;&gt; RPM-624:Client - Client Processing - Physician Assignment - Add new Physician Assignment ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_624">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-625&quot;&gt; RPM-625:Client - Client Processing - Physician Assignment - Delete Physician Assignment ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_625">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-627&quot;&gt; RPM-627:Client - Client Processing - Physician Assignment - Physician Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_627">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-630&quot;&gt; RPM-630:Client - Client Processing - Physician Assignment - Invalid Physician NPI Validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_630">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-631&quot;&gt; RPM-631:Client - Client Processing - Physician Assignment - Duplicate Physician NPI Validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_631">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-632&quot;&gt; RPM-632:Client - Client Processing - Physician Assignment - Invalid Physician UPIN Validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_632">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-633&quot;&gt; RPM-633:Client - Client Processing - Physician Assignment - Invalid Client ID Validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_633">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-626&quot;&gt; RPM-626:Client - Client Processing - Physician Assignment - Copy Physician Assignment to Client ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_626">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-662&quot;&gt; RPM-662:Client - Client Processing - Eligibility Census Configuration - Client Name and Account Type display ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_662">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-663&quot;&gt; RPM-663:Client - Client Processing - Eligibility Census Configuration - Help ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_663">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-664&quot;&gt; RPM-664:Client - Client Processing - Eligibility Census Configuration - Reset Client ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_664">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-678&quot;&gt; RPM-678:Client - Client Processing - Eligibility Census Configuration - Reset EPI ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_678">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-665&quot;&gt; RPM-665:Client-Client Processing-Eligibility Census Config-Create new Patient (with EPI only) Elig Roster ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_665">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-666&quot;&gt; RPM-666:Client-Client Processing-Eligibility Census Config-Create new Patient (Client and Fac IDs) Elig Roster ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_666">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-667&quot;&gt; RPM-667:Client - Client Processing - Eligibility Census Config - Existing Patient Eligibility Roster display ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_667">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-668&quot;&gt; RPM-668:Client - Client Processing - Eligibility Census Configuration - Existing Patient Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_668">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-669&quot;&gt; RPM-669:Client - Client Processing - Eligibility Census Config - Update existing Patient Eligibility Roster ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_669">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-670&quot;&gt; RPM-670:Client - Client Processing - Eligibility Census Configuration - Update existing Patient Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_670">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-671&quot;&gt; RPM-671:Client - Client Processing - Eligibility Census Config - Delete existing Patient Eligibility Roster ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_671">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-672&quot;&gt; RPM-672:Client - Client Processing - Eligibility Census Config - Do not allow empty Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_672">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-673&quot;&gt; RPM-673:Client - Client Processing - Eligibility Census Config - Do not allow overlap Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_673">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-674&quot;&gt; RPM-674:Client - Client Processing - Eligibility Census Config - Do not allow Future Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_674">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-675&quot;&gt; RPM-675:Client - Client Processing - Eligibility Census Config - Invalid EPI validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_675">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-676&quot;&gt; RPM-676:Client - Client Processing - Eligibility Census Config - Invalid DOB validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_676">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-677&quot;&gt; RPM-677:Client - Client Processing - Eligibility Census Config - Invalid SSN validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_677">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-679&quot;&gt; RPM-679:Client - Client Processing - Eligibility Census Configuration - Patient Details ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_679">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-680&quot;&gt; RPM-680:Client - Client Processing - Eligibility Census Configuration - Duplicate Client Pt ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_680">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-681&quot;&gt; RPM-681:Client - Client Processing - Eligibility Census Configuration - Duplicate Client Facility Pt ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientProcessingTest" />
+			<methods>
+				<include name="testRPM_681">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+</suite>

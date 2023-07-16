@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PF-ReconciliationEngine" preserve-order="true" parallel="tests" thread-count="25" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="defaultBankId" value="3"/>
+
+    <test name="Process record with eob_claim.fk_reconcile_stage_id =10, error_note='Unexpected error:  Failed to shuffle payors due to: failed to validate">
+        <parameter name="accnId" value="QATESTERRECONC01"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC01Z01"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_567"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Don't change SubId to corrected on if pyr is non-medicare pyr">
+        <parameter name="accnId" value="QATESTERRECONC02"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC02Z01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="oldSubId" value="OLDSUBID"/>
+        <parameter name="newSubId" value="NEWSUBID"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_568"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Change SubId to corrected on accn if pyr is medicare pyr'">
+        <parameter name="accnId" value="QATESTERRECONC04"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC04Z01"/>
+        <parameter name="pyrAbbrv" value="MCUGS"/>
+        <parameter name="oldSubId" value="OLDSUBID"/>
+        <parameter name="newSubId" value="NEWSUBID"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_569"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reconc eng considers for claim adjustments calculating paid amounts for Dep_bat pyr is medicare pyr">
+        <parameter name="accnId" value="QATESTERRECONC05"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC05Z01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="totalPaid" value=".15"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_570"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reconc eng assigned The fk_bank_id from BANK_ACCT is assigned to DEP.FK_BANK_ID when matches 835 BPR13 and 15">
+        <parameter name="accnId" value="QATESTERRECONC07"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC07Z01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="totalPaid" value=".25"/>
+        <parameter name="providersBankId" value="5555"/>
+        <parameter name="providersBankAcctNum" value="1111111"/>
+        <parameter name="bankId" value="123456789"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_597"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reconc eng assigned  DEP.BANK_ID based on the default payor's FK_BANK_ID from EOB_PYR_XREF for the EOB_EXTERNAL_PAYOR_ID from the deposit">
+        <parameter name="accnId" value="QATESTERRECONC08"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC08Z01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="totalPaid" value=".25"/>
+        <parameter name="providersBankId" value="99999"/>
+        <parameter name="providersBankAcctNum" value="2222222"/>
+        <parameter name="bankId" value="1"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_599"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reconc eng assigned  DEP.BANK_ID based on the default payor's FK_BANK_ID from SS 1502">
+        <parameter name="accnId" value="QATESTERRECONC10"/>
+        <parameter name="internalCtrlId" value="QATESTERRECONC10Z01"/>
+        <parameter name="pyrAbbrv" value="BCBSNH"/>
+        <parameter name="totalPaid" value=".25"/>
+        <parameter name="providersBankId" value="00000"/>
+        <parameter name="providersBankAcctNum" value="777777"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPFER_600"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Allowed Amount = $0 For Tax Proc Is Processed Correctly">
+        <parameter name="accnId" value="RPM108294"/>
+        <parameter name="internalCtrlId" value="RPM108294Z01"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testRPM108294"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Allowed Amount > $0 For Tax Proc Is Processed Correctly">
+        <parameter name="accnId" value="RPM108295"/>
+        <parameter name="internalCtrlId" value="RPM108295Z01"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testRPM108295"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test pseudo-reprice is performed">
+        <parameter name="accnId" value="QATESTERYFKWH20200702022240152"/>
+        <parameter name="internalCtrlId" value="QATESTERYFKWH20200702022240152Z01"/>
+        <parameter name="origPyrAbbrv" value="BCBSNH"/>
+        <parameter name="eobPyrAbbrv" value="BCBSKYHMO"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPseudoRepriceIsPerformed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test pseudo-reprice is not performed with limited coverage">
+        <parameter name="accnId" value="QATESTERBJEMS20200630021918508"/>
+        <parameter name="internalCtrlId" value="QATESTERBJEMS20200630021918508Z02"/>
+        <parameter name="origPyrAbbrv" value="MCUGS"/>
+        <parameter name="eobPyrAbbrv" value="BCBSKYHMO"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testPseudoRepriceIsNotPerformedForLimitedCoverage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fully-applied batch with expect price discrepancies is not released">
+        <parameter name="eobFinancialTransId" value="2442"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testBatchNotReleasedWhenExpectPriceDiscrepanciesExist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Sequestration amount is used in determining allowed amount and negative adjustments">
+        <parameter name="accnId" value="QATESTERYYZLX20230111071345353"/>
+        <parameter name="internalCtrlId" value="QATESTERYYZLX20230111071345353Z01"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testSequestration"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fully-applied batch with no expect price discrepancies is released">
+        <parameter name="eobFinancialTransId" value="2531"/>
+        <parameter name="bankAbbrv" value="BOA"/>
+        <parameter name="conallAmt" value="-50.00"/>
+        <classes>
+            <class name="com.pfEngines.tests.ReconciliationEngineTest">
+                <methods>
+                    <include name="testBatchReleasedWhenNoExpectPriceDiscrepanciesExist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

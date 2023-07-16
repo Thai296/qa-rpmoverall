@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Client Inquiry Tests Sequential" preserve-order="true" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-723&quot;&gt; RPM-723:Client - Client Inquiry - Price Inquiry - Client pricing can be loaded ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientInquiryTest" />
+			<methods>
+				<include name="testRPM_723">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-724&quot;&gt; RPM-724:Client - Client Inquiry - Price Inquiry - Client pricing can be loaded when SS4029, 4065 have values ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientInquiryTest" />
+			<methods>
+				<include name="testRPM_724">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-726&quot;&gt; RPM-726:Client - Client Inquiry - Price Inquiry - Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionClientInquiryTest" />
+			<methods>
+				<include name="testRPM_726">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	 
+</suite>

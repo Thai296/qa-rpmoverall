@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-AccnPaymentPostingEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="version" value="ANY" />
+
+   <test name="Post Deposit">
+        <classes>
+            <class name="com.pfEngines.tests.AccnPaymentPostingEngineTest"/>
+            <methods>
+                <include name="postDeposit">
+                    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+                    <parameter name="ssoPassword" value="qatester123"/>
+                    <parameter name="depId" value="46332"/>
+                </include>
+            </methods>
+        </classes>
+   </test>
+
+</suite>

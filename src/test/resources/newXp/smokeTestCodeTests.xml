@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Code" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="100"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener' />
+	</listeners>
+
+    <test name="Test Code Detail-Load Test Code-Single Test Code">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_27">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Load Test Code-No Load Test">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_29">
+                    <parameter name="testMess" value="AUTOMATION TEST"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Load Test Code-Profile Test Code">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_30">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Load Test Code-Create Profile as a component">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_34">
+                    <parameter name="groupId" value="HMO"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Search Test Code-Search Valid Test Id">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_36">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Search Test Code-Search valid test code info">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_39">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single test Detail-Eff Date-Add new eff date with copy data from another eff date">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_42">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single Test Detail-Eff Date-Create new eff date without copy data">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_46">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Search Test Code- Search test code with valid data">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_135">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Search Test Code-Reset search">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_137">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Search Test Code-New search">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_141">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Verify saving all the fields">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_400">
+                    <parameter name="testName" value="testNameDemo"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail-Load Test Code-Cancel create new test code">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_218">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single Test Detail - Procedures - Verify that the Proc Code name is populated">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_51">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Test Code Detail - Verify that testID is populate correctly">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_37">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single Test Detail - Modifier - Search Payor - Search PayorID with valid full conditions">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_108">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single Test Detail - Fee Schedule - Search Fee Sched with valid input">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_113">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Single Test Detail-Eff Date-Update tablist for eff date with valida data">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_224">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Profile Test Detail-Eff Date-Create new eff date with valid eff date format">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest"/>
+            <methods>
+                <include name="testXPR_225">
+                </include>
+            </methods>
+        </classes>
+    </test>
+    
+    <test name="Verify that there is a new button to changing Test Code ID">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest">
+            <methods>
+                <include name="verifyThereIsANewButtonToChangingTestCodeID" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Verify that users are able to update Test Code ID">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest">
+            <methods>
+                <include name="verifyUsersAreAbleToUpdateTestCodeID" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify that there is an error when users change Test Code ID to the existing one in the system">
+        <classes>
+            <class name="com.newXp.tests.SmokeTestCodeTest">
+            <methods>
+                <include name="verifyThereIsAnErrorWhenUsersChangeTestCodeIDToTheExistingOne" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

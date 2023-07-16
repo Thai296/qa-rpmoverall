@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Incremental Pricing" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="15" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+	<listeners>
+	<listener class-name='com.xifin.utils.RetryListener'/>
+	</listeners>
+
+	<test name="Search Incremental Pricing with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_415">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search PricingID - Verify New Search button">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_418">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Pricing - Verify Reset button">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_419">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Pricing without input data">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_420">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Pricing - Verify Close button">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_421">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+<!--	<test name="Load IPT - input PricingID with special character">-->
+<!--		<classes>-->
+<!--			<class name="com.newXp.tests.RegressionIncrementalPricing" />-->
+<!--			<methods>-->
+<!--				<include name="testXPR_413">-->
+<!--					<parameter name="email" value="qatester@xifin.com"  />-->
+<!--					<parameter name="password" value="qatester123" />-->
+<!--				</include>-->
+<!--			</methods>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+	<test name="Add new Incremental Price input inclusion - Exclusion only">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_423">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Add new Incremental without input name">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_424">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Add new Incremental without Inclusion - Exclusion Information">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_425">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Reset New Incremental Pricing ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_427">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Incremental Price - Delete all rules">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_430">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Update proc code change Proc Id by Service Type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_450">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Add procedure with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_451">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc rule - Add the same Proc Code">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_453">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Verify user can add duplicate Exclude Proc Code">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_455">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Add Test Rule - Add duplicate test type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_436">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+   <test name="Add Test Rule - Add test ID with invalid TestID">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_437">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+     <test name="Add Test Rule - Cancel new TestID">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_438">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+      <test name="Update inclusion exclusion with valid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_439">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+    <test name="Add Test rule - Add quantity with quantity is overlap">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_442">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+     <test name="Add Test rule - Add quantity with invalid data">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_444">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+     <test name="Add duplicate include procedure code">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_461">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - Add quantity  with require fields are empty">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_445">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test rul - Edit quantity  with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_446">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - Delete quantity">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_447">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - verify unit
+		is change when user select quantity type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_448">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Add Duplicate Service type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_456">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Rule - Delete Rule">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_457">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Reset Add new Rule">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_458">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="add Test rule with duplicate testID for both rules">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_459">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new rule without Include">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_460">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Rule - Add duplicate include Service type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_462">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Search Proc Code with valid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_463">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule-Search Proc Code type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_464">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Search Proc Code with select Revenue Code">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_465">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule-Search Proc Code with select service type">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_466">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Search Proc code with select service level">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_467">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule - Search all Proc code">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_468">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc rule - Search Proc code with invalid input">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_469">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search all Incremental Pricing ID">
+		<classes>
+			<class name="com.newXp.tests.RegressionIncrementalPricing" />
+			<methods>
+				<include name="testXPR_416">
+				</include>
+			</methods>
+		</classes>
+	</test>
+</suite>

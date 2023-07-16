@@ -1,0 +1,2 @@
+Account|OldAddr1|OldAddr2|OldCity|Ol|OldZip|NewAddr1|NewAddr2|NewCity|Ne|NewZip|NcoaType|NcoaCd
+A201106021148472|315 PARK VILLAGE||||55306-4923|12345 APPLE DR||||92111|R|M

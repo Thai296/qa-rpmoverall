@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Message Engine Regresstion Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	
+
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-29&quot;&gt; PFER-29:Message Engine-PyrContrct-Send expired message to managers when review_dt lessthan SYSDATE,end_dt=SYSDATE ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_29">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-57&quot;&gt; PFER-57:Message Engine-PyrContrct-No message is sent when review_dt lessthan sysdate, end_dt greaterthan sysdate ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_57">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-59&quot;&gt;  PFER-59:Message Engine-PyrContrct-No message is sent when end_dt lessthan sysdate, review_dt lessthan sysdate ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_59">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-36&quot;&gt; PFER-36:Message Engine-ClnCntct-No message is sent when msg_status =0 and follow_up_dt=null ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_36">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-40&quot;&gt; PFER-40:Message Engine-ClnPromsPmt-Send scheduled message to assigned user when due_dt > sysdate ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_40">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-43&quot;&gt; PFER-43:Message Engine-ClnPromsPmt-Send due message to assigned user when due_dt lesstthan (sysdate-days in SS#4) ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_43">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-44&quot;&gt; PFER-44:Message Engine-ClnPromsPmt-Send message to user when due_dt lessorequals (sysDt-days in SS#4), followUpDt>sysDt ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_44">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-46&quot;&gt; PFER-46:Message Engine-ClnPromsPmt-Send message when followUpDt=dueDt lessorequals sysDt, msgStatus=0 ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_46">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-47&quot;&gt; PFER-47:Message Engine-ClnPromsPmt-Send message when dueDt>=sysdate-daysInSS#4, followUpDt lessorequals sysDt ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_47">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-48&quot;&gt; PFER-48:Message Engine-ClnPromsPmt-Send message when followUpDt=dueDt=sysDt, msgStatus=1 ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_48">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-49&quot;&gt; PFER-49:Message Engine-ClnPromsPmt-Send messages dueDt before sysDt-daysInSS#4, followUpDt=sysDt,msgStatus=1 ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_49">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-51&quot;&gt; PFER-51:Message Engine-AccnCntct-No message is sent when msg_status = 1 and follow_up_dt = null ">
+		<classes>
+			<class name="com.mars.tests.MessageEngineTest" />
+			<methods>
+				<include name="testPFER_51">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="eType" value="MessageEngine" />					
+					<parameter name="xapEnv" value="XAP" />
+					<parameter name="engConfigDB" value="SSO_APP_STAGING" />									
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+
+</suite>

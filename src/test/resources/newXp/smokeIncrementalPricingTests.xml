@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Incremental Pricing" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener' />
+	</listeners>
+
+	 <test name="Load IPT-Enter valid Pricing Id">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_410"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Load IPT-Enter Invalid Pricing Id">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_411"/>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Load IPT-Verify Help page icon">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_412"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search PricingID - Search with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_414"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search PricingID - Verify Keep Search Open works">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_417"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new Incremental Price with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_422"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new Incremental with more than 10 rules">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_426"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add New incremental without any rule">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_428"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Update Incremental Pricing with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_429"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - Add duplicate Test ID">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_435"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - Delete Test ID">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_440"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Test Rule - Add quantity with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_441"/>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Add Test Rule - Add 2 non - overlapping quantities">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_443"/>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Test Rule - Add rule with Test radio button is checked">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_431"/>
+			</methods>
+		</classes>
+	</test>
+
+ 	 <test name="Add Test Rule - Verify that user can add testID or test type">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_432"/>
+			</methods>
+		</classes>
+	</test>
+
+ 	 <test name="Add Test Rule-Add 2 same Tests into Inclusion and Exclusion table">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_433"/>
+			</methods>
+		</classes>
+	</test>
+
+	 <test name="Add Test Rule - One rule with the same Test Type">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_434"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule-Add Procs with valid data">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_449"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule-Delete Procedure">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_452"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add Proc Rule-Add Duplicate Proc Code">
+		<classes>
+			<class name="com.newXp.tests.SmokeIncrementalPricingTest" />
+			<methods>
+				<include name="testXPR_454"/>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

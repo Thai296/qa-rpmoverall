@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Place Of Service Code Config" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="150" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="platform" value="WINDOWS" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoXpUsername" value="qatester@xifin.com" />
+	<parameter name="ssoXpPassword" value="qatester123" />
+	
+	<test name="Verify Place Of Service Code Configuration grid"> 
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_908">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new Service Code with valid input">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_909">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new Service Code with Payr and Proc Cd is get from Search reuslt">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_910">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Add new record with enter valid fields only">
+		<parameter name="pyrAbbrv" value="AETNA-EDITELIG"/>
+		<parameter name="posTypId" value="31"/>
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_911">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Add new record with duplicate PyrId and Pos Code">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_912">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Add new record with select both PyrId and Pyr Grp">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_913">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="UPdate record with valid data">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_914">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Delete record">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_915">
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="Delete multi records">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_916">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Verify Reset btn">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_917">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="Verify Help icon">
+		<classes>
+			<class name="com.newXp.tests.PlaceOfServiceCodeConfigTest" />
+			<methods>
+				<include name="testXPR_918">
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+</suite>

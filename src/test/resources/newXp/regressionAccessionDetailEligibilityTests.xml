@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accession Detail Eligibility" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+<!--    <test name="Eligibility check-Payor and Proc errors have pyr_prio =0 when Payor is translated ">-->
+<!--        <parameter name="accnId" value="QATESTER20170823144920804"/>-->
+<!--        <parameter name="origPyrAbbrv" value="BCBSKY"/>-->
+<!--        <parameter name="origSubId" value="354654656"/>-->
+<!--        <parameter name="user" value="xqatester"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_840"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Eligibility check-Payor errors have pyr_prio =1 when original Payor is back">-->
+<!--        <parameter name="accnId" value="QATESTERACCNDETAIL201808091"/>-->
+<!--        <parameter name="origPyrAbbrv" value="BCBSKY"/>-->
+<!--        <parameter name="subId" value="000000101"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_886"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Eligibility check- Proc errors pyr_prio =1 when original Payor is back Accn is Priced">-->
+<!--        <parameter name="accnId" value="QATESTER2017082314492080405"/>-->
+<!--        <parameter name="origPyrAbbrv" value="BCBSKY"/>-->
+<!--        <parameter name="subId" value="111100101"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_887"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Eligibility check-Prim pyr is translated and Sub Id is saved from original Payor if No SubId in the file">
+        <parameter name="accnId" value="QATESTER20170913125224749"/>
+        <parameter name="origPyrAbbrv" value="AETNA"/>
+        <parameter name="origSubId" value="A123456789"/>
+        <parameter name="subIdFrom271" value=""/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_919"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--   Flaky test <test name="Eligibility check-Prim pyr is translated and Sub Id is saved from 271 file">-->
+<!--        <parameter name="accnId" value="QATESTERACCNDETAIL201808092"/>-->
+<!--        <parameter name="origPyrAbbrv" value="AETNA"/>-->
+<!--        <parameter name="newPyrAbbrv" value="UHC"/>-->
+<!--        <parameter name="origSubId" value="A123456789"/>-->
+<!--        <parameter name="subIdFrom271" value="A55"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_922"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Eligibility check-Undetermined Response - Same Plan name, Conflicting Statuses">
+        <parameter name="accnId" value="QATESTER2017092210333147"/>
+        <parameter name="origPyrAbbrv" value="ABC"/>
+        <parameter name="origSubId" value="354654656"/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_950"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check-Eligible Response - Different Plan names, Conflicting Statuses">
+        <parameter name="accnId" value="QATESTER20170927142130330"/>
+        <parameter name="origPyrAbbrv" value="ABC"/>
+        <parameter name="origSubId" value="A885244650"/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_951"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!-- Flaky test   <test name="Eligibility check is ELIGIBLE, Patient and Insured Demographic Data is updated - mixed case">-->
+<!--        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180124-001"/>-->
+<!--        <parameter name="pyrAbbrv" value="XYZ"/>-->
+<!--        <parameter name="patientFNm" value="PT FIRSTN"/>-->
+<!--        <parameter name="patientLNm" value="PT LASTN"/>-->
+<!--        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>-->
+<!--        <parameter name="patientAddr2" value="APT UPDATED"/>-->
+<!--        <parameter name="patientSex" value="2"/>-->
+<!--        <parameter name="patientCity" value="LOS ANGELES"/>-->
+<!--        <parameter name="patientZipId" value="92104"/>-->
+<!--        <parameter name="subscriberId" value="000000101"/>-->
+<!--        <parameter name="relshpId" value="2"/>-->
+<!--        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>-->
+<!--        <parameter name="insuredLNm" value="INSLN UPDATED"/>-->
+<!--        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>-->
+<!--        <parameter name="insuredAddr2" value="APT UPDATED"/>-->
+<!--        <parameter name="insuredSex" value="2"/>-->
+<!--        <parameter name="insuredCity" value="LOS ANGELES"/>-->
+<!--        <parameter name="insuredZipId" value="92104"/>-->
+
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_1050"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Eligibility Engine - Eligibility check is ELIGIBLE, Insured Name, Gender, Address are updated">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180109-001"/>
+        <parameter name="pyrAbbrv" value="BCBSNH"/>
+        <parameter name="insuredFNm" value="INSFIRSTNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLASTNAME UPDATED"/>
+        <parameter name="insuredAddr1" value="INSURED ADDRESS UPDATED"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1051"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility Engine - Eligibility check is ELIGIBLE, Patient's Name, Gender, Address are updated">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180108-001"/>
+        <parameter name="pyrAbbrv" value="BSFL"/>
+        <parameter name="patientFNm" value="FIRSTNAME UPDATED"/>
+        <parameter name="patientLNm" value="LASTNAME UPDATED"/>
+        <parameter name="patientAddr1" value="ADDRESS UPDATED"/>
+        <parameter name="patientAddr2" value="APT"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="SAN DIEGO"/>
+        <parameter name="patientZipId" value="90009"/>
+
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1052"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demographic Data (EPI) is updated - mixed case">
+        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20180125-001"/>
+        <parameter name="pyrAbbrv" value="XYZ"/>
+        <parameter name="patientFNm" value="PT TEST"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1055"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check-No Svc Type code set in Payor Elig config, none sent in request">
+        <parameter name="accnId" value="QATESTER2018061215003444"/>
+        <parameter name="origPyrAbbrv" value="AETNA"/>
+        <parameter name="additionalSvcTyps" value=""/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1225"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check-Eligible Response - 271 file contains svc type code requested, default and no svc type code - use requested - Additional svc_typ_code">
+        <parameter name="accnId" value="QATESTER2018061215003555"/>
+        <parameter name="origPyrAbbrv" value="UHC"/>
+        <parameter name="additionalSvcTyps" value="45"/>
+        <parameter name="defaultSvcTypCd" value="5"/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1224"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check-Prim pyr is translated and Sub Id from REF*IG if Subs ID Type not setup and 271 file has all additianal segments">
+        <parameter name="accnId" value="QATESTERACCNDETAIL20180711"/>
+        <parameter name="origPyrAbbrv" value="AETNA"/>
+        <parameter name="newPyrAbbrv" value="UHC"/>
+        <parameter name="origSubId" value="101010101"/>
+        <parameter name="subIdFrom271" value="SUBIG11"/>
+        <classes>
+            <class name="com.newXp.tests.AccessionDetailEligibilityTest">
+                <methods>
+                    <include name="testXPR_1590"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!-- Flaky Test    <test name="Pyr is translated, SubId updated from REF*18 if Subs ID Type set to Plan Number">-->
+<!--        <parameter name="accnId" value="QATESTERACCNDETAIL2018071203"/>-->
+<!--        <parameter name="origPyrAbbrv" value="BCBSNY"/>-->
+<!--        <parameter name="newPyrAbbrv" value="XYZ"/>-->
+<!--        <parameter name="origSubId" value="333333333"/>-->
+<!--        <parameter name="subIdFrom271" value="SUBFROMREF18"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_1591"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!-- Flaky Test   <test name="Pyr is translated, SubId updated from NM109, not REF*IG if Subs ID Type set to Member Id Number (REF*1W), but not in the 271 file">-->
+<!--        <parameter name="accnId" value="QATESTERACCNDETAIL20180801"/>-->
+<!--        <parameter name="origPyrAbbrv" value="BSCNY"/>-->
+<!--        <parameter name="newPyrAbbrv" value="XYZ"/>-->
+<!--        <parameter name="origSubId" value="TEST1616"/>-->
+<!--        <parameter name="subIdFromREFIG" value="SUBIG11"/>-->
+<!--        <parameter name="subIdFromNM109" value="SUBFROMNM109"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_1616"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--  Flaky test  <test name="Client Roster Check - Patient Is On Roster For New Client">-->
+<!--        <parameter name="accnId" value="QATESTER-ELIG-ENGINE20190418-698"/>-->
+<!--        <parameter name="origPyrAbbrv" value="UHC"/>-->
+<!--        <parameter name="origClnAbbrv" value="SK2"/>-->
+<!--        <parameter name="newClnAbbrv" value="XIFINZH"/>-->
+<!--        <parameter name="newPyrAbbrv" value="C"/>-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.AccessionDetailEligibilityTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_2044"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>

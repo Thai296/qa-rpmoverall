@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Payor Demographics Tests Parallel" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+  
+ 
+
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-51&quot;&gt; RPM_51 RPM - Payor - Group Demographics - Group ID Patient- Non Primary Service Id display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_51">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Patient" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+		  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-53&quot;&gt; RPM_53 RPM - Payor - Group Demographics - Group ID Non Patient - Non Primary Service Id display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_53">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Contracted" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-54&quot;&gt; RPM_54 RPM - Payor - Group Demographics - Group ID Non Patient - Add Procedure Code Override ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_54">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Non-contracted" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-55&quot;&gt; RPM_55 RPM - Payor - Group Demographics - Group ID Non Patient - Add Override Disabled ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_55">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Patient" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	  
+	  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-56&quot;&gt; RPM_56 RPM - Payor - Group Demographics - Group ID Patient - Manual Demand Format Services display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_56">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Patient" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-57&quot;&gt; RPM_57 RPM - Payor - Group Demographics - Group ID Non Patient - Manual Demand Format Services display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_57">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Non-contracted" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-58&quot;&gt; RPM_58 RPM - Payor - Pricing Configuration - Payor Id P - Submission Service Proc code Override ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_58">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="P" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-59&quot;&gt; RPM_59 RPM - Payor - Pricing Configuration - Payor Id P - Dunning Cycle Primary Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_59">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="P" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-60&quot;&gt; RPM_60 RPM - Payor - Pricing Configuration - Payor Id P - Dunning Cycle Non Primary Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_60">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="P" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-61&quot;&gt; RPM_61 RPM - Payor - Pricing Configuration - Payor Id P - Submission Provider Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_61">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="P" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-62&quot;&gt; RPM_62 RPM - Payor - Pricing Configuration - Payor Id P - Manual Demand Submission Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_62">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="P" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-63&quot;&gt; RPM_63 RPM - Payor - Pricing Configuration - Payor Id Non Patient Client - Manual Demand Submission Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_63">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-64&quot;&gt; RPM_64 RPM - Payor - Pricing Configuration - Payor Id Non Patient Client - Submission Provider Service ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_64">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="payorId" value="" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-426&quot;&gt;  RPM-426:RPM - Payor - Payor Demographics - Remove Add1 and Zip for existing Client group record ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_426">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-427&quot;&gt;  RPM-427:RPM - Payor - Payor Demographics - Add1 and Zip required for non-Patient and non-Client group(s) ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_427">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-430&quot;&gt;  RPM-430:RPM - Payor - Payor Demographics - New Record for Patient payor group does not require Addr1 and Zip ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_430">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-433&quot;&gt;  RPM-433:RPM - Payor - Payor Demographics - New Record for Client payor group does not require Addr1 and Zip ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_433">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-437&quot;&gt; RPM-437 : RPM-Payor-Dialysis Frequency Control-Payors Groups grid scrollbar does not hide Delete column ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_437">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-438&quot;&gt; RPM-438 : RPM-Payor-Dialysis Frequency Control-Payors grid scrollbar does not hide Delete column ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_438">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-470&quot;&gt; RPM-470 : Payor - Payor Demograhphics - Do not allow double-click on Submit button ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_470">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-486&quot;&gt; RPM-486 RPM - Payor - Pricing Configuration - Payor Insurance Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_486">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-487&quot;&gt; RPM-487 RPM - Payor - Pricing Configuration - Payor Group Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_487">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-488&quot;&gt; RPM-488 RPM - Payor - Pricing Configuration - Payor Reason Code ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_488">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-489&quot;&gt; RPM-489 RPM - Payor - Pricing Configuration - Payor Referring Phys ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_489">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-490&quot;&gt; RPM-490 RPM - Payor - Pricing Configuration - Payor W/O Basis ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_490">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-491&quot;&gt; RPM-491 RPM - Payor - Pricing Configuration - Payor Min W/O Balance ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_491">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-492&quot;&gt; RPM-492 RPM - Payor - Pricing Configuration - Payor W/O Age ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_492">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-493&quot;&gt; RPM-493 RPM - Payor - Pricing Configuration - Payor Filing Time Limit ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_493">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-494&quot;&gt; RPM-494 RPM - Payor - Pricing Configuration - Payor Refiling Time Limit ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_494">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-495&quot;&gt; RPM-495 RPM - Payor - Pricing Configuration - Payor Appeal Time Limit ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_495">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-496&quot;&gt; RPM-496 RPM - Payor - Pricing Configuration - Payor Dx Selection Method ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_496">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-497&quot;&gt; RPM-497 RPM - Payor - Pricing Configuration - Payor Dx Required Checkbox ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_497">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-498&quot;&gt; RPM-498 RPM - Payor - Pricing Configuration - Payor Print Test Name U Listed Procs ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_498">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-499&quot;&gt; RPM-499 RPM - Payor - Pricing Configuration - Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_499">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-500&quot;&gt; RPM-500 RPM - Payor - Pricing Configuration - Run Audit ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_500">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="pyrAbbrev" value="ABC" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-508&quot;&gt; RPM-508 RPM - Payor - Contract Config - Search Contract ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_508">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="*" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-509&quot;&gt; RPM-509 RPM - Payor - Contract Config - Load Contract Id via Contract Search window ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_509">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="*" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	  
+	 
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-510&quot;&gt; RPM-510 RRPM - Payor - Contract Config - Contract Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_510">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-511&quot;&gt; RPM-511 RPM - Payor - Contract Config - Contract ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_511">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-512&quot;&gt; RPM-512 RPM - Payor - Contract Config - Contract Coverage ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_512">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-513&quot;&gt; RPM-513 RPM - Payor - Contract Config - Contract Eff Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_513">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-514&quot;&gt; RPM-514 RPM - Payor - Contract Config - Contract Exp Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_514">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-515&quot;&gt; RPM-515 RPm - Payor - Contract Config - Contract Review Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_515">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-516&quot;&gt; RPM-516 RPM - Payor - Contract Config - Contract Continue Pricing Exp Checkbox ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_516">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-517&quot;&gt; RPM-517 RPM - Payor - Contract Config - Contract Report Form ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_517">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-518&quot;&gt; RPM-518 RPM - Payor - Contract Config - Contract Admin Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_518">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-519&quot;&gt; RPM-519 RPM - Payor - Contract Config - Contract Admin Country ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_519">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-520&quot;&gt; RPM-520 RPM - Payor - Contract Config - Contract Admin Addr1 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_520">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-521&quot;&gt; RPM-521 RPM - Payor - Contract Config - Contract Admin Addr2 ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_521">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-522&quot;&gt; RPM-522 RPM - Payor - Contract Config - Contract Admin Zip ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_522">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-523&quot;&gt; RPM-523 RPM - Payor - Contract Config - Contract Admin City ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_523">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-524&quot;&gt; RPM-524 RPM - Payor - Contract Config - Contract Admin State ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_524">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 	
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-525&quot;&gt; RPM-525 RPM - Payor - Contract Config - Contract Admin Contact ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_525">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-526&quot;&gt; RPM-526 RPM - Payor - Contract Config - Contract Admin Phone ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_526">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-527&quot;&gt; RPM-527 RPM - Payor - Contract Config - Contract Admin Fax ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_527">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-528&quot;&gt; RPM-528 RPM - Payor - Contract Config - Contract Admin Email ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_528">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	 	
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-529&quot;&gt; RPM-529 RPM - Payor - Contract Config - Contract Admin Preferred Contact Method ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_529">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	 
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-530&quot;&gt; RPM-530 RPM - Payor - Contract Config - Payor Assignment Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_530">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-531&quot;&gt; RPM-531 RPM - Payor - Contract Config - Payor Assignment Payor ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_531">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-532&quot;&gt; RPM-532 RPM - Payor - Contract Config - Payor Assignment Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_532">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-533&quot;&gt; RPM-533 RPM - Payor - Contract Config - Contact Detail UserID ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_533">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-534&quot;&gt; RPM-534 RPM - Payor - Contract Config - Contact Detail Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_534">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-535&quot;&gt; RPM-535 RPM - Payor - Contract Config - Contact Detail Info ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_535">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-536&quot;&gt; RPM-536 RPM - Payor - Contract Config - Contact Detail Follow Up Date ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_536">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-537&quot;&gt; RPM-537 RPM - Payor - Contract Config - Contact Detail Follow Up Person ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_537">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-538&quot;&gt; RPM-538 RPM - Payor - Contract Config - Payor Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_538">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-539&quot;&gt; RPM-539 RPM - Payor - Contract Config - Payor Run Audit ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_539">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="contractId" value="DNCONTRACTAODL" />				
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 	 
+</suite>

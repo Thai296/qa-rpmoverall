@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-MessageEngine" preserve-order="true" parallel="tests" thread-count="12"
+       verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="PyrContrct-Send expired message to managers when review_dt lessthan SYSDATE,end_dt=SYSDATE">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_29">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PyrContrct-No message is sent when review_dt lessthan sysdate, end_dt greaterthan sysdate">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_57">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PyrContrct-No message is sent when end_dt lessthan sysdate, review_dt lessthan sysdate">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_59">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnCntct-No message is sent when msg_status =0 and follow_up_dt=null">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_36">
+                    <parameter name="clnId" value="135192"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send scheduled message to assigned user when due_dt > sysdate">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_40">
+                    <parameter name="clnId" value="135193"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send due message to assigned user when due_dt lesstthan (sysdate-days in SS#4)">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_43">
+                    <parameter name="clnId" value="135194"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send message to user when due_dt lessorequals (sysDt-days in SS#4), followUpDt>sysDt">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_44">
+                    <parameter name="clnId" value="135195"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send message when followUpDt=dueDt lessorequals sysDt, msgStatus=0">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_46">
+                    <parameter name="clnId" value="135196"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send message when dueDt>=sysdate-daysInSS#4, followUpDt lessorequals sysDt">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_47">
+                    <parameter name="clnId" value="135197"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send message when followUpDt=dueDt=sysDt, msgStatus=1">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_48">
+                    <parameter name="clnId" value="135198"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Send messages dueDt before sysDt-daysInSS#4, followUpDt=sysDt,msgStatus=1">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_49">
+                    <parameter name="clnId" value="135199"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnCntct-No message is sent when msg_status = 1 and follow_up_dt = null">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_51">
+                    <parameter name="accnId" value="QATESTER20210525101500659"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

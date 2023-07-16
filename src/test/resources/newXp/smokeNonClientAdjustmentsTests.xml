@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Non-Client Adjustments Smoke Suites" preserve-order="true" verbose="1">
+
+		<suite-files>
+			<!--Parallel Suite-->
+ 			<suite-file path="smokeNonClientAdjustmentsTestsP.xml" />
+			<!--Sequential Suite-->
+		 	<suite-file path="smokeNonClientAdjustmentsTestsS.xml" />
+		</suite-files>
+
+</suite>

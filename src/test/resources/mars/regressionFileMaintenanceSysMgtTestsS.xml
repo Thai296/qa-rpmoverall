@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component FileMaintenance System Management Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-478&quot;&gt; RPM-478 : Task Scheduler - Pricing Engine - Not to recreate unposted errors ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_478">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-710&quot;&gt; RPM-710:RPM - Accession - Accession Demographic - Accn sent to Eligibility Engine ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_710">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="accnId" value="AUTOELIGWZJPB2015091417394890" />
+					<parameter name="pyrAbbrev" value="UHC" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-727&quot;&gt; RPM-727:File Maintenance-Task Scheduler-Pricing Engine-Exceptions when checks Incremental Pricing Logic ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_727">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="accnId" value="AUTOPRICING20151019001" />									
+				</include>
+			</methods>
+		</classes>
+	</test>		
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-711&quot;&gt; RPM-711:RPM - Accession - Accession Demographic - Eligible Subscriber Eligibility Check through Elig Engine ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_711">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="accnId" value="AUTOELIGKFBXV20150914174034269" />		
+					<parameter name="pyrAbbrev" value="UHC" />			
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-730&quot;&gt; RPM-730:File Maintenance - Task Scheduler - Pricing Engine - Indigent discount logic is no longer working ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_730">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />	
+					<parameter name="pyrAbbrev" value="COLLECTIONS" />				
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-731&quot;&gt; RPM-731:File Maintenance - Task Scheduler - Eligibility Engine - Eligibility Payor Roster Logic ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_731">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />	
+					<parameter name="pyrAbbrev" value="MCMN" />		
+					<parameter name="subsId" value="A925337679" />	
+					<parameter name="transPyrAbbrev" value="BCBSNY" />		
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+<!-- Comment out the following tests due to can't write a hl7 file to the \log\S:\testenv\qa07\files\hl7\in when run tests from Jenkins@xapp-10
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-732&quot;&gt; RPM-732:File Maintenance - Task Scheduler - OE Posting Engine - SS#1111 is On and SS#1147 is On ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_732">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />										
+					<parameter name="file" value="hl7.txt" /> 
+					<parameter name="formatType" value="hl7" />
+					<parameter name="diagCdType" value="ICD-10-CM (2016)" />
+					<parameter name="testAbbrev1" value="300" />
+					<parameter name="testAbbrev2" value="EYE" />
+					<parameter name="ss1111DataValue" value="1" />
+					<parameter name="ss1147DataValue" value="1" />
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-733&quot;&gt; RPM-733:File Maintenance - Task Scheduler - OE Posting Engine - SS#1111 is On and SS#1147 is Off ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_733">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />										
+					<parameter name="file" value="hl7.txt" /> 
+					<parameter name="formatType" value="hl7" />
+					<parameter name="diagCdType" value="ICD-10-CM (2016)" />
+					<parameter name="testAbbrev1" value="300" />
+					<parameter name="testAbbrev2" value="EYE" />
+					<parameter name="ss1111DataValue" value="1" />
+					<parameter name="ss1147DataValue" value="0" />
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-734&quot;&gt; RPM-734:File Maintenance - Task Scheduler - OE Posting Engine - SS#1111 is Off and SS#1147 is On ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_734">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />										
+					<parameter name="file" value="hl7.txt" /> 
+					<parameter name="formatType" value="hl7" />
+					<parameter name="diagCdType" value="ICD-10-CM (2016)" />
+					<parameter name="testAbbrev1" value="300" />
+					<parameter name="testAbbrev2" value="EYE" />
+					<parameter name="ss1111DataValue" value="0" />
+					<parameter name="ss1147DataValue" value="1" />
+				</include>
+			</methods>
+		</classes> 
+	</test>  
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-735&quot;&gt; RPM-735:File Maintenance - Task Scheduler - OE Posting Engine - SS#1111 is Off and SS#1147 is Off ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceSysMgtTest" />
+			<methods>
+				<include name="testRPM_735">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />										
+					<parameter name="file" value="hl7.txt" /> 
+					<parameter name="formatType" value="hl7" />
+					<parameter name="diagCdType" value="ICD-10-CM (2016)" />
+					<parameter name="testAbbrev1" value="300" />
+					<parameter name="testAbbrev2" value="EYE" />
+					<parameter name="ss1111DataValue" value="0" />
+					<parameter name="ss1147DataValue" value="0" />
+				</include>
+			</methods>
+		</classes> 
+	</test> 
+ -->
+</suite>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ElcPmtProcessingEngine" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="version" value="ANY" />
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+   <test name="Create Pre-Payment">
+        <classes>
+            <class name="com.pfEngines.tests.ElcPmtProcessingEngineTest"/>
+            <methods>
+                <include name="PrePayment">
+                    <parameter name="orderId" value="nonExistID001"/>
+                    <parameter name="pmtAmnt" value="228"/>
+                    <parameter name="cardNumber" value="4111 1111 1111 1111"/>
+                    <parameter name="expMonth" value="7"/>
+                    <parameter name="expYr" value="9"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

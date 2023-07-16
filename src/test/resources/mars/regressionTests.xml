@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RPM: Regression Test" preserve-order="true" verbose="10">
+	<suite-files>
+		<suite-file path="regressionAccessionErrorProcessingTestsP.xml" />
+		<suite-file path="regressionAccessionErrorProcessingTestsS.xml" />
+		<!--  
+		<suite-file path="regressionAccessionOrderProcessingTests.xml" />  
+		-->
+		<suite-file path="regressionAccessionPatientProcessingTestsP.xml" />
+		<suite-file path="regressionAccessionPatientProcessingTestsS.xml" />
+		<suite-file path="regressionAccessionProcessingTestsP.xml" />
+		<suite-file path="regressionAccessionProcessingTestsS.xml" />
+		<suite-file path="regressionClientInquiryTestsS.xml" />
+		<suite-file path="regressionClientInquiryTestsP.xml" />
+		<suite-file path="regressionClientProcessingTestsP.xml" />
+		<suite-file path="regressionClientProcessingTestsS.xml" />
+		<!-- <suite-file path="regressionClientRefundsTests.xml" /> -->
+		<suite-file path="regressionFileMaintenanceOrderProcessingConfigTests.xml" />
+		<!-- <suite-file path="regressionFileMaintenancePricingTests.xml" /> -->
+		<suite-file path="regressionFileMaintenanceSysMgtTestsP.xml" />
+		<suite-file path="regressionFileMaintenanceSysMgtTestsS.xml" />
+		<suite-file path="regressionFileMaintenanceTablesTestsP.xml" />
+		<suite-file path="regressionFileMaintenanceTablesTestsS.xml" />
+		<!-- <suite-file path="regressionFinancialDebuggingAndTestingTests.xml" /> -->
+		<!-- <suite-file path="regressionFinancialEndofMonthClosingPkgTests.xml" /> -->
+		<!-- <suite-file path="regressionFinancialEndofMonthTests.xml" /> -->
+		<suite-file path="regressionPaymentPaymentsTestsP.xml" />
+		<!-- <suite-file path="regressionPayorConsolidationTests.xml" /> -->
+		<suite-file path="regressionPayorDemographicsTestsP.xml" />
+		<suite-file path="regressionPayorDemographicsTestsS.xml" />
+		<suite-file path="regressionLoginTestsP.xml" />
+		<suite-file path="regressionPatientStatementTests.xml" />
+	</suite-files>
+</suite>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Payor Demographics Tests Sequential" preserve-order="true" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+   <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-50&quot;&gt; RPM_50 RPM - Payor - Group Demographics - Group ID Patient - Primary Service Id display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_50">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Patient" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-52&quot;&gt; RPM_52 RPM - Payor - Group Demographics - Group ID Non Patient - Primary Service Id display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_52">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="groupId" value="Contracted" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-423&quot;&gt;  RPM-423:RPM - Payor - Payor Demographics - Remove Add1 and Zip for existing Patient group record ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_423">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	  
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-505&quot;&gt; RPM-505:Payor - Group Demographics - Patient Group Add Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_505">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />								
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-506&quot;&gt; RPM-506:Payor - Group Demographics - Patient Group Delete Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_506">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-507&quot;&gt; RPM-507:Payor - Group Demographics - Patient Group Demographic Info display ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_507">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-540&quot;&gt;  RPM-540:Payor - Group Demographics - Client Group Client Dunning Option ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_540">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>      
+ 
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-425&quot;&gt; RPM-425:RPM - Payor - Payor Demographics - Add1 and Zip not required for Client group ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_425">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-418&quot;&gt; RPM-418:RPM - Payor - Payor Demographics - Add1 and Zip not required for Patient group ">
+		<classes>
+			<class name="com.mars.tests.RegressionPayorDemographicsTest" />
+			<methods>
+				<include name="testRPM_418">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />						
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

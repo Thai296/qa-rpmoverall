@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Paralel Suite-->
+<suite name="Client Transaction Detail" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="45"/>
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+
+	<listeners>
+		<listener class-name='com.xifin.utils.RetryListener'/>
+	</listeners>
+
+	<test name="Search Client - Search Client with valid data for Client Info Section">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_338">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Search Client - Search NPI-Search NPI with Entity is Client">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_348">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements - Verify filters function in Previous Statement table">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_356">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements - View Statement with Excel Format">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_358">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Statements - View Statement with PDF Format">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_359">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Account Aging Balance - Verify data">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_354">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Client Payment-View client Payment ">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_371">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Documents-View any document in the grid">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_405">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Adjustments - Create Client Adj with valid data btn">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_376">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Adjustment - Verify Canned note btn">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_379">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Reconciled Statement - View Reconciled statement in PDF">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_403">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name=" Reconciled Statement - View Reconciled statement in Excel">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_404">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<!--	<test name="Client Accn Detail-Client payment-Reset new payment">-->
+	<!--		<classes>-->
+	<!--			<class name="com.newXp.tests.SmokeClientTransactionDetailTest" />-->
+	<!--			<methods>-->
+	<!--				<include name="testXPR_370">-->
+	<!--					<parameter name="cardNumber" value="4111 1111 1111 1111"/>-->
+	<!--					<parameter name="expirationMonth" value="7"/>-->
+	<!--					<parameter name="expirationYear" value="9"/>-->
+	<!--					<parameter name="paymentAmount" value="5.67"/>-->
+	<!--				</include>-->
+	<!--			</methods>-->
+	<!--		</classes>-->
+	<!--	</test>-->
+
+	<test name="Verify View Document button">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_399">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail - Client Bill Accn - View Accn detail page">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_388">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Client Accn Detail-Statement date-Create Client Payment with valid input">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_363">
+					<parameter name="paymentAmount" value="6.78"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<!--       <test name="Client Payment-credit payment with valid data">-->
+	<!--           <classes>-->
+	<!--               <class name="com.newXp.tests.SmokeClientTransactionDetailTest" />-->
+	<!--               <methods>-->
+	<!--                   <include name="testXPR_407">-->
+	<!--                       <parameter name="cardNumber" value="4111 1111 1111 1111"/>-->
+	<!--                       <parameter name="expirationMonth" value="7"/>-->
+	<!--                       <parameter name="expirationYear" value="9"/>-->
+	<!--                       <parameter name="paymentAmount" value="6"/>-->
+	<!--                   </include>-->
+	<!--               </methods>-->
+	<!--           </classes>-->
+	<!--       </test>-->
+
+	<test name="Client Accn Detail-Client Payment-Cancel New payment">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientTransactionDetailTest"/>
+			<methods>
+				<include name="testXPR_369">
+					<parameter name="cardNumber" value="4111 1111 1111 1111"/>
+					<parameter name="expirationMonth" value="7"/>
+					<parameter name="expirationYear" value="9"/>
+					<parameter name="paymentAmount" value="7.89"/>
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

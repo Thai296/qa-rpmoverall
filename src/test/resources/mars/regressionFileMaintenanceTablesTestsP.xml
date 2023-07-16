@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component FileMaintenance Tables Tests Parallel" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-460&quot;&gt; RPM_460 RPM - File Maintenance - Tables - Physician License - State License - Add Row ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_460">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>
+   
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-461&quot;&gt; RPM_461 RPM - File Maintenance - Tables - Physician License - Physician UPIN ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_461">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-462&quot;&gt; RPM_462 RPM - File Maintenance - Tables - Physician License - Physician Last Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_462">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-463&quot;&gt; RPM_463 RPM - File Maintenance - Tables - Physician License - Physician First Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_463">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-464&quot;&gt; RPM_464 RPM - File Maintenance - Tables - Physician License - Physician Address 1 ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_464">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-465&quot;&gt; RPM_465 RPM - File Maintenance - Tables - Physician License - Physician Zip ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_465">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-466&quot;&gt; RPM_466 RPM - File Maintenance - Tables - Physician License - Physician Credentials ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_466">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-467&quot;&gt; RPM_467 RPM - File Maintenance - Tables - Physician License - Taxonomy Code ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_467">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-468&quot;&gt; RPM_468 RPM - File Maintenance - Tables - Physician License - Taxonomy Provider Type Description ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_468">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-469&quot;&gt; RPM_469 RPM - File Maintenance - Tables - Physician License - Taxonomy Classification ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_469">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-480&quot;&gt; RPM_480 RPM - File Maintenance - Tables - Physician License - Taxonomy Specialization ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_480">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-481&quot;&gt; RPM_481 RPM - File Maintenance - Tables - Taxomony Code - Taxonomy Definition ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_481">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-482&quot;&gt; RPM_482 RPM - File Maintenance - Tables - Taxomony Code - Taxonomy Notes ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_482">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-471&quot;&gt; RPM-471 : File Maintenance - Physician License - Row number and count in Affiliated Licenses grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_471">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-472&quot;&gt; RPM-472 : File Maintenance-Physician License-Row number and count in Client Specific Affiliated Licenses grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_472">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-473&quot;&gt; RPM-473 : File Maintenance-Physician License-Row number and count in OIG Exclusions grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_473">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-474&quot;&gt; RPM-474 : File Maintenance-Physician License-Row number and count in Payor Group Exclusion grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_474">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-475&quot;&gt; RPM-475:File Maintenance-Physician License-Row number and count in Payor Exclusion grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_475">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-476&quot;&gt; RPM-476 : File Maintenance-Physician License-Row number and count in Physician Cross References grid ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_476">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	 
+	
+  	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-542&quot;&gt;  RPM-542:File Maintenance - Tables - Reason Code - Reason Code Description display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_542">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>		
+ 
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-543&quot;&gt; RPM-543:File Maintenance - Tables - Reason Code - Prioritized Actions display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_543">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-548&quot;&gt; RPM-548:File Maintenance - Tables - Reason Code - Final Actions display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_548">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>		
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-546&quot;&gt; RPM-546:File Maintenance - Tables - Reason Code -Not Updateable Reason Code  ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_546">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-544&quot;&gt; RPM-544:File Maintenance - Tables - Reason Code - Payor-Specific Overrides ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_544">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-550&quot;&gt; RPM-550:File Maintenance - Tables - Reason Code - Payor Group-Specific Overrides ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_550">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>		
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-551&quot;&gt; RPM-551:File Maintenance - Tables - Procedure Code - Procedure Code description display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_551">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	 	 
+</suite>

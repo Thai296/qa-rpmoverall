@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-DocUploadEngine" preserve-order="true" parallel="tests" thread-count="15" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="420"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="DOCUMENT-ContentType=text/plain, doc_category=Accession">
+        <parameter name="fileName" value="accn153medrecs.txt"/>
+        <parameter name="contentType" value="text/plain"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="153"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_145"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-Invalid Doc Type">
+        <parameter name="fileName" value="accn153medrecs.zip"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_146"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-File contains duplicate contents">
+        <parameter name="fileName" value="accn148medrecs.txt"/>
+        <parameter name="fileName2" value="accn147medrecs.txt"/>
+        <parameter name="contentType" value="text/plain"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="148"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_147"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="FOLDER-DocTyp=doc, DocCategory=Accession">
+        <parameter name="fileName" value="accn149medrecs.doc"/>
+        <parameter name="contentType" value="application/msword"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="149"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_163"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-ContentType=pdf, doc_category=Client">
+        <parameter name="fileName" value="Cln100medrecs.pdf"/>
+        <parameter name="contentType" value="application/pdf"/>
+        <parameter name="docCategory" value="Client"/>
+        <parameter name="docCategoryId" value="100"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_550"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-ContentType=jpg, doc_category=Payor">
+        <parameter name="fileName" value="PyrPmedrecs.jpg"/>
+        <parameter name="contentType" value="image/jpeg"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="true"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_551"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-ContentType=xlsx, doc_category=Accession">
+        <parameter name="fileName" value="accn153medrecs.xlsx"/>
+        <parameter name="contentType" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="153"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_552"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-ContentType=docx, doc_category=Accession">
+        <parameter name="fileName" value="accn153medrecs.docx"/>
+        <parameter name="contentType" value="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="153"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_553"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="DOCUMENT-ContentType=gif, doc_category=Accession">
+        <parameter name="fileName" value="accn153medrecs.gif"/>
+        <parameter name="contentType" value="image/gif"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="153"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_554"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="METADATA-ContentType=text/plain, Doc_Category=Client">
+        <parameter name="fileName" value="metadata_DocUploadEngineTest.txt"/>
+        <parameter name="contentType" value="text/plain"/>
+        <parameter name="docCategory" value="Client"/>
+        <parameter name="docCategoryId" value="100"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="comment" value="THIS IS A COMMENT FROM QA AUTOMATION METADATA TEST CASE"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_152"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="FOLDER-DocTyp=doc, No Category and Category ID, still process file">
+        <parameter name="fileName" value="149medrecs.doc"/>
+        <parameter name="contentType" value="application/msword"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="true"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_749"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="FOLDER-DocTyp=doc, ACCN Category and AccnID does not exist, still process file">
+        <parameter name="fileName" value="accn1511medrecs.doc"/>
+        <parameter name="contentType" value="application/msword"/>
+        <parameter name="docCategory" value="Accession"/>
+        <parameter name="docCategoryId" value="1511"/>
+        <parameter name="docStoreTyp" value="medrecs"/>
+        <parameter name="isInProcess" value="true"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testPFER_750"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Migrate 835 and EOB Files to Doc Store">
+        <parameter name="fileName" value="459221207_ERA_835_5010_20171002.835.EXACTSCIRETEST9.01|459221207_ERA_835_5010_20171002.835.EXACTSCIRETEST9.01-DISCR-8615.pdf|459221207_ERA_835_5010_20171002.835.EXACTSCIRETEST9.01-8615.pdf"/>
+        <parameter name="contentType" value="text/plain|application/pdf|application/pdf"/>
+        <parameter name="docCategory" value="System"/>
+        <parameter name="docCategoryId" value="203"/>
+        <parameter name="docStoreTyp" value="835|discrepancyreport|eobreport"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testMigrate835sAndDepositPdfs"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Migrate Non-Client Statement File to Doc Store">
+        <parameter name="fileName" value="BCCA5010A1_ACME_20221204_00_05_12.txt"/>
+        <parameter name="contentType" value="text/plain"/>
+        <parameter name="docCategory" value="System"/>
+        <parameter name="docStoreTyp" value="thirdpartynonptstmt"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testMigrateNonClientStatementFile"/>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Migrate Patient Statement File to Doc Store">
+        <parameter name="fileName" value="PtStmtPdf_20221207_20_21_44.pdf"/>
+        <parameter name="contentType" value="application/pdf"/>
+        <parameter name="docCategory" value="System"/>
+        <parameter name="docStoreTyp" value="xifinptstmt"/>
+        <parameter name="isInProcess" value="false"/>
+        <classes>
+            <class name="com.pfEngines.tests.DocUploadEngineTest"/>
+            <methods>
+                <include name="testMigratePatientStatementFile"/>
+            </methods>
+        </classes>
+    </test>
+</suite>

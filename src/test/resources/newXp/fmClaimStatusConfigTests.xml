@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Claim Status Config" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+    <parameter name="port" value="4444" />
+    <parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+    <parameter name="version" value="ANY" />
+    <parameter name="browser" value="chrome" />
+    <parameter name="xapEnv" value="XAP" />
+    <parameter name="disableBrowserPlugins" value="true"/>
+    <parameter name="ssoXpUsername" value="qatester@xifin.com" />
+    <parameter name="ssoXpPassword" value="qatester123" />
+
+    <!--	// 	Disabling test - we do not want to modify Claim Status configurations for random payors, as it will cause issues with other
+    //  Automation suites. These tests should be re-written to use a new, dedicated Payor ID.
+    -->
+    <!--	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_737&quot;&gt; XPR-737 - ClaimStatusConfig - Add Payor setup with valid data input ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_737">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test> -->
+    <!--	-->
+    <!--	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_738&quot;&gt; XPR-738 - ClaimStatusConfig - Add Payor setup with Active is uncheck ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_738">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test> -->
+    <!--	-->
+    <!--	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_739&quot;&gt; XPR-739 - ClaimStatusConfig - Update Outgoing Payor with valid PayorId ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_739">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test> -->
+    <!--	-->
+    <!--	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_740&quot;&gt; XPR-740 - ClaimStatusConfig - Delete Payor in the table ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_740">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>   -->
+    <!--	-->
+    <!--	&lt;!&ndash; -->
+    <!--	 * Test XPR_752 is disabled because ODS enabled (SS#26 = 1) does not work in our QA environment-->
+    <!--	 * If SS#26 = 1 (ODS enabled). Audit screen return Critical Error-->
+    <!--	 * If SS#26 = = (ODS disabled). Audit screens to fail to display-->
+    <!--	 * @throws Throwable-->
+    <!--	 */&ndash;&gt;-->
+    <!--	&lt;!&ndash;<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_752&quot;&gt; XPR-752 - ClaimStatusConfig - Verify Run Audit Btn "> -->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_752">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!-- 	</test>  &ndash;&gt;-->
+    <!--	-->
+    <!-- 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=testXPR&amp;item=testcase&amp;id=testXPR_753&quot;&gt; XPR-753 - ClaimStatusConfig - Search outgoing payorId ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.ClaimStatusConfigTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_753">-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test> -->
+    <!--	-->
+    <test name="Select PayorId from Search Result page ">
+        <classes>
+            <class name="com.newXp.tests.ClaimStatusConfigTest" />
+            <methods>
+                <include name="testXPR_754">
+                    <parameter name="project" value="Payor-WS-Prod-soapui-project-SmokeTests-Utils.xml" />
+                    <parameter name="testSuite" value="Payor WS_RequestMessage_CreatePayor" />
+                    <parameter name="testCase" value="Payor WS-RequestMessage-CreatePayor-CreateNewPayor" />
+                    <parameter name="propLevel" value="TestCase" />
+                    <parameter name="propName" value="newpayorID" />
+                    <parameter name="wsUsername" value="clndoc" />
+                    <parameter name="wsPassword" value="clndoc" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Help Button">
+        <classes>
+            <class name="com.newXp.tests.ClaimStatusConfigTest" />
+            <methods>
+                <include name="testXPR_755">
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>

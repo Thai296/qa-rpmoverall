@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-ClnCorrespEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+    <test name="File_Typ_Id=4 and Creat_Dt is null and Pal_Cln_Test_Prc.size() greater than 0 ">
+        <classes>
+            <class name="com.pfEngines.tests.ClientCorrespondenceEngineTest"/>
+            <methods>
+                <include name="testPFER_476">
+                    <parameter name="formatType" value="clnLetter"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

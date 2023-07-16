@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Eligibility Engine Test External Suite" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="120"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="DORADO eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2018070301"/>
+        <parameter name="pyrAbbrv" value="MCMA"/>
+        <parameter name="eligSvcId" value="Dorado"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testXPR_1551"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- disabled test case due to Availity url/port time out within Xifin network -->
+<!--    <test name="AVAILITY eligibility service is up and returning valid eligibility response">-->
+<!--        <parameter name="accnId" value="QATESTERACCNDETAIL2018070502"/>-->
+<!--        <parameter name="pyrAbbrv" value="MCUGS"/>-->
+<!--        <parameter name="eligSvcId" value="Availity-5010"/>-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">-->
+<!--                <methods>-->
+<!--                    <include name="testXPR_1550"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="OPTUM eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2018070503"/>
+        <parameter name="pyrAbbrv" value="MCMI"/>
+        <parameter name="eligSvcId" value="OPTUM-5010"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testXPR_1552"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PNT-5010 eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2018070506"/>
+        <parameter name="pyrAbbrv" value="MCWA"/>
+        <parameter name="eligSvcId" value="PNT-5010"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testXPR_1548"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hmsa-5010 eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERACCNDETAIL2018070508"/>
+        <parameter name="pyrAbbrv" value="BSHI"/>
+        <parameter name="eligSvcId" value="Hmsa-5010"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testXPR_1549"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BCBSAZ-5010 eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERZZFQS20200901161043771"/>
+        <parameter name="pyrAbbrv" value="BSAZ-ELIG"/>
+        <parameter name="eligSvcId" value="BCBSAZ-5010"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testBcbsAz5010"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="BCBSTN eligibility service is up and returning valid eligibility response">
+        <parameter name="accnId" value="QATESTERCCGQX20220702185103940"/>
+        <parameter name="pyrAbbrv" value="BCBSTNM-EXTELIG"/>
+        <parameter name="eligSvcId" value="BCBSTN"/>
+        <classes>
+            <class name="com.pfEngines.tests.EligibilityEngineExternalTest">
+                <methods>
+                    <include name="testBcbsTn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

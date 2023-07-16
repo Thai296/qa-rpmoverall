@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="File Maintenance Submission and Remittance Screen" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <test name="Statement File Stored in DocStore">
+        <parameter name="submFileSeqId" value="111152419"/>
+        <classes>
+            <class name="com.newXp.tests.SmokeSubmissionAndRemittanceTest">
+                <methods>
+                    <include name="testSubmissionFilesPulledFromDocStore"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+	

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Patient Notification Config" preserve-order="true" parallel="false" thread-count="1" verbose="10">
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="60"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+
+	<test name="Add Letter with All Inclusions">
+		<classes>
+			<class name="com.newXp.tests.SmokePatientNotificationConfigurationTest">
+				<methods>
+					<include name="testXPR_1777"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add Letter with all Exclusions in it">
+		<classes>
+			<class name="com.newXp.tests.SmokePatientNotificationConfigurationTest">
+				<methods>
+					<include name="testXPR_1778"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add and Delete Letter with all Exclusions in it">
+		<classes>
+			<class name="com.newXp.tests.SmokePatientNotificationConfigurationTest">
+				<methods>
+					<include name="testXPR_1779"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Veryfy Help page on Pt Notification Letter">
+		<classes>
+			<class name="com.newXp.tests.SmokePatientNotificationConfigurationTest">
+				<methods>
+					<include name="testXPR_1780"/>
+				</methods>
+			</class>785
+		</classes>
+	</test>
+</suite>

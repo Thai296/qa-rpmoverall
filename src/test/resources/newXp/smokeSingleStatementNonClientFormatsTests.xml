@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single Statement jsp - Non-Client Statement Formats" preserve-order="true" parallel="tests"
+       thread-count="10" verbose="10">
+
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <!--<listeners>-->
+    <!--<listener class-name='com.xifin.utils.RetryListener'/>-->
+    <!--</listeners>-->
+
+    <test name="Generate Secondary pyr Cms1500 + EOB report">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT04"/>
+        <parameter name="primPyrAbbrv" value="AETNA"/>
+        <parameter name="secondPyrAbbrv" value="UHC"/>
+        <parameter name="secondSubId" value="000000102667"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="procs" value="82947 84153 88325"/>
+        <parameter name="fac" value="ACME LAB"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1946"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Generate UB04, corrected claim type">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT02"/>
+        <parameter name="primPyrAbbrv" value="BSMO"/>
+        <parameter name="submSvcAbbrev" value="UB04"/>
+        <parameter name="fac" value="ACME LAB"/>
+        <parameter name="supportedBillTypes" value="851,857,858"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1947"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Generate Patient Statement ">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT03"/>
+        <parameter name="primPyrAbbrv" value="UHC"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="submSvcAbbrev" value="PtDelimitedFile"/>
+        <parameter name="fac" value="Acme Lab"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1948"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MayoPtStmtPdf - displaying logo on the Patient Statement - logo is enabled ">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT05"/>
+        <parameter name="primPyrAbbrv" value="P"/>
+        <parameter name="subId" value="11111111665"/>
+        <parameter name="submSvcAbbrev" value="MayoPtStmtPdf"/>
+        <parameter name="facAbbrev" value="NWIC"/>
+        <parameter name="expectedFile" value="testImageLogoPFER_694Myriad.png"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1969"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GenericPtStmt - displaying logo on the Patient Statement - logo is enabled - SYSTEM_SETTING_OVERRIDE_BY_FAC and SS 1523 - Not Main Fac">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT06"/>
+        <parameter name="primPyrAbbrv" value="P"/>
+        <parameter name="subId" value="11111111665"/>
+        <parameter name="submSvcAbbrev" value="PDFPTLTRNOLDGR"/>
+        <parameter name="facAbbrev" value="NWIC"/>
+        <parameter name="expectedFile" value="testImageLogoPFER_695Assurex.png"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1970"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PDFPTLTR - displaying Main Fac logo (SS1523) on the Patient Statement - NO SYSTEM_SETTING_OVERRIDE_BY_FAC;/a&gt;">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT07"/>
+        <parameter name="primPyrAbbrv" value="P"/>
+        <parameter name="subId" value="11111111665"/>
+        <parameter name="submSvcAbbrev" value="PDFPTLTR"/>
+        <parameter name="facAbbrev" value="MEMHOSP"/>
+        <parameter name="expectedFile" value="testImageLogoPFER_696.png"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_1971"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Generate Cms1500, Box 31 is displaying signature from PYR.HCFA_SIGNATURE">
+        <parameter name="accnId" value="QATESTERSINGLSTATNONCLNT08"/>
+        <parameter name="primPyrAbbrv" value="BSAZ"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="fac" value="ACME LAB"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testXPR_2045"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cms1500 No Submit to Payor Checked">
+        <parameter name="accnId" value="QATESTER20200626021340575"/>
+        <parameter name="primPyrAbbrv" value="MCUGS"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testSingleStatementWithNoSubmitToPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="XP Accession Single Statement Test Patient Statement With No Submit to Payor">
+        <parameter name="accnId" value="QATESTERYDXRV20211215040106675"/>
+        <parameter name="primPyrAbbrv" value="P"/>
+        <parameter name="submSvcAbbrev" value="PtStmtPdf"/>
+        <classes>
+            <class name="com.newXp.tests.SingleStatementNonClientFormatsTests">
+                <methods>
+                    <include name="testSingleStatementWithNoSubmitToPayor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

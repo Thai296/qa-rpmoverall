@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LineItemDispute" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+	<parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="ssoUsername" value="qatester@xifin.com" />
+	<parameter name="ssoPassword" value="qatester123" />
+	<parameter name="disableBrowserPlugins" value="true" />
+	<parameter name="clientPortalUsername" value="clnuser@qa07.com" />
+	<parameter name="mailUsername" value="" />
+	<parameter name="mailPassword" value="" />
+	
+  <test name="Verify that a new grid Dispute Notifications should be displayed correct">
+    <classes>
+      <class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+      	<methods>
+      		<include name="verifyGridDisputeNotificationDisplayedCorrect" />
+      	</methods>
+      </class>
+    </classes>
+  </test>
+  
+  <test name="Verify that a new row should be added on the cln_invoice_dispute_status_email table when the user updates disputes status on the table">
+    <classes>
+      <class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+      	<methods>
+      		<include name="verifyNewRowAddedWhenUserUpdatesDisputesStatus" />
+      	</methods>
+      </class>
+    </classes>
+  </test>
+  
+  <test name="Verify that the cln_invoice_dispute_status_email table should be overwrited when the user update the existing data">
+    <classes>
+      <class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+      	<methods>
+      		<include name="verifyDisputeStatusOverwritedWhenUserUpdateExistingData" />
+      	</methods>
+      </class>
+    </classes>
+  </test>
+
+	<test name="Verify that the data should NOT be saved on the new table cln_invoice_dispute_status_email">
+		<classes>
+			<class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+				<methods>
+					<include name="verifyDataNotSaveOnTheNewTable" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+  
+  <test name="Verify that the Send Notifications button should be disabled when no selected client">
+    <classes>
+      <class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+      	<methods>
+      		<include name="verifySendNotificationButtonDisabledWhenNoSelectedClient" />
+      	</methods>
+      </class>
+    </classes>
+  </test>
+  
+  <test name="Verify the clients dropdownlist should be automatically cleared when switching between All Clients and the specific clients">
+    <classes>
+      <class name="com.newXp.tests.SmokeClientLineItemDisputeTest">
+      	<methods>
+      		<include name="verifyTheClientShouldBeClearedWhenSwitchingToAllClients" />
+      	</methods>
+      </class>
+    </classes>
+  </test>
+</suite>

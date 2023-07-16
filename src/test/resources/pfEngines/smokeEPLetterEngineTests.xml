@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpLetterEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="clnAbbrev1" value="777"/>
+    <parameter name="clnAbbrev2" value="ESPHYS"/>
+    <parameter name="clnAbbrev3" value="888"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="Generate Letter with Type: PATIENT ">
+        <classes>
+            <class name="com.pfEngines.tests.EPLetterEngineTest"/>
+            <methods>
+                <include name="testPFER_501">
+                    <parameter name="formatType" value="epPatient"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWOClient"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Generate Letter with Type: PATIENTPULL ">
+        <classes>
+            <class name="com.pfEngines.tests.EPLetterEngineTest"/>
+            <methods>
+                <include name="testPFER_502">
+                    <parameter name="formatType" value="epPatient"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWOClient"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Generate Letter with Type: CLIENT ">
+        <classes>
+            <class name="com.pfEngines.tests.EPLetterEngineTest"/>
+            <methods>
+                <include name="testPFER_503">
+                    <parameter name="formatType" value="epClient"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase" value="Accession WS-CreateAccession-CreateNewAccessionWOClient"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+    <test name="Generate Appeal Letter ">
+        <classes>
+            <class name="com.pfEngines.tests.EPLetterEngineTest"/>
+            <methods>
+                <include name="testPFER_525">
+                    <parameter name="errCdId" value="85675"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNewAccessionWithClnPerformBillingAssignmentOn"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Generate Letter with Type: CLIENTPULL ">
+        <classes>
+            <class name="com.pfEngines.tests.EPLetterEngineTest"/>
+            <methods>
+                <include name="testPFER_504">
+                    <parameter name="formatType" value="epClient"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-CreateAccession-CreateNewAccessionWOClient"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="Generate Letter with Type: EMAIL ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_505">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: NO EMAIL ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_506">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!-- 	<test name="Generate Letter with Type: PSC ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_507">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: PSCPULL ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_508">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: FAX ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_509">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="888" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: NO FAX ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_520">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: SFAX ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_510">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="888" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+
+    <!--	<test name="Generate Letter with Type: EFAX ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_511">-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="888" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="Generate Letter with Type: EFAX NO FAX ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_522">-->
+    <!--						<parameter name="email" value="qatester@xifin.com" />-->
+    <!--						<parameter name="password" value="qatester123" />-->
+    <!--						<parameter name="eType" value="EpLetterEngine" />-->
+    <!--						<parameter name="xapEnv" value="XAP" />-->
+    <!--						<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+    <!--	<test name="SKIPS -EMAIL ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_512">-->
+    <!--						<parameter name="email" value="qatester@xifin.com" />-->
+    <!--						<parameter name="password" value="qatester123" />-->
+    <!--						<parameter name="eType" value="EpLetterEngine" />-->
+    <!--						<parameter name="xapEnv" value="XAP" />-->
+    <!--						<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--						<parameter name="formatType" value="epClient" />-->
+    <!--						<parameter name="clnAbbrev" value="777" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+    <!---->
+    <!--<test name="SKIPS -EMAIL_NO_EMAIL_SPECIFIED ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_513">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />																-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />	-->
+    <!--<parameter name="clnAbbrev" value="777" />				-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="SKIPS -FAX ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_514">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />																-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />	-->
+    <!--<parameter name="clnAbbrev" value="888" />				-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+    <!---->
+    <!--<test name="SKIPS -FAX_NO_FAX_SPECIFIED ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_515">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />																-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />	-->
+    <!--<parameter name="clnAbbrev" value="777" />				-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="SKIPS -EFAX ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_516">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />																-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />	-->
+    <!--<parameter name="clnAbbrev" value="888" />				-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>	-->
+
+    <!--<test name="SKIPS -SFAX ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_517">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />																-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />	-->
+    <!--<parameter name="clnAbbrev" value="888" />				-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>		-->
+
+    <!--<test name="SKIPS -CLIENT ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_518">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />-->
+    <!--<parameter name="clnAbbrev" value="888" />-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="SKIPS -CLIENT_PULL ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_519">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />-->
+    <!--<parameter name="clnAbbrev" value="777" />-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="Generate Letter with Type: ClientTOA, SummaryTOA ">-->
+    <!--<classes>-->
+    <!--<class name="com.pfEngines.tests.EPLetterEngineTest" />-->
+    <!--<methods>-->
+    <!--<include name="testPFER_500">-->
+    <!--<parameter name="email" value="qatester@xifin.com" />-->
+    <!--<parameter name="password" value="qatester123" />-->
+    <!--<parameter name="eType" value="EpLetterEngine" />-->
+    <!--<parameter name="xapEnv" value="XAP" />-->
+    <!--<parameter name="engConfigDB" value="SSO_APP_STAGING" />-->
+    <!--<parameter name="formatType" value="epClient" />-->
+    <!--<parameter name="clnAbbrev" value="888" />-->
+    <!--</include>-->
+    <!--</methods>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+</suite>

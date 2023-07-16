@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RPM: Smoke Test Suites" preserve-order="true" verbose="10">
+
+		<suite-files>
+   			<suite-file path="smokeTestsP.xml" />
+			<suite-file path="smokeTestsS.xml" />
+		</suite-files>
+
+</suite>

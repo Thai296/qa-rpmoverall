@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Eligibility EP Search" preserve-order="true" parallel="tests" thread-count="10"
+       verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="150"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="No Transl Rule, SubId update setup - Rejected response - SubId is updated">
+        <parameter name="accnId" value="QATESTEREPSEARCH2019012301"/>
+        <parameter name="origPyrAbbrv" value="MDCA"/>
+        <parameter name="jurisdPyr" value="BCMD"/>
+        <parameter name="origSubId" value="A914022193T1619"/>
+        <parameter name="subIdFrom271" value="SUBFROM217TC1896"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityEPSearchTest">
+                <methods>
+                    <include name="testXPR_1896"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demo (EPI) Data is updated - mixed case">
+        <parameter name="accnId" value="QATESTEREPSEARCH2019012303"/>
+        <parameter name="origPyrAbbrv" value="XYZ"/>
+        <parameter name="patientFNm" value="PT FIRSTN"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityEPSearchTest">
+                <methods>
+                    <include name="testXPR_1897"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Eligibility check is ELIGIBLE, Patient and Insured Demographic Data is not updated ">
+        <parameter name="accnId" value="QATESTEREPSEARCH2019012302"/>
+        <parameter name="origPyrAbbrv" value="BCBSNJ"/>
+        <parameter name="patientFNm" value="PT FIRSTN"/>
+        <parameter name="patientLNm" value="PT LASTN"/>
+        <parameter name="patientAddr1" value="PATIENT ADDRESS"/>
+        <parameter name="patientAddr2" value="APT UPDATED"/>
+        <parameter name="patientSex" value="2"/>
+        <parameter name="patientCity" value="LOS ANGELES"/>
+        <parameter name="patientZipId" value="92104"/>
+        <parameter name="subscriberId" value="000000101"/>
+        <parameter name="relshpId" value="2"/>
+        <parameter name="insuredFNm" value="INSFNAME UPDATED"/>
+        <parameter name="insuredLNm" value="INSLN UPDATED"/>
+        <parameter name="insuredAddr1" value="INS ADDRESS UPD"/>
+        <parameter name="insuredAddr2" value="APT UPDATED"/>
+        <parameter name="insuredSex" value="2"/>
+        <parameter name="insuredCity" value="LOS ANGELES"/>
+        <parameter name="insuredZipId" value="92104"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityEPSearchTest">
+                <methods>
+                    <include name="testXPR_1898"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Eligibility check is ELIGIBLE, Primary Pyr is translated,Pmnts and Adjs are persisted in accn_pyr_del">
+        <parameter name="accnId" value="QATESTEREPSEARCH2019012304"/>
+        <parameter name="origPyrAbbrv" value="AETNA"/>
+        <parameter name="origSubId" value="A2019012304"/>
+        <parameter name="origPyrPayments" value="2017-10-03,2,$0.50,8920,1;2017-10-03,2,$0.00,8920,1;"/>
+        <parameter name="origPyrAdjustments" value="2019-01-23,2,$-0.50;"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityEPSearchTest">
+                <methods>
+                    <include name="testXPR_1900"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EP Search - Default Svc Type code is used if Additional svc_type_code is not in 271 file">
+        <parameter name="accnId" value="QATESTEREPSEARCH2019012305"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="additionalSvcTyps" value="45"/>
+        <parameter name="defaultSvcTypCd" value="5"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityEPSearchTest">
+                <methods>
+                    <include name="testXPR_1899"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

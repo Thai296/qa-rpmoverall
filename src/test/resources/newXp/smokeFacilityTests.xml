@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Facility" preserve-order="true" parallel="tests" thread-count="7" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444"/>
+	<parameter name="timeout" value="30"/>
+	<parameter name="platform" value="WINDOWS"/>
+	<parameter name="browser" value="chrome"/>
+	<parameter name="version" value="ANY"/>
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+	<parameter name="xapEnv" value="XAP"/>
+	<parameter name="disableBrowserPlugins" value="true"/>
+	<parameter name="facAbbrev1" value="AUTOFACXPR956"/>
+	<parameter name="facAbbrev2" value="AUTOFACXPR957"/>
+	<parameter name="facAbbrev3" value="AUTOFACXPR979"/>
+	<parameter name="facAbbrev4" value="AUTOFACXPR959"/>
+
+	<test name="Add Facility with Type is Hospital Lab">
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_957">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify all Helps">
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_978">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Verify Run Audit button">
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_979">
+				</include>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="NPI Search, NPI Global Search and NPPES Search">
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_981">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<test name="Add Facility with Type is Draw Station">
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_956">
+				</include>
+			</methods>
+		</classes>
+	</test>
+	<!--	<test name="Add Facility with Type is Draw Station">-->
+	<!--		<classes>-->
+	<!--			<class name="com.newXp.tests.FacilityTest" />-->
+	<!--			<methods>-->
+	<!--				<include name="testXPR_956">-->
+	<!--				</include>-->
+	<!--			</methods>-->
+	<!--		</classes>-->
+	<!--	</test>-->
+
+	<test name="Add Facility with Type is Reference Lab">
+		<parameter name="facTyp" value="Reference Lab"/>
+		<classes>
+			<class name="com.newXp.tests.FacilityTest"/>
+			<methods>
+				<include name="testXPR_959">
+				</include>
+			</methods>
+		</classes>
+	</test>
+</suite>

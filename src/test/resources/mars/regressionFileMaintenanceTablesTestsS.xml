@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component FileMaintenance Tables Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-484&quot;&gt; RPM-484 : File Maintenance - Tables - Client Billing Category - Add Category pop-up window shows and function ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_484">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-485&quot;&gt; RPM-485:File Maintenance - Tables - Client Billing Category - Edit Client Billing Category ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_485">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-501&quot;&gt; RPM-501 : File Maintenance - Tables - Client Billing Category - Do not allow duplicate Client Billing Category ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_501">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />							
+				</include>
+			</methods>
+		</classes>
+	</test>	
+  
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-542&quot;&gt;  RPM-542:File Maintenance - Tables - Reason Code - Reason Code Description display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_542">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>		
+ 
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-543&quot;&gt; RPM-543:File Maintenance - Tables - Reason Code - Prioritized Actions display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_543">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-548&quot;&gt; RPM-548:File Maintenance - Tables - Reason Code - Final Actions display ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_548">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+				</include>
+			</methods>
+		</classes>
+	</test>		
+ 	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-547&quot;&gt; RPM-547:File Maintenance - Tables - Reason Code - Move to Specific Payor Action ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_547">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-545&quot;&gt; RPM-545:File Maintenance - Tables - Reason Code - Add Reason Code Cross Reference ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_545">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />				
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-549&quot;&gt; RPM-549:File Maintenance - Tables - Reason Code - Duplicate Reason Code Cross Reference ">
+		<classes>
+			<class name="com.mars.tests.RegressionFileMaintenanceTablesTest" />
+			<methods>
+				<include name="testRPM_549">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					</include>
+			</methods>
+		</classes>
+	</test>		
+	
+</suite>

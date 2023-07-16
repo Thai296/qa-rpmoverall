@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EPSearchAndAssignmentEngine" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Select one filter only and QueuId=4 (Q_EP_MAN) ">
+        <classes>
+            <class name="com.pfEngines.tests.EpSearchAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_305">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Select filters and filter options are ClientAbbrev and AccnId ">
+        <classes>
+            <class name="com.pfEngines.tests.EpSearchAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_312">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Sort options ">
+        <classes>
+            <class name="com.pfEngines.tests.EpSearchAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_316">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    <test name="select one filter only and QueuId=3 (Q_EP_MTCH_CMP) ">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.EpSearchAssignmentEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="testPFER_303">-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Fix LCNOABN error and add GZ Modifier ">
+        <classes>
+            <class name="com.pfEngines.tests.EpSearchAssignmentEngineTest"/>
+            <methods>
+                <include name="testPFER_475">
+                    <parameter name="email" value="qatester@xifin.com"/>
+                    <parameter name="password" value="qatester123"/>
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-ABN Logic"/>
+                    <parameter name="testCase" value="AWS-81:Accession WS-ABN Logic-AddLCNOABNError"/>
+                    <parameter name="propLevel" value="TestCase"/>
+                    <parameter name="propName" value="NewAccnID"/>
+                    <parameter name="wsUsername" value="clndoc"/>
+                    <parameter name="wsPassword" value="clndoc"/>
+                    <parameter name="eType" value="EpSrchAndAssignEngine"/>
+                    <parameter name="xapEnv" value="XAP"/>
+                    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash;	<test name="Select one filter only and QueuId=6 (Q_EP_HLD) ">&ndash;&gt;-->
+<!--    &lt;!&ndash;		<classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;			<class name="com.pfEngines.tests.EpSearchAssignmentEngineTest" />&ndash;&gt;-->
+<!--    &lt;!&ndash;			<methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;				<include name="testPFER_307">&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="email" value="qatester@xifin.com" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="password" value="qatester123" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="eType" value="EpSrchAndAssignEngine" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="xapEnv" value="XAP" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="engConfigDB" value="SSO_APP_STAGING" />&ndash;&gt;-->
+<!--    &lt;!&ndash;				</include>&ndash;&gt;-->
+<!--    &lt;!&ndash;			</methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;		</classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;	</test>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;	<test name="select multiple filters with OR options and QueuId = 6 (Hold) ">&ndash;&gt;-->
+<!--    &lt;!&ndash;		<classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;			<class name="com.pfEngines.tests.EpSearchAssignmentEngineTest" />&ndash;&gt;-->
+<!--    &lt;!&ndash;			<methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;				<include name="testPFER_314">&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="email" value="qatester@xifin.com" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="password" value="qatester123" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="eType" value="EpSrchAndAssignEngine" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="xapEnv" value="XAP" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="engConfigDB" value="SSO_APP_STAGING" />&ndash;&gt;-->
+<!--    &lt;!&ndash;				</include>&ndash;&gt;-->
+<!--    &lt;!&ndash;			</methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;		</classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;	</test>&ndash;&gt;-->
+
+
+<!--    &lt;!&ndash;	<test name="Select one filter only and QueuId=5 (Q_EP_CORRESP) ">&ndash;&gt;-->
+<!--    &lt;!&ndash;		<classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;			<class name="com.pfEngines.tests.EpSearchAssignmentEngineTest" />&ndash;&gt;-->
+<!--    &lt;!&ndash;			<methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;				<include name="testPFER_306">&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="errCdId3" value="2165" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="testSuite" value="Accession WS-CreateAccession" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />&ndash;&gt;-->
+<!--    &lt;!&ndash;				</include>&ndash;&gt;-->
+<!--    &lt;!&ndash;			</methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;		</classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;	</test>&ndash;&gt;-->
+
+
+<!--    &lt;!&ndash;	<test name="Select multiple filters and the options are POS, EP Queue and Accn Age ">&ndash;&gt;-->
+<!--    &lt;!&ndash;		<classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;			<class name="com.pfEngines.tests.EpSearchAssignmentEngineTest" />&ndash;&gt;-->
+<!--    &lt;!&ndash;			<methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;				<include name="testPFER_304">&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="errCdId3" value="2134" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					 	<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="testSuite" value="Accession WS-CreateAccession" />&ndash;&gt;-->
+<!--    &lt;!&ndash;						<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />&ndash;&gt;-->
+<!--    &lt;!&ndash;				</include>&ndash;&gt;-->
+<!--    &lt;!&ndash;			</methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;		</classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;	</test>&ndash;&gt;-->
+
+
+<!--    &lt;!&ndash;	<test name="select one filter only and QueuId=8 (Q_EP_OUT_AGNCY_PRE_CORRESP) ">&ndash;&gt;-->
+<!--    &lt;!&ndash;		<classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;			<class name="com.pfEngines.tests.EpSearchAssignmentEngineTest" />&ndash;&gt;-->
+<!--    &lt;!&ndash;			<methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;				<include name="testPFER_602">&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="email" value="qatester@xifin.com" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="password" value="qatester123" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="eType" value="EpSrchAndAssignEngine" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="xapEnv" value="XAP" />&ndash;&gt;-->
+<!--    &lt;!&ndash;					<parameter name="engConfigDB" value="SSO_APP_STAGING" />&ndash;&gt;-->
+<!--    &lt;!&ndash;				</include>&ndash;&gt;-->
+<!--    &lt;!&ndash;			</methods>&ndash;&gt;-->
+<!--    &lt;!&ndash;		</classes>&ndash;&gt;-->
+<!--    &lt;!&ndash;	</test>&ndash;&gt;-->
+
+</suite>

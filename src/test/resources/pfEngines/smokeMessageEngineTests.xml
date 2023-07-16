@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-MessageEngine" preserve-order="true" parallel="tests" thread-count="15"
+       verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="PyrContrct-Send expiring messages to assigned user when end_dt > sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_55">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PyrContrct-No message is sent when end_dt greaterthan sysdate, review_dt greaterthan sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_56">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PyrContrct-Send expired messages to supervisor when review_dt lessthan sysdate, end_dt = sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_58">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PyrContrct-Send expiring, expired messages to supervisor if review_dt=sysdate=end_dt ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_60">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnCntct-Send message to assigned user when msg_status = 1 and follow_up_dt= Sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_35">
+                    <parameter name="clnId" value="135143"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnCntct-No message is sent when follow_up_dt lessthan Sysdate (Not over the date in SS#4) ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_37">
+                    <parameter name="clnId" value="135100"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnCntct-Send overdue message to supervisor when message is OVERDUE ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_38">
+                    <parameter name="clnId" value="135070"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-No message is sent when due_dt > sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_39">
+                    <parameter name="clnId" value="135031"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send msg to assigned user when follow_up_dt lessthan SYSDATE( lessthan the days in SS#4),due_dt>sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_41">
+                    <parameter name="clnId" value="135003"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send overdue message to supervisor when followUpDt lessthan (Sysdate-days in SS#4) and due_dt>sysdate ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_42">
+                    <parameter name="clnId" value="134955"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="ClnPromsPmt-Send message when followUpDt>sysDt, dueDt>sysDt-daysInSS#4, msgStatus=1 ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_45">
+                    <parameter name="clnId" value="134913"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnCntct-Send message to assigned user when followUpDt lessthan sysDt, msgStatus=0 ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_50">
+                    <parameter name="accnId" value="QATESTER20210709102038875"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnCntct-No message sent when followUpDt>sysDt-days in SS#4 and msg_status = 1 ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_52">
+                    <parameter name="accnId" value="QATESTER2021070816390369"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnCntct-Send message to suppervisor when followUpDt lessthan (sysDt-days in SS4),msgStatus=1 ">
+        <classes>
+            <class name="com.pfEngines.tests.MessageEngineTest"/>
+            <methods>
+                <include name="testPFER_53">
+                    <parameter name="accnId" value="QATESTER20211026013842770"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    <test name="AccnPromsPmt-Send message to assigne user when fk_proms_pmt_st = 2, msg_status = 0 ">-->
+<!--        <classes>-->
+<!--            <class name="com.pfEngines.tests.MessageEngineTest"/>-->
+<!--            <methods>-->
+<!--                <include name="testPFER_54">-->
+<!--                    <parameter name="accnId" value="QATESTER20210805141232300"/>-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>

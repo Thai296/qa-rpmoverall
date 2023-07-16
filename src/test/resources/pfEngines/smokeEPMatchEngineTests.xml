@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpMatchEngine" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+    <parameter name="testCase"
+               value="Accession WS-CreateAccession-EPAutoMatch-CreateMatchedPriced3rdPartyPyrAccnsWithSUBIDError"/>
+    <parameter name="propLevel" value="TestCase"/>
+    <parameter name="propName1" value="CopiedAccnId"/>
+    <parameter name="propName2" value="NewAccnID"/>
+    <parameter name="wsUsername" value="clndoc"/>
+    <parameter name="wsPassword" value="clndoc"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener'/>
+    </listeners>
+
+    <test name="Priced 3rd party pyr accn with SUBID (FIELD ID=4) error ">
+        <classes>
+            <class name="com.pfEngines.tests.EPMatchEngineTest"/>
+            <methods>
+                <include name="testPFER_545">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Priced 3rd party pyr accn with SUBID (FIELD ID=4) err,matched accn status=62(Obsolete) ">
+        <classes>
+            <class name="com.pfEngines.tests.EPMatchEngineTest"/>
+            <methods>
+                <include name="testPFER_546">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Run Engine with StaId!=(62,41), Errored accn PyrId=SS#84 (UNK) ">
+        <classes>
+            <class name="com.pfEngines.tests.EPMatchEngineTest"/>
+            <methods>
+                <include name="testPFER_540">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="3rd party pyr accn with SUBID (FIELD ID=4) err, accn status=41(Posting) ">
+        <classes>
+            <class name="com.pfEngines.tests.EPMatchEngineTest"/>
+            <methods>
+                <include name="testPFER_547">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="Priced 3rd party pyr accn with Denial error ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.pfEngines.tests.EPMatchEngineTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testPFER_549">-->
+    <!--					<parameter name="accnId" value="QATESTERC20171218152516863" />-->
+    <!--					<parameter name="errCdId" value="57208" />-->
+    <!--					<parameter name="mtchedAccnId" value="QATESTER20171218152515570" />-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>-->
+
+</suite>

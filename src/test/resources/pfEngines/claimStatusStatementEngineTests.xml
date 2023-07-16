@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine Batch 276" preserve-order="true" parallel="tests" thread-count="1"
+       verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="420"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="Process 276 claims queued up by PF-Claim Status engine / no other submissions for accn">
+        <parameter name="accnId" value="QATESTERNONCLNT21"/>
+        <parameter name="primPyrAbbrv" value="BCBSNY"/>
+        <parameter name="expectedBillingFacId" value="1"/>
+        <parameter name="expectedFile" value="CLMSTATUStest1_TEST_PFER_648.txt"/>
+        <parameter name="userClaimStatStmtEng" value="NonClnStmtEngine"/>
+        <parameter name="submSvc212Abbrev" value="TEST-212"/>
+        <parameter name="submSvcAbbrev837" value="BCCA5010A1"/>
+        <parameter name="docSeqIdsStr" value="546017"/>
+        <classes>
+            <class name="com.pfEngines.tests.ClaimStatusStatementEngineTest">
+                <methods>
+                    <include name="testPFER_648"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Process 276 claims queued up by PF-Claim Status engine / unprocessed 837 submission">
+        <parameter name="accnId" value="QATESTERNONCLNT22"/>
+        <parameter name="primPyrAbbrv" value="BCBSNY"/>
+        <parameter name="submSvcAbbrev837" value="BCCA5010A1"/>
+        <parameter name="subId" value="11111111111649"/>
+        <parameter name="expectedBillingFacId" value="1"/>
+        <parameter name="expectedFile" value="CLMSTATUStest2_TEST_PFER_649.txt"/>
+        <parameter name="userClaimStatStmtEng" value="NonClnStmtEngine"/>
+        <parameter name="submSvc212Abbrev" value="TEST-212"/>
+        <parameter name="docSeqIdsStr" value="613214"/>
+        <classes>
+            <class name="com.pfEngines.tests.ClaimStatusStatementEngineTest">
+                <methods>
+                    <include name="testPFER_649"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

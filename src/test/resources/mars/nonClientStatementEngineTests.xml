@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Non-Client Statement Engine Test Suite" preserve-order="true" parallel="tests" thread-count="12" verbose="10">
+    
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://172.20.2.118:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="600"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+
+    <suite-files>
+        <suite-file path="../pfEngines/nonClientStatementEngine5010Format.xml" />
+    </suite-files>
+
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-566&quot;&gt;PFER-566: Non-Client Subm and Statement eng - Cms1500 Box 33B displays from statement config">
+        <parameter name="accnId" value="QATESTERNONCLNT01"/>
+        <parameter name="pyrAbbrv" value="AETNA"/>
+        <parameter name="subId" value="000000101"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="tpiStmtConfig" value="STMTCONFIGOVERRIDE"/>
+        <parameter name="stmtConfig" value="60065"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_566"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-565&quot;&gt;PFER-565:Non-Client Subm and Statement eng - Cms1500 Box 33B - pyr_subm_svc.ext_recvr_id ">
+        <parameter name="accnId" value="QATESTERNONCLNT02"/>
+        <parameter name="pyrAbbrv" value="UHC"/>
+        <parameter name="subId" value="000000102"/>
+        <parameter name="submSvcAbbrev" value="CMSv02-12"/>
+        <parameter name="npiBillingOverride" value="1235363052"/>
+        <parameter name="tpiExtReciveId" value="EXTRECIVERID"/>
+        <parameter name="facAbbrv" value="ACME"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_565"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-594&quot;&gt;PFER-594: Non-Client Subm and Statement eng - Patient statement - 1 accn client specific question - display ACCNQUEST segment with Question and Response ">
+        <parameter name="accnId" value="QATESTERNONCLNT08"/>
+        <parameter name="primPyrAbbrv" value="MCUGS"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="000000191"/>
+        <parameter name="submSvcAbbrev" value="RevSpringPatient"/>
+        <parameter name="accnClientQuestion" value="27 - Hospital Facility Id"/>
+        <parameter name="accnClientResponse" value="TEST"/>
+        <parameter name="configElementTyp" value="30022"/>
+
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_594"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-595&quot;&gt;PFER-595: Non-Client Subm and Statement eng - Patient statement - 2 accn client specific questions - display 2 ACCNQUEST segments with Question and Response ">
+        <parameter name="accnId" value="QATESTERNONCLNT09"/>
+        <parameter name="primPyrAbbrv" value="MCUGS"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="000009101"/>
+        <parameter name="submSvcAbbrev" value="RevSpringPatient"/>
+        <parameter name="accnClientQuestion1" value="28 - Hospital Patient Id"/>
+        <parameter name="accnClientResponse1" value="HOSPITAL PATIENT ID"/>
+        <parameter name="accnClientQuestion2" value="30 - Lab Id"/>
+        <parameter name="accnClientResponse2" value="LAB ID"/>
+        <parameter name="configElementTyp" value="30022"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_595"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-596&quot;&gt;PFER-596: Non-Client Subm and Statement eng - Patient statement - accn client specific question is not specified by the statement config - DO NOT display ACCNQUEST ">
+        <parameter name="accnId" value="QATESTERNONCLNT10"/>
+        <parameter name="primPyrAbbrv" value="MCUGS"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="900000101"/>
+        <parameter name="submSvcAbbrev" value="RevSpringPatient"/>
+        <parameter name="accnClientQuestion" value="1 - Comments"/>
+        <parameter name="accnClientResponse" value="DON'T DISPLAY"/>
+        <parameter name="configElementTyp" value="30022"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_596"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-607&quot;&gt;PFER-607: Non-Client Subm and Statement eng - Patient statement - Same-day accn level payments and adjustments are correctly displayed and group together ">
+        <parameter name="accnId" value="QATESTERNONCLNT11"/>
+        <parameter name="primPyrAbbrv" value="UHC"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="SUBIDP12345"/>
+        <parameter name="submSvcAbbrev" value="PtDelimitedFile"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_607"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-651&quot;&gt;PFER-651:Patient Statement PDF should not print CC Box when stmt_config is on ">
+        <parameter name="accnId" value="QATESTERNONCLNT23"/>
+        <parameter name="primPyrAbbrv" value="BCBSNY"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="MayoPtStmtPdfNoCC"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_651"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-652&quot;&gt;PFER-652:Patient Statement PDF should print CC Box when stmt_config is disabled ">
+        <parameter name="accnId" value="QATESTERNONCLNT24"/>
+        <parameter name="primPyrAbbrv" value="BCBSNY"/>
+        <parameter name="secondPyrAbbrv" value="P"/>
+        <parameter name="subId" value="585785842A"/>
+        <parameter name="submSvcAbbrev" value="MayoPtStmtPdf"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_652"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-637&quot;&gt;PFER-637: Patient Statement Letter Segment - Payor group incl, client incl, test incl prints 3 letters IDs ">
+        <parameter name="accnId" value="QATESTERNONCLNT18"/>
+        <parameter name="primPyrAbbrv" value="BCBSNJ"/>
+        <parameter name="subId" value="333333333"/>
+        <parameter name="submSvcAbbrev" value="PATNOTIFY-LETTER"/>
+        <parameter name="letterId1" value="11111111111111111111111111111111111111"/>
+        <parameter name="letterId2" value="LETTER2LETTER2LETTER2"/>
+        <parameter name="letterId3" value="LETTER3"/>
+        <parameter name="testAbbrev" value="CH1VFRNT"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_637"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-638&quot;&gt;PFER-638: Patient Notification Letter Segment - Payor excl, test type excl, client accnt typ excl, taxonomy ex ">
+        <parameter name="accnId" value="QATESTERNONCLNT19"/>
+        <parameter name="primPyrAbbrv" value="BCBSNJ"/>
+        <parameter name="subId" value="333333333"/>
+        <parameter name="submSvcAbbrev" value="PATNOTIFY-LETTER"/>
+        <parameter name="letterId4" value="LETTER4"/>
+        <parameter name="letterId5" value="LETTER5"/>
+        <parameter name="letterId6" value="LETTER6"/>
+        <parameter name="letterId7" value="LETTER7"/>
+        <parameter name="testAbbrev" value="CH1VFRNT"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_638"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="&lt;a href=&quot;https://testlink/testlink/linkto.php?tprojectPrefix=PFER&amp;item=testcase&amp;id=PFER-639&quot;&gt;PFER-639: Patient Notification Letter Segment - Payor incl, client excl, test excl, facility incl ">
+        <parameter name="accnId" value="QATESTERNONCLNT20"/>
+        <parameter name="primPyrAbbrv" value="BCBSNJ"/>
+        <parameter name="subId" value="333333333"/>
+        <parameter name="submSvcAbbrev" value="PATNOTIFY-LETTER"/>
+        <parameter name="letterId8" value="LETTER8"/>
+        <parameter name="letterId9" value="LETTER9"/>
+        <classes>
+            <class name="com.pfEngines.tests.NonClientStatementEngineTest">
+                <methods>
+                    <include name="testPFER_639"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

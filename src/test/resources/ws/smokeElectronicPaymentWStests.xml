@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ElectronicPaymentWebservices" preserve-order="true" parallel="tests" thread-count="6" verbose="10">
+
+   	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:" />
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />      	
+	
+ 
+	<test name="HealthCheckPage-Status OK ">
+		<classes>
+			<class name="com.ws.tests.SmokeElectronicPaymentWSTest" />
+			<methods>
+				<include name="testEPWS_13">
+				</include>
+			</methods>
+		</classes>
+	</test>	 	
+	
+</suite>

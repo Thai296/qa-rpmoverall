@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Parallel Suite-->
+<suite name="Accession History Log" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+
+    <listeners>
+        <listener class-name='com.xifin.utils.RetryListener' />
+    </listeners>
+
+    <test name="Verify Accession Information in header section ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_693">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load an Accn that has no error history ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_694">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnHistoryLog-Verify filter functions in Process Queue History table ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_695">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession"/>
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify filter functions in Error Processing History table ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_696">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="AccnHistoryLog-Load an Accn that has Interface Errors ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_697">
+                    <parameter name="accnId" value="A201106061627533"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load an Accn that has Correspondence History ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_698">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="View statement file in Correspondence History table ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_699">
+                    <parameter name="accnId" value="QATESTERDUIGH20220329071002295"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify that all Help pages can be opened properly ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_701">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Load an Accn from Accession Search ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_706">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--	<test name="View Ack file in Correspondence History table ">-->
+    <!--		<classes>-->
+    <!--			<class name="com.newXp.tests.SmokeAccessionHistoryLogTest" />-->
+    <!--			<methods>-->
+    <!--				<include name="testXPR_700">-->                     -->
+    <!--					<parameter name="accnId" value="QATESTER20170629110143736" />				-->
+    <!--				</include>-->
+    <!--			</methods>-->
+    <!--		</classes>-->
+    <!--	</test>	-->
+
+    <test name="Verify View Organization Document hyperlink works ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_722">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify View Document hyperlink works ">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_721">
+                    <parameter name="accnId" value="100"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+<!--    <test name="Verify the Print Correspondence History icon button works works ">-->
+<!--        <classes>-->
+<!--            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>-->
+<!--            <methods>-->
+<!--                <include name="testXPR_720">-->
+<!--                </include>-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Load accn in Outside Agency Pre Corresp queue">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest"/>
+            <methods>
+                <include name="testXPR_1613">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml"/>
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession"/>
+                    <parameter name="testCase"
+                               value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyPyrAccnWithNODIAGErr"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="View Doc Store Statement file in Correspondence History table">
+        <classes>
+            <class name="com.newXp.tests.SmokeAccessionHistoryLogTest" />
+            <methods>
+                <include name="testDocStoreStatementLink">
+                    <parameter name="accnId" value="QATESTER20220519153947426"/>
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

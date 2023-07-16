@@ -1,0 +1,1861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client WS_Prod_Utils" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="PARALLELL" id="85033f08-d41b-4c7a-9956-d588cc5662ec" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="clientSoap11" type="wsdl" bindingName="{http://www.xifin.com/schema/client}clientSoap11" soapVersion="1_1" anonymous="optional" definition="https://www.xifinqa.com/prod/clientv871/client.wsdl" id="03c7a623-35a8-4f6f-affb-dc09042ac237" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.xifinqa.com/prod/clientv871/client.wsdl"><con:part><con:url>https://www.xifinqa.com/prod/clientv871/client.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.xifin.com/schema/client" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.xifin.com/schema/client" xmlns:sch1="http://www.xifin.com/schema/msgHeader" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xifin.com/schema/client">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/client" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/client" xmlns:msgHeader="http://www.xifin.com/schema/msgHeader">
+      <xs:import namespace="http://www.xifin.com/schema/msgHeader"/>
+      <xs:element name="RequestMessage">
+        <xs:annotation>
+          <xs:documentation>Soap request message structure</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element ref="AddClient"/>
+                  <xs:element ref="UpdateClient"/>
+                  <xs:element ref="UpdateContactData"/>
+                  <xs:element ref="DeleteClientCrossReferences"/>
+                  <xs:element ref="GetClient"/>
+                  <xs:element ref="UpdateSecondaryClient"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResponseMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="msgHeader:MessageHeader"/>
+            <xs:element name="Payload">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element name="Status" type="StatusType"/>
+                  <xs:element name="GetClientResponse" type="GetClientResponse"/>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetClientResponse">
+        <xs:annotation>
+          <xs:documentation>Get Client Response message structure</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AccountName" type="AccountNameType"/>
+          <xs:element name="ClientAccountType" type="ClientAccountTypeType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AvailableStatementFormats" type="ClientStatementFormat"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="SecondaryClients" type="GetSecondaryClientType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="PrimaryClients" type="GetPrimaryClientType"/>
+          <xs:element minOccurs="0" name="PrimaryFacilityId" type="IdType"/>
+          <xs:element minOccurs="0" name="PrimaryFacilityName" type="FacilityNameType"/>
+          <xs:element minOccurs="0" name="AnnualDisclosureLetter" type="AnnualDisclosureLetterType">
+            <xs:annotation>
+              <xs:documentation>The available AnnualDisclosureLetters can be obtained using typetables webservice
+                        where tablename = AnnualDisclosureLetterType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PerformEligibilityCensusChecking" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PerformEligibilityCensusCheckingCrossClients" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PerformBillingAssignment" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AddClient">
+        <xs:annotation>
+          <xs:documentation>Root level for addClient entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AccountName" type="AccountNameType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="AdditionalStatementCopy" type="AdditionalStatementCopyType"/>
+            <xs:element minOccurs="0" name="BillReferralsToClient" type="xs:boolean"/>
+            <xs:element name="BillingAddress" type="BillingAddressType"/>
+            <xs:element name="ClientAccountType" type="ClientAccountTypeType">
+              <xs:annotation>
+                <xs:documentation>The available ClientAccountTypes can be obtained using typetables webservice
+                            where tablename =ClientAccountType.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ClientID" type="IdType"/>
+            <xs:element minOccurs="0" name="ClientStatementDeliveryMethod" type="ClientStatementDeliveryMethodType">
+              <xs:annotation>
+                <xs:documentation>The available DeliveryMethodTypes can be obtained using typetables webservice
+                            where tablename =DeliveryMethodType.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="ClientStatementDisplayOption" type="ClientStatementDisplayOptionType"/>
+            <xs:element minOccurs="0" name="ClientSubmissionServiceId" type="ClientSubmissionServiceIDType">
+              <xs:annotation>
+                <xs:documentation>The available ClientSubmissionServiceIds can be obtained using typetables webservice
+                            where tablename =ClientSubmissionServiceId.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="CorrespondenceAddress" type="CorrespondenceAddressType"/>
+            <xs:element minOccurs="0" name="DailyCharges" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="DailyChargesFrequency" type="DailyChargesFrequencyType">
+              <xs:annotation>
+                <xs:documentation>The available DailyChargesFrequencys can be obtained using typetables webservice
+                            where tablename =DailyChargesFrequency.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="DailyChargesNotificationMethod" type="DailyChargesNotificationMethodType">
+              <xs:annotation>
+                <xs:documentation>Use typetables webservice to get available Ids use for this type .Use
+                            DailyChargesNotificationMethod as tablename to get available types. Use TypeTable.Id</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="Questions">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="Question" type="QuestionType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="NPI" type="NPIType"/>
+            <xs:element minOccurs="0" name="POs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="PO" type="POType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="PrimaryFacility" type="IdType"/>
+            <xs:element minOccurs="0" name="RefundAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="StartDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="StatementFrequency" type="StatementFrequencyType">
+              <xs:annotation>
+                <xs:documentation>The available StatementFrequencys can be obtained using typetables webservice
+                            where tablename =StatementFrequency.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="StreetAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="TaxId" type="TaxIdType"/>
+            <xs:element minOccurs="0" name="XRefs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="ClientXRef" type="ClientXRefType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CopyClientId" type="IdType"/>
+            <xs:element default="false" minOccurs="0" name="copyBillingAddressToShippingAddress" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ShippingAddress" type="ShippingAddressType"/>
+            <xs:element minOccurs="0" name="AnnualDisclosureLetter" type="AnnualDisclosureLetterType">
+              <xs:annotation>
+                <xs:documentation>The available AnnualDisclosureLetters can be obtained using typetables webservice
+                            where tablename = AnnualDisclosureLetterType.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="PerformEligibilityCensusChecking" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="PerformEligibilityCensusCheckingCrossClients" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="PerformBillingAssignment" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateClient">
+        <xs:annotation>
+          <xs:documentation>Root level for updateClient entity</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AccountName" type="AccountNameType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="AdditionalStatementCopy" type="AdditionalStatementCopyType"/>
+            <xs:element minOccurs="0" name="BillReferralsToClient" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="BillingAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="ClientAccountType" type="ClientAccountTypeType"/>
+            <xs:element name="ClientID" type="IdType"/>
+            <xs:element minOccurs="0" name="ClientStatementDeliveryMethod" type="ClientStatementDeliveryMethodType">
+              <xs:annotation>
+                <xs:documentation>The available DeliveryMethodTypes can be obtained using typetables webservice
+                            where tablename =DeliveryMethodType.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="ClientStatementDisplayOption" type="ClientStatementDisplayOptionType"/>
+            <xs:element minOccurs="0" name="ClientSubmissionServiceID" type="ClientSubmissionServiceIDType">
+              <xs:annotation>
+                <xs:documentation>The available ClientSubmissionServiceIds can be obtained using typetables webservice
+                            where tablename =ClientSubmissionServiceId.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="CorrespondenceAddress" type="CorrespondenceAddressType"/>
+            <xs:element minOccurs="0" name="DailyCharges" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="DailyChargesFrequency" type="DailyChargesFrequencyType">
+              <xs:annotation>
+                <xs:documentation>The available DailyChargesFrequencys can be obtained using typetables webservice
+                        where tablename =DailyChargesFrequency.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="DailyChargesNotificationMethod" type="DailyChargesNotificationMethodType">
+              <xs:annotation>
+                <xs:documentation>The available DailyChargesNotificationMethods can be obtained using typetables webservice
+                        where tablename =DailyChargesNotificationMethod.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="Questions">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="Question" type="QuestionType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="NPI" type="NPIType"/>
+            <xs:element minOccurs="0" name="POs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="PO" type="POType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="PricingSuspend" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="PrimaryFacility" type="IdType"/>
+            <xs:element minOccurs="0" name="RefundAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="StartDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="StatementFrequency" type="StatementFrequencyType">
+              <xs:annotation>
+                <xs:documentation>The available StatementFrequencys can be obtained using typetables webservice
+                            where tablename =StatementFrequency.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="StreetAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="TaxId" type="TaxIdType"/>
+            <xs:element minOccurs="0" name="XRefs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="XRef" type="ClientXRefType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element default="false" minOccurs="0" name="copyBillingAddressToShippingAddress" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ShippingAddress" type="ShippingAddressType"/>
+            <xs:element minOccurs="0" name="AnnualDisclosureLetter" type="AnnualDisclosureLetterType">
+              <xs:annotation>
+                <xs:documentation>The available AnnualDisclosureLetters can be obtained using typetables webservice
+                            where tablename = AnnualDisclosureLetterType.
+                            The typetable webservice response returns the Id and description. In this webservice request
+                            send the Id.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="PerformEligibilityCensusChecking" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="PerformEligibilityCensusCheckingCrossClients" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="PerformBillingAssignment" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateContactData">
+        <xs:annotation>
+          <xs:documentation>Root level for updateContactData</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ClientID" type="IdType"/>
+            <xs:element minOccurs="0" name="BillingAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="StreetAddress" type="BillingAddressType"/>
+            <xs:element minOccurs="0" name="CorrespondenceAddress" type="CorrespondenceAddressType"/>
+            <xs:element default="false" minOccurs="0" name="copyBillingAddressToShippingAddress" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="ShippingAddress" type="ShippingAddressType"/>
+            <xs:element minOccurs="0" name="RefundAddress">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Address" type="AddressType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteClientCrossReferences">
+        <xs:annotation>
+          <xs:documentation>Root level for DeleteClientCrossReferences</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ClientID" type="IdType"/>
+            <xs:element maxOccurs="unbounded" name="XRefs" type="deleteClientXrefType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="deleteClientXrefType">
+        <xs:sequence>
+          <xs:element name="XRefID" type="XrefIdType"/>
+          <xs:element name="XRefType" type="XRefDescriptionType">
+            <xs:annotation>
+              <xs:documentation>The available XRefType can be obtained using typetables webservice
+                        where tablename =ClnXRefType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ClientXRefType">
+        <xs:sequence>
+          <xs:element name="XRefID" type="XrefIdType"/>
+          <xs:element name="XRefType" type="XRefDescriptionType">
+            <xs:annotation>
+              <xs:documentation>The available XRefType can be obtained using typetables webservice
+                        where tablename =ClnXRefType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="XRefDescription" type="XRefDescriptionLongType"/>
+          <xs:element default="2000-01-01" minOccurs="0" name="EffectiveDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetClient">
+        <xs:annotation>
+          <xs:documentation>Get Client Data</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ClientId" type="IdType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateSecondaryClient">
+        <xs:annotation>
+          <xs:documentation>Root level for UpdateSecondaryClient</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PrimaryClientId" type="IdType"/>
+            <xs:element maxOccurs="unbounded" name="SecondaryClientInfos" type="SecondaryClientInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="QuestionType">
+        <xs:sequence>
+          <xs:element name="Question" type="QuestionIdType">
+            <xs:annotation>
+              <xs:documentation>The available QuestionType can be obtained using typetables webservice
+                        where tablename =QuestionType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Required" type="QuestionRequiredType"/>
+          <xs:element minOccurs="0" name="Printable" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="QuestionRequiredType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OPTIONAL"/>
+          <xs:enumeration value="RECOMMENDED"/>
+          <xs:enumeration value="REQUIRED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ClientStatementDisplayOptionType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayUtilizationSummary" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayProfileComponentsinUtilization" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPatientId" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayProfileComponents" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPatientDOB" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPatientSSN" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPatientNameonReprice" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayDiscountsinBulk" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayDiagnosisCodes" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPreviousBalances" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="SumRetroPricedAdjustments" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GroupTogetherLikeAccessionCharges" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PrintSubscriberId" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayReqNbr" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayOrderingPhysician" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayPONbr" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BillingAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element minOccurs="0" name="Contact1" type="ContactType"/>
+          <xs:element minOccurs="0" name="Contact2" type="ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CorrespondenceAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element minOccurs="0" name="Contact" type="ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ShippingAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" type="AddressType"/>
+          <xs:element minOccurs="0" name="Contact" type="ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="PreferredContactMethod" type="PreferredContactMethodType">
+            <xs:annotation>
+              <xs:documentation>The available PreferredContactMethodType can be obtained using typetables
+                        webservice where tablename =PreferredContactMethodType.
+                        The typetable webservice response returns the Id and description. In this webservice request
+                        send the Id.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Name" type="NameType"/>
+          <xs:element minOccurs="0" name="Phone" type="PhoneNumberType"/>
+          <xs:element minOccurs="0" name="Fax" type="FaxType"/>
+          <xs:element minOccurs="0" name="Email" type="EmailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element name="AddressLine1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddressLine2">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="City">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="State">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ZIP">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="CountryCode">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="POType">
+        <xs:sequence>
+          <xs:element name="PONumber" type="PONumberType"/>
+          <xs:element minOccurs="0" name="POAmt" type="POAmtType"/>
+          <xs:element name="IssueDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpDate" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DisplayType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayUtilizationSummary" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="DisplayProfileComponentsinUtilization"/>
+          <xs:element minOccurs="0" name="DisplayPatientId"/>
+          <xs:element minOccurs="0" name="DisplayProfileComponents"/>
+          <xs:element minOccurs="0" name="DisplayPatientDOB"/>
+          <xs:element minOccurs="0" name="DisplayPatientSSN"/>
+          <xs:element minOccurs="0" name="DisplayPatientNameonReprice"/>
+          <xs:element minOccurs="0" name="DisplayDiscountsinBulk"/>
+          <xs:element minOccurs="0" name="DisplayDiagnosisCodes"/>
+          <xs:element minOccurs="0" name="DisplayPreviousBalances"/>
+          <xs:element minOccurs="0" name="SumRetroPricedAdjustments"/>
+          <xs:element minOccurs="0" name="GroupTogetherLikeAccessionCharges"/>
+          <xs:element minOccurs="0" name="PrintSubscriberId"/>
+          <xs:element minOccurs="0" name="DisplayReqNbr"/>
+          <xs:element minOccurs="0" name="DisplayOrderingPhysician"/>
+          <xs:element minOccurs="0" name="DisplayPONbr"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalStatementCopyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientID" type="IdType"/>
+          <xs:element minOccurs="0" name="AccountName" type="AccountNameType"/>
+          <xs:element minOccurs="0" name="Address" type="CorrespondenceAddressType"/>
+          <xs:element minOccurs="0" name="Attn" type="NameType"/>
+          <xs:element default="1" minOccurs="0" name="Copies" type="CopiesType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element minOccurs="0" name="StatusMessage" type="StatusMessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="XRefDescriptionType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="XRefDescriptionLongType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="240"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TaxIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="QuestionIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="IdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AccountNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FacilityNameType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PONumberType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="POAmtType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="12"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NPIType">
+        <xs:restriction base="xs:nonNegativeInteger">
+          <xs:totalDigits value="10"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="256"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FaxType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PhoneNumberType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CopiesType">
+        <xs:restriction base="xs:nonNegativeInteger">
+          <xs:totalDigits value="10"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusCodeType">
+        <xs:restriction base="xs:integer">
+          <xs:maxExclusive value="9999"/>
+          <xs:minExclusive value="-9999"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatusMessageType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="200"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientAccountTypeType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientStatementDeliveryMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DailyChargesFrequencyType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DailyChargesNotificationMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="StatementFrequencyType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientSubmissionServiceIDType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PreferredContactMethodType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ClientStatementFormat">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PDF"/>
+          <xs:enumeration value="EXCEL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="GetPrimaryClientType">
+        <xs:sequence>
+          <xs:element name="ClientId" type="IdType"/>
+          <xs:element name="EffectiveDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+          <xs:element name="AccountName" type="AccountNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSecondaryClientType">
+        <xs:sequence>
+          <xs:element name="ClientId" type="IdType"/>
+          <xs:element name="EffectiveDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+          <xs:element name="AccountName" type="AccountNameType"/>
+          <xs:element name="SuspendThruEOM" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SecondaryClientInfo">
+        <xs:sequence>
+          <xs:element name="SecondaryClientId" type="IdType"/>
+          <xs:element name="EffectiveDate" type="xs:date"/>
+          <xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+          <xs:element name="SuspendThruEOM" type="xs:boolean"/>
+          <xs:element default="false" minOccurs="0" name="Deleted" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AnnualDisclosureLetterType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="10"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="XrefIdType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.xifin.com/schema/msgHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xifin.com/schema/msgHeader">
+      <xs:element name="MessageHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+            <xs:element minOccurs="0" name="SequenceNumber" type="xs:positiveInteger"/>
+            <xs:element name="UserId">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SourceApplication" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Name of the source application</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="OrgAlias" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ResponseMessage">
+    <wsdl:part element="tns:ResponseMessage" name="ResponseMessage"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RequestMessage">
+    <wsdl:part element="tns:RequestMessage" name="RequestMessage"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="client">
+    <wsdl:operation name="RequestMessage">
+      <wsdl:input message="tns:RequestMessage" name="RequestMessage"></wsdl:input>
+      <wsdl:output message="tns:ResponseMessage" name="ResponseMessage"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="clientSoap11" type="tns:client">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RequestMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RequestMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ResponseMessage">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="clientService">
+    <wsdl:port binding="tns:clientSoap11" name="clientSoap11">
+      <soap:address location="https://www.xifinqa.com/prod/client/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.20.19.22:8080/client/services</con:endpoint><con:endpoint>https://www.xifinqa.com/prod/client/services</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="RequestMessage" bindingOperationName="RequestMessage" type="Request-Response" outputName="ResponseMessage" inputName="RequestMessage" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="4268e9c7-b751-4f36-83bf-a31a2d7858b6"><con:settings/><con:call name="Request 1" id="b0319b2b-ada8-480a-8c45-97a67160c559"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.xifinqa.com/prod/client/services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.xifin.com/schema/client" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:RequestMessage>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <msg:OrganizationName>?</msg:OrganizationName>
+            <!--Optional:-->
+            <msg:SequenceNumber>?</msg:SequenceNumber>
+            <msg:UserId>?</msg:UserId>
+            <!--Optional:-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <msg:OrgAlias>?</msg:OrgAlias>
+         </msg:MessageHeader>
+         <cli:Payload>
+            <!--You have a CHOICE of the next 6 items at this level-->
+            <cli:AddClient>
+               <cli:AccountName>?</cli:AccountName>
+               <!--Zero or more repetitions:-->
+               <cli:AdditionalStatementCopy>
+                  <!--Optional:-->
+                  <cli:ClientID>?</cli:ClientID>
+                  <!--Optional:-->
+                  <cli:AccountName>?</cli:AccountName>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <!--Optional:-->
+                     <cli:Address>
+                        <cli:AddressLine1>?</cli:AddressLine1>
+                        <!--Optional:-->
+                        <cli:AddressLine2>?</cli:AddressLine2>
+                        <!--Optional:-->
+                        <cli:City>?</cli:City>
+                        <!--Optional:-->
+                        <cli:State>?</cli:State>
+                        <!--Optional:-->
+                        <cli:ZIP>?</cli:ZIP>
+                        <!--Optional:-->
+                        <cli:CountryCode>?</cli:CountryCode>
+                     </cli:Address>
+                     <!--Optional:-->
+                     <cli:Contact>
+                        <!--Optional:-->
+                        <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                        <!--Optional:-->
+                        <cli:Name>?</cli:Name>
+                        <!--Optional:-->
+                        <cli:Phone>?</cli:Phone>
+                        <!--Optional:-->
+                        <cli:Fax>?</cli:Fax>
+                        <!--Optional:-->
+                        <cli:Email>?</cli:Email>
+                     </cli:Contact>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Attn>?</cli:Attn>
+                  <!--Optional:-->
+                  <cli:Copies>1</cli:Copies>
+               </cli:AdditionalStatementCopy>
+               <!--Optional:-->
+               <cli:BillReferralsToClient>?</cli:BillReferralsToClient>
+               <cli:BillingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:BillingAddress>
+               <cli:ClientAccountType>?</cli:ClientAccountType>
+               <cli:ClientID>?</cli:ClientID>
+               <!--Optional:-->
+               <cli:ClientStatementDeliveryMethod>?</cli:ClientStatementDeliveryMethod>
+               <!--Optional:-->
+               <cli:ClientStatementDisplayOption>
+                  <!--Optional:-->
+                  <cli:DisplayUtilizationSummary>?</cli:DisplayUtilizationSummary>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponentsinUtilization>?</cli:DisplayProfileComponentsinUtilization>
+                  <!--Optional:-->
+                  <cli:DisplayPatientId>?</cli:DisplayPatientId>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponents>?</cli:DisplayProfileComponents>
+                  <!--Optional:-->
+                  <cli:DisplayPatientDOB>?</cli:DisplayPatientDOB>
+                  <!--Optional:-->
+                  <cli:DisplayPatientSSN>?</cli:DisplayPatientSSN>
+                  <!--Optional:-->
+                  <cli:DisplayPatientNameonReprice>?</cli:DisplayPatientNameonReprice>
+                  <!--Optional:-->
+                  <cli:DisplayDiscountsinBulk>?</cli:DisplayDiscountsinBulk>
+                  <!--Optional:-->
+                  <cli:DisplayDiagnosisCodes>?</cli:DisplayDiagnosisCodes>
+                  <!--Optional:-->
+                  <cli:DisplayPreviousBalances>?</cli:DisplayPreviousBalances>
+                  <!--Optional:-->
+                  <cli:SumRetroPricedAdjustments>?</cli:SumRetroPricedAdjustments>
+                  <!--Optional:-->
+                  <cli:GroupTogetherLikeAccessionCharges>?</cli:GroupTogetherLikeAccessionCharges>
+                  <!--Optional:-->
+                  <cli:PrintSubscriberId>?</cli:PrintSubscriberId>
+                  <!--Optional:-->
+                  <cli:DisplayReqNbr>?</cli:DisplayReqNbr>
+                  <!--Optional:-->
+                  <cli:DisplayOrderingPhysician>?</cli:DisplayOrderingPhysician>
+                  <!--Optional:-->
+                  <cli:DisplayPONbr>?</cli:DisplayPONbr>
+               </cli:ClientStatementDisplayOption>
+               <!--Optional:-->
+               <cli:ClientSubmissionServiceId>?</cli:ClientSubmissionServiceId>
+               <!--Optional:-->
+               <cli:CorrespondenceAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:CorrespondenceAddress>
+               <!--Optional:-->
+               <cli:DailyCharges>?</cli:DailyCharges>
+               <!--Optional:-->
+               <cli:DailyChargesFrequency>?</cli:DailyChargesFrequency>
+               <!--Optional:-->
+               <cli:DailyChargesNotificationMethod>?</cli:DailyChargesNotificationMethod>
+               <!--Optional:-->
+               <cli:Questions>
+                  <!--Zero or more repetitions:-->
+                  <cli:Question>
+                     <cli:Question>?</cli:Question>
+                     <cli:Required>?</cli:Required>
+                     <!--Optional:-->
+                     <cli:Printable>?</cli:Printable>
+                  </cli:Question>
+               </cli:Questions>
+               <!--Optional:-->
+               <cli:NPI>?</cli:NPI>
+               <!--Optional:-->
+               <cli:POs>
+                  <!--Zero or more repetitions:-->
+                  <cli:PO>
+                     <cli:PONumber>?</cli:PONumber>
+                     <!--Optional:-->
+                     <cli:POAmt>?</cli:POAmt>
+                     <cli:IssueDate>?</cli:IssueDate>
+                     <!--Optional:-->
+                     <cli:ExpDate>?</cli:ExpDate>
+                  </cli:PO>
+               </cli:POs>
+               <cli:PrimaryFacility>?</cli:PrimaryFacility>
+               <!--Optional:-->
+               <cli:RefundAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+               </cli:RefundAddress>
+               <cli:StartDate>?</cli:StartDate>
+               <!--Optional:-->
+               <cli:StatementFrequency>?</cli:StatementFrequency>
+               <cli:StreetAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:StreetAddress>
+               <!--Optional:-->
+               <cli:TaxId>?</cli:TaxId>
+               <!--Optional:-->
+               <cli:XRefs>
+                  <!--Zero or more repetitions:-->
+                  <cli:ClientXRef>
+                     <cli:XRefID>?</cli:XRefID>
+                     <cli:XRefType>?</cli:XRefType>
+                     <cli:XRefDescription>?</cli:XRefDescription>
+                     <!--Optional:-->
+                     <cli:EffectiveDate>2000-01-01</cli:EffectiveDate>
+                     <!--Optional:-->
+                     <cli:ExpirationDate>?</cli:ExpirationDate>
+                  </cli:ClientXRef>
+               </cli:XRefs>
+               <!--Optional:-->
+               <cli:CopyClientId>?</cli:CopyClientId>
+               <!--Optional:-->
+               <cli:copyBillingAddressToShippingAddress>false</cli:copyBillingAddressToShippingAddress>
+               <!--Optional:-->
+               <cli:ShippingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:ShippingAddress>
+               <!--Optional:-->
+               <cli:AnnualDisclosureLetter>?</cli:AnnualDisclosureLetter>
+               <!--Optional:-->
+               <cli:PerformEligibilityCensusChecking>?</cli:PerformEligibilityCensusChecking>
+               <!--Optional:-->
+               <cli:PerformEligibilityCensusCheckingCrossClients>?</cli:PerformEligibilityCensusCheckingCrossClients>
+               <!--Optional:-->
+               <cli:PerformBillingAssignment>?</cli:PerformBillingAssignment>
+            </cli:AddClient>
+            <cli:UpdateClient>
+               <!--Optional:-->
+               <cli:AccountName>?</cli:AccountName>
+               <!--Zero or more repetitions:-->
+               <cli:AdditionalStatementCopy>
+                  <!--Optional:-->
+                  <cli:ClientID>?</cli:ClientID>
+                  <!--Optional:-->
+                  <cli:AccountName>?</cli:AccountName>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <!--Optional:-->
+                     <cli:Address>
+                        <cli:AddressLine1>?</cli:AddressLine1>
+                        <!--Optional:-->
+                        <cli:AddressLine2>?</cli:AddressLine2>
+                        <!--Optional:-->
+                        <cli:City>?</cli:City>
+                        <!--Optional:-->
+                        <cli:State>?</cli:State>
+                        <!--Optional:-->
+                        <cli:ZIP>?</cli:ZIP>
+                        <!--Optional:-->
+                        <cli:CountryCode>?</cli:CountryCode>
+                     </cli:Address>
+                     <!--Optional:-->
+                     <cli:Contact>
+                        <!--Optional:-->
+                        <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                        <!--Optional:-->
+                        <cli:Name>?</cli:Name>
+                        <!--Optional:-->
+                        <cli:Phone>?</cli:Phone>
+                        <!--Optional:-->
+                        <cli:Fax>?</cli:Fax>
+                        <!--Optional:-->
+                        <cli:Email>?</cli:Email>
+                     </cli:Contact>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Attn>?</cli:Attn>
+                  <!--Optional:-->
+                  <cli:Copies>1</cli:Copies>
+               </cli:AdditionalStatementCopy>
+               <!--Optional:-->
+               <cli:BillReferralsToClient>?</cli:BillReferralsToClient>
+               <!--Optional:-->
+               <cli:BillingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:BillingAddress>
+               <!--Optional:-->
+               <cli:ClientAccountType>?</cli:ClientAccountType>
+               <cli:ClientID>?</cli:ClientID>
+               <!--Optional:-->
+               <cli:ClientStatementDeliveryMethod>?</cli:ClientStatementDeliveryMethod>
+               <!--Optional:-->
+               <cli:ClientStatementDisplayOption>
+                  <!--Optional:-->
+                  <cli:DisplayUtilizationSummary>?</cli:DisplayUtilizationSummary>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponentsinUtilization>?</cli:DisplayProfileComponentsinUtilization>
+                  <!--Optional:-->
+                  <cli:DisplayPatientId>?</cli:DisplayPatientId>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponents>?</cli:DisplayProfileComponents>
+                  <!--Optional:-->
+                  <cli:DisplayPatientDOB>?</cli:DisplayPatientDOB>
+                  <!--Optional:-->
+                  <cli:DisplayPatientSSN>?</cli:DisplayPatientSSN>
+                  <!--Optional:-->
+                  <cli:DisplayPatientNameonReprice>?</cli:DisplayPatientNameonReprice>
+                  <!--Optional:-->
+                  <cli:DisplayDiscountsinBulk>?</cli:DisplayDiscountsinBulk>
+                  <!--Optional:-->
+                  <cli:DisplayDiagnosisCodes>?</cli:DisplayDiagnosisCodes>
+                  <!--Optional:-->
+                  <cli:DisplayPreviousBalances>?</cli:DisplayPreviousBalances>
+                  <!--Optional:-->
+                  <cli:SumRetroPricedAdjustments>?</cli:SumRetroPricedAdjustments>
+                  <!--Optional:-->
+                  <cli:GroupTogetherLikeAccessionCharges>?</cli:GroupTogetherLikeAccessionCharges>
+                  <!--Optional:-->
+                  <cli:PrintSubscriberId>?</cli:PrintSubscriberId>
+                  <!--Optional:-->
+                  <cli:DisplayReqNbr>?</cli:DisplayReqNbr>
+                  <!--Optional:-->
+                  <cli:DisplayOrderingPhysician>?</cli:DisplayOrderingPhysician>
+                  <!--Optional:-->
+                  <cli:DisplayPONbr>?</cli:DisplayPONbr>
+               </cli:ClientStatementDisplayOption>
+               <!--Optional:-->
+               <cli:ClientSubmissionServiceID>?</cli:ClientSubmissionServiceID>
+               <!--Optional:-->
+               <cli:CorrespondenceAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:CorrespondenceAddress>
+               <!--Optional:-->
+               <cli:DailyCharges>?</cli:DailyCharges>
+               <!--Optional:-->
+               <cli:DailyChargesFrequency>?</cli:DailyChargesFrequency>
+               <!--Optional:-->
+               <cli:DailyChargesNotificationMethod>?</cli:DailyChargesNotificationMethod>
+               <!--Optional:-->
+               <cli:Questions>
+                  <!--Zero or more repetitions:-->
+                  <cli:Question>
+                     <cli:Question>?</cli:Question>
+                     <cli:Required>?</cli:Required>
+                     <!--Optional:-->
+                     <cli:Printable>?</cli:Printable>
+                  </cli:Question>
+               </cli:Questions>
+               <!--Optional:-->
+               <cli:NPI>?</cli:NPI>
+               <!--Optional:-->
+               <cli:POs>
+                  <!--Zero or more repetitions:-->
+                  <cli:PO>
+                     <cli:PONumber>?</cli:PONumber>
+                     <!--Optional:-->
+                     <cli:POAmt>?</cli:POAmt>
+                     <cli:IssueDate>?</cli:IssueDate>
+                     <!--Optional:-->
+                     <cli:ExpDate>?</cli:ExpDate>
+                  </cli:PO>
+               </cli:POs>
+               <!--Optional:-->
+               <cli:PricingSuspend>?</cli:PricingSuspend>
+               <!--Optional:-->
+               <cli:PrimaryFacility>?</cli:PrimaryFacility>
+               <!--Optional:-->
+               <cli:RefundAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+               </cli:RefundAddress>
+               <!--Optional:-->
+               <cli:StartDate>?</cli:StartDate>
+               <!--Optional:-->
+               <cli:StatementFrequency>?</cli:StatementFrequency>
+               <!--Optional:-->
+               <cli:StreetAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:StreetAddress>
+               <!--Optional:-->
+               <cli:TaxId>?</cli:TaxId>
+               <!--Optional:-->
+               <cli:XRefs>
+                  <!--Zero or more repetitions:-->
+                  <cli:XRef>
+                     <cli:XRefID>?</cli:XRefID>
+                     <cli:XRefType>?</cli:XRefType>
+                     <cli:XRefDescription>?</cli:XRefDescription>
+                     <!--Optional:-->
+                     <cli:EffectiveDate>2000-01-01</cli:EffectiveDate>
+                     <!--Optional:-->
+                     <cli:ExpirationDate>?</cli:ExpirationDate>
+                  </cli:XRef>
+               </cli:XRefs>
+               <!--Optional:-->
+               <cli:copyBillingAddressToShippingAddress>false</cli:copyBillingAddressToShippingAddress>
+               <!--Optional:-->
+               <cli:ShippingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:ShippingAddress>
+               <!--Optional:-->
+               <cli:AnnualDisclosureLetter>?</cli:AnnualDisclosureLetter>
+               <!--Optional:-->
+               <cli:PerformEligibilityCensusChecking>?</cli:PerformEligibilityCensusChecking>
+               <!--Optional:-->
+               <cli:PerformEligibilityCensusCheckingCrossClients>?</cli:PerformEligibilityCensusCheckingCrossClients>
+               <!--Optional:-->
+               <cli:PerformBillingAssignment>?</cli:PerformBillingAssignment>
+            </cli:UpdateClient>
+            <cli:UpdateContactData>
+               <cli:ClientID>?</cli:ClientID>
+               <!--Optional:-->
+               <cli:BillingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:BillingAddress>
+               <!--Optional:-->
+               <cli:StreetAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact2>
+               </cli:StreetAddress>
+               <!--Optional:-->
+               <cli:CorrespondenceAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:CorrespondenceAddress>
+               <!--Optional:-->
+               <cli:copyBillingAddressToShippingAddress>false</cli:copyBillingAddressToShippingAddress>
+               <!--Optional:-->
+               <cli:ShippingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>?</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>?</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>?</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>?</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>?</cli:Email>
+                  </cli:Contact>
+               </cli:ShippingAddress>
+               <!--Optional:-->
+               <cli:RefundAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>?</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:AddressLine2>?</cli:AddressLine2>
+                     <!--Optional:-->
+                     <cli:City>?</cli:City>
+                     <!--Optional:-->
+                     <cli:State>?</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>?</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>?</cli:CountryCode>
+                  </cli:Address>
+               </cli:RefundAddress>
+            </cli:UpdateContactData>
+            <cli:DeleteClientCrossReferences>
+               <cli:ClientID>?</cli:ClientID>
+               <!--1 or more repetitions:-->
+               <cli:XRefs>
+                  <cli:XRefID>?</cli:XRefID>
+                  <cli:XRefType>?</cli:XRefType>
+               </cli:XRefs>
+            </cli:DeleteClientCrossReferences>
+            <cli:GetClient>
+               <cli:ClientId>?</cli:ClientId>
+            </cli:GetClient>
+            <cli:UpdateSecondaryClient>
+               <cli:PrimaryClientId>?</cli:PrimaryClientId>
+               <!--1 or more repetitions:-->
+               <cli:SecondaryClientInfos>
+                  <cli:SecondaryClientId>?</cli:SecondaryClientId>
+                  <cli:EffectiveDate>?</cli:EffectiveDate>
+                  <!--Optional:-->
+                  <cli:ExpirationDate>?</cli:ExpirationDate>
+                  <cli:SuspendThruEOM>?</cli:SuspendThruEOM>
+                  <!--Optional:-->
+                  <cli:Deleted>false</cli:Deleted>
+               </cli:SecondaryClientInfos>
+            </cli:UpdateSecondaryClient>
+         </cli:Payload>
+      </cli:RequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.xifin.com/schema/client/client/RequestMessage"/></con:call></con:operation></con:interface><con:testSuite name="Client WS-AddClient" id="7b5c8148-fa22-4430-83f0-b71e85210873"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddClient-AddNewClientWithRequiredFieldsOnly" searchProperties="true" id="c9b840f2-192d-4eeb-a88f-1e2b635298b7"><con:settings/><con:testStep type="groovy" name="Step1-AddNewClientWithRequiredFieldsOnly-SetupData" id="8cd914fe-2203-4994-8172-7ce8b9ea4362"><con:settings/><con:config><script>import com.xifin.utils.*;
+    import com.xifin.accnws.dao.*;
+    import com.xifin.clientportal.dao.*;
+    import com.xifin.clientws.dao.*;
+    import com.xifin.qa.config.*;
+    import com.xifin.mars.dao.*;
+    import com.xifin.payorws.dao.*;
+
+    //====== GEt Value Project property level value
+    def dbEnv = testRunner.testCase.testSuite.project.getPropertyValue("dbEnv")
+    def orgAlias = testRunner.testCase.testSuite.project.getPropertyValue ("OrgAlias")
+    log.info "dbEnv = " + dbEnv
+    // get and set Clientid testcase-level value
+    Configuration configuration = ConfigurationLoader.loadConfiguration(orgAlias);
+    daoManagerClientWebservice = new DaoManagerClientWS(configuration.getRpmDatabase())
+    randomCharacter = new RandomCharacter()
+    timeStamp = new TimeStamp()
+    def clientId = "ClnAuto"+randomCharacter.getRandomNumericString(8)
+    testRunner.testCase.setPropertyValue("ClientId", clientId)
+    log.info "ClientId = "+ clientId
+
+// get and set ClientName testcase - level
+def clientName = randomCharacter.getRandomAlphaString(6)
+testRunner.testCase.setPropertyValue("Name", clientName)
+log.info "ClientName = ClientName" + clientName
+
+// get and set Client Account type testcase - level
+/*def clientAccntType = daoManagerClientWebservice.getAccountType(dbEnv)
+testRunner.testCase.setPropertyValue("ClientAccntType", clientAccntType)
+log.info "ClientAccntType = " + clientAccntType
+*/
+// get and set Primary facility testcase - level
+def primFac = daoManagerClientWebservice.getPrimaryFacilityId(dbEnv)
+testRunner.testCase.setPropertyValue("PrimaryFacility", primFac)
+log.info "PrimaryFacility = " + primFac
+
+// get and set start date testcase - level
+def startDate = timeStamp.getCurrentDate('yyyy-MM-dd')
+testRunner.testCase.setPropertyValue("StartDate", startDate)
+log.info "StartDate = " + startDate
+
+// get and set address testcase - level
+def address = "ADDRESS" + randomCharacter.getRandomAlphaString(4)
+testRunner.testCase.setPropertyValue("Address", address)
+log.info "Address = " + address
+
+// get and set phone testcase - level
+def phone = "453729" + randomCharacter.getRandomNumericString(4)
+testRunner.testCase.setPropertyValue("Phone", phone)
+log.info "Phone = " + phone
+
+/*//get and set Zip testcase - level
+daoManagerPayor = new DaoManagerPayorWS()
+def zipInfo = []
+zipInfo = daoManagerPayor.getZipInfo(dbEnv)
+testRunner.testCase.setPropertyValue("Zip", zipInfo[0])
+log.info "Zip = " + zipInfo[0] */
+
+// get and set XrefInfo testcase - level
+def xrefInfo = []
+xrefInfo = daoManagerClientWebservice.getXrefInfo(dbEnv)
+testRunner.testCase.setPropertyValue("XrefId", xrefInfo[0])
+log.info "XrefId = " + xrefInfo[0]
+
+testRunner.testCase.setPropertyValue("XrefType", xrefInfo[1])
+log.info "XrefType = " + xrefInfo[1]
+
+testRunner.testCase.setPropertyValue("XrefDescription", xrefInfo[2])
+log.info "XrefDescription = " + xrefInfo[2]</script></con:config></con:testStep><con:testStep type="request" name="Step2-AddNewClientWithRequiredFieldsOnly" id="c80b1b34-7c41-4191-a8fd-ad7c8f00a85f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>clientSoap11</con:interface><con:operation>RequestMessage</con:operation><con:request name="Step2-AddNewClientWithRequiredFieldsOnly" wssPasswordType="PasswordDigest" id="f30b2564-d08a-49d5-a8bf-a22577136724"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.xifin.com/schema/client" xmlns:msg="http://www.xifin.com/schema/msgHeader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:RequestMessage>
+         <msg:MessageHeader>
+            <!--Optional:-->
+            <!--Optional:-->
+            <msg:SequenceNumber>34534543</msg:SequenceNumber>
+            <msg:UserId>${#Project#Username}</msg:UserId>
+            <!--Optional:-->
+            <msg:SourceApplication>?</msg:SourceApplication>
+            <!--Optional:-->
+            <msg:OrgAlias>${#Project#orgAlias}</msg:OrgAlias>
+         </msg:MessageHeader>
+         <cli:Payload>
+            <!--You have a CHOICE of the next 6 items at this level-->
+            <cli:AddClient>
+               <cli:AccountName>ClientName ${#TestCase#Name}</cli:AccountName>
+               <!--Optional:-->
+               <cli:BillReferralsToClient>false</cli:BillReferralsToClient>
+               <cli:BillingAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>Billing Addr1 ${#TestCase#Address}</cli:AddressLine1>
+                     <!--Optional:-->
+                     <!--<cli:AddressLine2>Billing Addr2 ${#TestCase#Address}</cli:AddressLine2>-->
+                     <!--Optional:-->
+                     <cli:City>La Mesa</cli:City>
+                     <!--Optional:-->
+                     <cli:State>CA</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>91941</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>US</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>${#TestCase#PreferredContType}</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>BillingContactName1 ${#TestCase#Name}</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>${#TestCase#Phone}</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Fax>${#TestCase#Phone}</cli:Fax>
+                     <!--Optional:-->
+                     <cli:Email>Billing@xifin.com</cli:Email>
+                  </cli:Contact1>
+                  <!--Optional:-->
+                  <cli:Contact2>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>${#TestCase#PreferredContType}</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <!--<cli:Name>BillingContactName2 ${#TestCase#Name}</cli:Name>-->
+                  </cli:Contact2>
+               </cli:BillingAddress>
+               <cli:ClientAccountType>${#TestCase#ClientAccntType}</cli:ClientAccountType>
+               <cli:ClientID>${#TestCase#ClientId}</cli:ClientID>
+               <!--Optional:-->
+               <cli:ClientStatementDeliveryMethod>${#TestCase#PreferredContType}</cli:ClientStatementDeliveryMethod>
+               <!--Optional:-->
+               <cli:ClientStatementDisplayOption>
+                  <!--Optional:-->
+                  <cli:DisplayUtilizationSummary>false</cli:DisplayUtilizationSummary>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponentsinUtilization>false</cli:DisplayProfileComponentsinUtilization>
+                  <!--Optional:-->
+                  <cli:DisplayPatientId>false</cli:DisplayPatientId>
+                  <!--Optional:-->
+                  <cli:DisplayProfileComponents>false</cli:DisplayProfileComponents>
+                  <!--Optional:-->
+                  <cli:DisplayPatientDOB>false</cli:DisplayPatientDOB>
+                  <!--Optional:-->
+                  <cli:DisplayPatientSSN>false</cli:DisplayPatientSSN>
+                  <!--Optional:-->
+                  <cli:DisplayPatientNameonReprice>false</cli:DisplayPatientNameonReprice>
+                  <!--Optional:-->
+                  <cli:DisplayDiscountsinBulk>false</cli:DisplayDiscountsinBulk>
+                  <!--Optional:-->
+                  <cli:DisplayDiagnosisCodes>false</cli:DisplayDiagnosisCodes>
+                  <!--Optional:-->
+                  <cli:DisplayPreviousBalances>false</cli:DisplayPreviousBalances>
+                  <!--Optional:-->
+                  <cli:SumRetroPricedAdjustments>false</cli:SumRetroPricedAdjustments>
+                  <!--Optional:-->
+                  <cli:GroupTogetherLikeAccessionCharges>false</cli:GroupTogetherLikeAccessionCharges>
+                  <!--Optional:-->
+                  <cli:PrintSubscriberId>false</cli:PrintSubscriberId>
+                  <!--Optional:-->
+                  <cli:DisplayReqNbr>false</cli:DisplayReqNbr>
+                  <!--Optional:-->
+                  <cli:DisplayOrderingPhysician>false</cli:DisplayOrderingPhysician>
+                  <!--Optional:-->
+                  <cli:DisplayPONbr>false</cli:DisplayPONbr>
+               </cli:ClientStatementDisplayOption>
+               <cli:ClientSubmissionServiceId>CLNSTMT-SNGLSPC</cli:ClientSubmissionServiceId>
+               <!--Optional:-->
+               <cli:CorrespondenceAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>Corresp Addr1 ${#TestCase#Address}</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:City>San Diego</cli:City>
+                     <!--Optional:-->
+                     <cli:State>CA</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>${#TestCase#Zip}</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>US</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>${#TestCase#PreferredContType}</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>Corresp Contact ${#TestCase#Name}</cli:Name>
+                     <!--Optional:-->
+                     <cli:Phone>${#TestCase#Phone}</cli:Phone>
+                     <!--Optional:-->
+                     <cli:Email>CorrespContact@xifin.com</cli:Email>
+                  </cli:Contact>
+               </cli:CorrespondenceAddress>
+               <cli:NPI>1821205840</cli:NPI>
+               <cli:PrimaryFacility>${#TestCase#PrimaryFacility}</cli:PrimaryFacility>
+               <!--Optional:-->
+               <cli:RefundAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>Refund Address1 ${#TestCase#Address}</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:City>La Mesa</cli:City>
+                     <!--Optional:-->
+                     <cli:State>CA</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>${#TestCase#Zip}</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>US</cli:CountryCode>
+                  </cli:Address>
+               </cli:RefundAddress>
+               <cli:StartDate>${#TestCase#StartDate}</cli:StartDate>
+               <!--Optional:-->
+               <cli:StatementFrequency>Weekly</cli:StatementFrequency>
+               <cli:StreetAddress>
+                  <!--Optional:-->
+                  <cli:Address>
+                     <cli:AddressLine1>Stree Address1 ${#TestCase#Address}</cli:AddressLine1>
+                     <!--Optional:-->
+                     <cli:City>La Mesa</cli:City>
+                     <!--Optional:-->
+                     <cli:State>CA</cli:State>
+                     <!--Optional:-->
+                     <cli:ZIP>${#TestCase#Zip}</cli:ZIP>
+                     <!--Optional:-->
+                     <cli:CountryCode>US</cli:CountryCode>
+                  </cli:Address>
+                  <!--Optional:-->
+                  <cli:Contact1>
+                     <!--Optional:-->
+                     <cli:PreferredContactMethod>${#TestCase#PreferredContType}</cli:PreferredContactMethod>
+                     <!--Optional:-->
+                     <cli:Name>Stree Address Contact Name ${#TestCase#Name}</cli:Name>
+                  </cli:Contact1>
+               </cli:StreetAddress>
+               <!--Optional:-->
+               <cli:TaxId>${#TestCase#TaxId}</cli:TaxId>
+               <!--Optional:-->
+               <cli:copyBillingAddressToShippingAddress>true</cli:copyBillingAddressToShippingAddress>
+            </cli:AddClient>
+         </cli:Payload>
+      </cli:RequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="68dd77fe-b4e3-44df-8214-7c14d136fb70"/><con:assertion type="XPath Match" name="Validation Message" id="f06bd70c-3b38-4d14-b6e7-9c0f2bf22dea"><con:configuration><path>declare namespace ns3='http://www.xifin.com/schema/client';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://www.xifin.com/schema/msgHeader';
+
+//ns3:Payload[1]/ns3:Status[1]/ns3:StatusMessage[1]/text()</path><content>Success</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:username>${#Project#Username}</con:username><con:password>${#Project#Password}</con:password><con:domain>Web Service Testing</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Step3-AddNewClientWithRequiredFieldsOnly-Validation" id="0d2c9eaa-a734-4ab9-be89-e629a54ab064"><con:settings/><con:config><script>import com.xifin.clientws.dao.*;
+import com.xifin.accnws.dao.*;
+import com.xifin.mars.dao.*;
+    import com.xifin.qa.config.*;
+    import com.xifin.mars.dao.*;
+
+// Get Project - level property Value
+// get dbEnv
+def dbEnv = testRunner.testCase.testSuite.project.getPropertyValue("dbEnv")
+    def orgAlias = testRunner.testCase.testSuite.project.getPropertyValue ("OrgAlias")
+log.info "dbEnv = " + dbEnv
+// Get Client id, client name
+    Configuration configuration = ConfigurationLoader.loadConfiguration(orgAlias);
+    daoManagerClientWebservice = new DaoManagerClientWS(configuration.getRpmDatabase())
+
+def clientId =  context.expand('${#TestCase#ClientId}').toUpperCase()
+
+log.info clientId
+// Get ClientId in Db and compare clientId value testcase-level
+daoManagerXifinRpm = new DaoManagerXifinRpm(configuration.getRpmDatabase())
+def clientIdInDb = daoManagerXifinRpm.checkClientInfoInDb(clientId, dbEnv)
+assert clientIdInDb == true: "AddClient-AddNewClientWithRequiredFieldsOnly failed"
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+def holder = groovyUtils.getXmlHolder( "Step2-AddNewClientWithRequiredFieldsOnly#Response" )
+
+//If the desired content is namespace qualified (very likely for SOAP responses), you need to define the namespace first.
+holder.namespaces["ns3"] = "http://www.xifin.com/schema/client"
+def message = holder["//ns3:StatusMessage[1]/text()"]
+// Set Status message testcase -level Value
+testRunner.testCase.setPropertyValue("StatusMessage", message)
+log.info "StausMessage = " + message
+assert message == "Success" : "AddClient-AddNewClientWithRequiredFieldsOnly failed"
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>Name</con:name><con:value>BDIODT</con:value></con:property><con:property><con:name>ClientAccntType</con:name><con:value>HOSPITAL</con:value></con:property><con:property><con:name>ClientId</con:name><con:value>ClnAuto36069632</con:value></con:property><con:property><con:name>ClientSubmId</con:name><con:value>1</con:value></con:property><con:property><con:name>PrimaryFacility</con:name><con:value>ACME</con:value></con:property><con:property><con:name>StartDate</con:name><con:value>2017-07-31</con:value></con:property><con:property><con:name>Address</con:name><con:value>ADDRESSJRKR</con:value></con:property><con:property><con:name>Phone</con:name><con:value>4537291035</con:value></con:property><con:property><con:name>Zip</con:name><con:value>91941</con:value></con:property><con:property><con:name>XrefId</con:name><con:value>MCCA</con:value></con:property><con:property><con:name>XrefType</con:name><con:value>LABCOSTONCLAIM</con:value></con:property><con:property><con:name>XrefDescription</con:name><con:value>Include Lab Cost on Claim Form</con:value></con:property><con:property><con:name>TaxId</con:name><con:value>12314569</con:value></con:property><con:property><con:name>PreferredContType</con:name><con:value>Mail</con:value></con:property><con:property><con:name>StatusMessage</con:name><con:value>Success</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Username</con:name><con:value>clndoc</con:value></con:property><con:property><con:name>Password</con:name><con:value>clndoc</con:value></con:property><con:property><con:name>UserId</con:name><con:value>qatester</con:value></con:property><con:property><con:name>OrgAlias</con:name><con:value>qa08</con:value></con:property><con:property><con:name>dbEnv</con:name><con:value>QA_ACME_TEST</con:value></con:property><con:property><con:name>endpoint</con:name><con:value>https://www.xifinqa.com/prod/clientv871/services</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

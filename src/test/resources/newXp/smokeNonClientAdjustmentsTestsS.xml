@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Sequential Suite-->
+<suite name="Non-Client Adjustments" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="15" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	<parameter name="email" value="qatester@xifin.com" />
+	<parameter name="password" value="qatester123" />
+	<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+	<parameter name="testSuite" value="Accession WS-CreateAccession" />
+	<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+	<parameter name="propLevel" value="TestCase" />
+	<parameter name="propName" value="NewAccnID" />
+	<parameter name="wsUsername" value="clndoc" />
+	<parameter name="wsPassword" value="clndoc" />
+	<parameter name="eType1" value="OePostingEngine" />
+	<parameter name="eType2" value="PricingEngine" />
+	<parameter name="xapEnv" value="XAP" />
+	<parameter name="engConfigDB" value="SSO_APP_STAGING" />
+	<parameter name="ssoUsername" value="qatester@xifin.com"/>
+	<parameter name="ssoPassword" value="qatester123"/>
+
+        <test name="Upload file with Adj is not equal bill">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_499">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Upload twice times for the same file">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_500">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Upload Duplicate Single file with different category">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_501">
+                        <parameter name="documentFile" value="automation_temp.csv" />
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Update non-Client Adjustments with valid Adj$">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_505">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Delete an non-client adjustment">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_507">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+         <test name="Uncheck Delete Row checkbox">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_508">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Upload file have Anticipate New $ is not equal to New $ ">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_511">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Upload file have Adjustment $ is negative number">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_514">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Error Message shows when Cash Adjustment is more than Payor Payment ">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_642">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+        <test name="Upload file contains Mod1">
+            <classes>
+                <class name="com.newXp.tests.SmokeNonClientAdjustmentsTest" />
+                <methods>
+                    <include name="testXPR_518">
+                    </include>
+                </methods>
+            </classes>
+        </test>
+
+</suite>

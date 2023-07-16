@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Accession Error Processing Tests Sequential" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+    	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-612&quot;&gt; RPM-612:Accession - Error Processing - EP Dunning Letter - Create new Patient Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_612">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>   
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-613&quot;&gt; RPM-613:Accession - Error Processing - EP Dunning Letter - Update Patient Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_613">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-614&quot;&gt; RPM-614:Accession - Error Processing - EP Dunning Letter - Delete Patient Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_614">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-615&quot;&gt; RPM-615:Accession - Error Processing - EP Dunning Letter - Create new Client Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_615">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+ 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-616&quot;&gt; RPM-616:Accession - Error Processing - EP Dunning Letter - Update Client Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_616">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-617&quot;&gt; RPM-617:Accession - Error Processing - EP Dunning Letter - Delete Client Dunning Cycle ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_617">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-618&quot;&gt; RPM-618:Accession - Error Processing - EP Dunning Letter - Input validation - No Days to Next Letter ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_618">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-619&quot;&gt; RPM-619:Accession - Error Processing - EP Dunning Letter - Letter Count validation ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_619">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-620&quot;&gt; RPM-620:Accession - Error Processing - EP Dunning Letter - Input validation - Non-numeric value ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_620">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-622&quot;&gt; RPM-622:Accession - Error Processing - EP Dunning Letter - Reset ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionErrorProcessingTest" />
+			<methods>
+				<include name="testRPM_622">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>
+		
+</suite>

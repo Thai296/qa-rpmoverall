@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PF-EpOutsideAgencyEngine" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="15"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="eType1" value="OePostingEngine"/>
+    <parameter name="eType2" value="PricingEngine"/>
+    <parameter name="eType3" value="EpWorkFlowEngine"/>
+    <parameter name="eType4" value="EpOutsideAgencyEngine"/>
+    <parameter name="xapEnv" value="XAP"/>
+    <parameter name="engConfigDB" value="SSO_APP_STAGING"/>
+
+    <test name="Verify the accn can be hold for certain days before moving to the next action ">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_586">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyPyrAccnWithPtZipErr" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="PECOS-Verify the accn is pushed into Q_VALIDATE_ACCN">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_585">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession" />
+                    <parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="FR-ADD-PreCorresp-Verify file can be generated">
+        <classes>
+            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />
+            <methods>
+                <include name="testPFER_598">
+                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />
+                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />
+                    <parameter name="testCase" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyPyrAccnWithNODIAGErr" />
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <!--    <test name="Accns in both Pre and Post Corresp queues-Verify both files can be generated">-->
+    <!--        <classes>-->
+    <!--            <class name="com.pfEngines.tests.EPOutsideAgencyEngineTest" />-->
+    <!--            <methods>-->
+    <!--                <include name="testPFER_601">-->
+    <!--                    <parameter name="project" value="Accn-WS-Prod-soapui-project-Utils.xml" />-->
+    <!--                    <parameter name="testSuite" value="Accession WS-CreateAccession-CreateNewAccession" />-->
+    <!--                    <parameter name="testCase1" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyAccnWithSUBIDError" />-->
+    <!--                    <parameter name="testCase2" value="Accession WS-EPOutsideAgencyEngine-CreateNewFinalReported3rdPartyAccnWithAUTHErr" />-->
+    <!--                </include>-->
+    <!--            </methods>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+</suite>

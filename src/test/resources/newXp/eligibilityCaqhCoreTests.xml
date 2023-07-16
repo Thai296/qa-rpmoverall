@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Eligibility CAQH CORE Compliance" preserve-order="true" parallel="tests" thread-count="5" verbose="10">
+
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="60"/>
+    <parameter name="ssoUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoPassword" value="qatester123"/>
+    <parameter name="disableBrowserPlugins" value="true"/>
+
+    <test name="CT001">
+        <parameter name="accnId" value="CT001"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT002">
+        <parameter name="accnId" value="CT002"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT003">
+        <parameter name="accnId" value="CT003"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT004">
+        <parameter name="accnId" value="CT004"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT005">
+        <parameter name="accnId" value="CT005"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT006">
+        <parameter name="accnId" value="CT006"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt006"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT007">
+        <parameter name="accnId" value="CT007"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt007"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT008">
+        <parameter name="accnId" value="CT008"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT009">
+        <parameter name="accnId" value="CT009"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt009"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT010">
+        <parameter name="accnId" value="CT010"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt010"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT011">
+        <parameter name="accnId" value="CT011"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt011"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT012">
+        <parameter name="accnId" value="CT012"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt012"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT013">
+        <parameter name="accnId" value="CT013"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt013"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT014">
+        <parameter name="accnId" value="CT014"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt014"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT015">
+        <parameter name="accnId" value="CT015"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt015"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT016">
+        <parameter name="accnId" value="CT016"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT017">
+        <parameter name="accnId" value="CT017"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt017"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT018">
+        <parameter name="accnId" value="CT018"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt018"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT019">
+        <parameter name="accnId" value="CT0019"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt019"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT020">
+        <parameter name="accnId" value="CT020"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt020"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT021">
+        <parameter name="accnId" value="CT021"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt021"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT022">
+        <parameter name="accnId" value="CT022"/>
+        <parameter name="eligStaTypDescr" value="Ineligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt022"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT023">
+        <parameter name="accnId" value="CT023"/>
+        <parameter name="eligStaTypDescr" value="Ineligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt023"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT024">
+        <parameter name="accnId" value="CT024"/>
+        <parameter name="eligStaTypDescr" value="Eligible"/>
+        <classes>
+            <class name="com.newXp.tests.EligibilityCaqhCoreTests">
+                <methods>
+                    <include name="testCt024"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

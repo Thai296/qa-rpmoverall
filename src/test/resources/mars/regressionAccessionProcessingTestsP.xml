@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Component Accession Processing Tests Parallel" preserve-order="true" parallel="tests" thread-count="10" verbose="10">
+
+	<parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+	<parameter name="port" value="4444" />
+	<parameter name="timeout" value="45" />
+    <parameter name="platform" value="WINDOWS" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="version" value="ANY" />
+	
+  
+	 <!-- <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-396&quot;&gt; RPM-396 : RPM - Accession Processing - Super Search - Submit Button Disabled ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_396">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+				</include>
+			</methods>
+		</classes> 
+	</test>    CR  -->
+
+     <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-398&quot;&gt; RPM-398 : RPM - Accession - Accession Demographics - Search - Submit Button Disabled ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_398">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes> 
+	</test>   
+	
+	 <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-29&quot;&gt; RPM_29 RPM - Accession - Accession Demographics - Update Accession - Update Payor ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_29">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-30&quot;&gt; RPM_30 RPM - Accession - Transaction Detail - Update Accession - Add Dx Code ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_30">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-31&quot;&gt; RPM_31 RPM - Accession - Transaction Detail - Update Accession - Add Modifier ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_31">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+					<parameter name="mod" value="26" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	 
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-33&quot;&gt; RPM_33 RPM - Accession - Transaction Detail - Billable Procedure Code - Active adj codes display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_33">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-34&quot;&gt; RPM_34 RPM - Accession - Transaction Detail - Bulk Payments - Active adj codes display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_34">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-35&quot;&gt; RPM_35 RPM - Accession - Transaction Detail - Billable Procedure Code - Inactive adj codes don't display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_35">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-36&quot;&gt; RPM_36 RPM - Accession - Transaction Detail - Bulk Payments - Inactive adj codes don't display ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_36">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>	
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-65&quot;&gt; RPM_65 RPM - Accession - Accession Demographics - Reason Code FxDate - Submit Accn unfixed WELLEXAM ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_65">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-66&quot;&gt; RPM_66 RPM - Accession - Accession Demographics - Reason Code FxDate - Submit Accn fixed WELLEXAM ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_66">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />					
+				</include>
+			</methods>
+		</classes>
+	</test>   
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-448&quot;&gt; RPM_448 RPM - Accession - Accession Demographic - Accn Status ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_448">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />				
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-449&quot;&gt; RPM_449 RPM - Accession - Accession Demographic - ClientId ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_449">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-450&quot;&gt; RPM_450 RPM - Accession - Accession Demographic - Patient Address 1 ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_450">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-451&quot;&gt; RPM_451 RPM - Accession - Accession Demographic - Patient Gender ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_451">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+	
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-452&quot;&gt; RPM_452 RPM - Accession - Accession Demographic - Patient zip code ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_452">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-453&quot;&gt; RPM_453 RPM - Accession - Accession Demographic - Patient Ordering NIP ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_453">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-454&quot;&gt; RPM_454 RPM - Accession - Accession Demographic - Patient PSC Location ID ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_454">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+	
+    <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-455&quot;&gt; RPM_455 RPM - Accession - Accession Demographic - Patient PSC Location Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_455">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />
+				</include>
+			</methods>
+		</classes>
+	</test> 
+ 
+ <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-456&quot;&gt; RPM_456 RPM - Accession - Accession Demographic - Insurance Subscr Id ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_456">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-457&quot;&gt; RPM_457 RPM - Accession - Accession Demographic - Insurance Provider Id ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_457">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  
+	
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-458&quot;&gt; RPM_458 RPM - Accession - Accession Demographic - Insurance Payor Priority ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_458">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>
+ 
+  <test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-459&quot;&gt; RPM_459 RPM - Accession - Accession Demographic - Patient Ordering NIP UPIN ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_459">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />
+					<parameter name="project" value="Accn-WS-Prod-soapui-project-SmokeTests.xml" />
+					<parameter name="testSuite" value="Accession WS-CreateAccession" />
+					<parameter name="testCase" value="AWS-5:Accession WS-CreateAccession-CreateNewAccession" />
+					<parameter name="propLevel" value="TestCase" />
+					<parameter name="propName" value="NewAccnID" />
+					<parameter name="wsUsername" value="clndoc" />
+					<parameter name="wsPassword" value="clndoc" />					
+				</include>
+			</methods>
+		</classes>
+	</test>  	
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-704&quot;&gt; RPM-704:RPM - Accession - Accession Demographic - Eligible Subscriber Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_704">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGGZRLX20150908114303295" />
+					<parameter name="pyrAbbrev" value="UHC" />			
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-706&quot;&gt; RPM-706:RPM - Accession - Accession Demographic - Ineligible Subscriber Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_706">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGAOLGZ20150914153334694" />
+					<parameter name="pyrAbbrev" value="UHC" />		
+					<parameter name="disableBrowserPlugins" value="true" />		
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-705&quot;&gt; RPM-705:RPM - Accession - Accession Demographic - Eligible Dependant Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_705">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGDMBCU20150914163830399" />
+					<parameter name="pyrAbbrev" value="UHC" />		
+					<parameter name="disableBrowserPlugins" value="true" />		
+				</include>
+			</methods>
+		</classes>
+	</test>  
+  
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-707&quot;&gt; RPM-707:RPM - Accession - Accession Demographic - Ineligible Dependant Eligibility Check with WS ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_707">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGZFMDV2015091416571912" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="disableBrowserPlugins" value="true" />					
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-713&quot;&gt; RPM-713:RPM - Accession - Accession Demographic - Subscriber Eligibility Check will update Pt Name ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_713">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />	
+					<parameter name="accnId" value="AUTOELIGAFXGJ20150918125848716" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="ptLName" value="ELIGTESTLNAME" />
+					<parameter name="ptFName" value="AUTOTESTFNAME" />				
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+	<test name="&lt;a href=&quot;https://172.20.1.75/testlink/linkto.php?tprojectPrefix=RPM&amp;item=testcase&amp;id=RPM-716&quot;&gt; RPM-716:RPM - Accession - Accession Demographic - Subscriber Eligibility Check that translates the payor ">
+		<classes>
+			<class name="com.mars.tests.RegressionAccessionProcessingTest" />
+			<methods>
+				<include name="testRPM_716">
+					<parameter name="email" value="qatester@xifin.com" />
+					<parameter name="password" value="qatester123" />		
+					<parameter name="accnId" value="AUTOELIGGZJDC20150929164044272" />
+					<parameter name="pyrAbbrev" value="UHC" />	
+					<parameter name="translatedPyrAbbrev" value="BCBSUNY" />		
+					<parameter name="disableBrowserPlugins" value="true" />	
+				</include>
+			</methods>
+		</classes>
+	</test> 
+
+</suite>

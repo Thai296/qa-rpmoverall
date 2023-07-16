@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- MARS log4j Logging configuration -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!--
+    Sends log messages to System.err
+    -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+
+        <param name="Target" value="System.err"/>
+        <param name="Threshold" value="debug"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{ISO8601} {pid:%X{pid},instanceId:%X{instanceId},org:%X{org}} [%t] %-5p %c %x - %m%n"/>
+        </layout>
+
+    </appender>
+
+    <!--
+    Sends log messages to the rolling log file
+    -->
+    <appender name="debugfile" class="org.apache.log4j.DailyRollingFileAppender">
+
+        <!-- <param name="File" value="${user.dir}/${org}/${engine}/engine-${org}-debug.log"/> -->
+        <param name="File" value="${log.output.path}/engine.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="debug"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{ISO8601} {pid:%X{pid},instanceId:%X{instanceId},org:%X{org}} [%t] %-5p %c %x - %m%n"/>
+        </layout>
+
+        <!-- Reject log messages regarding broken pipe socket errors. -->
+        <filter class="org.apache.log4j.varia.StringMatchFilter">
+            <param name="StringToMatch" value="java.net.SocketException: Connection reset by peer"/>
+            <param name="AcceptOnMatch" value="false"/>
+        </filter>
+
+    </appender>
+
+    <!--
+    Sends log messages to the rolling log file
+    -->
+    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+
+        <!-- <param name="File" value="${user.dir}/${org}/${engine}/engine-${org}.log"/> -->
+        <param name="File" value="${log.output.path}/engine.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="debug"/>
+        <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d{ISO8601} {pid:%X{pid},instanceId:%X{instanceId},org:%X{org}} [%t] %-5p %c %x - %m%n"/>
+        </layout>
+        <!-- Reject log messages regarding broken pipe socket errors. -->
+        <filter class="org.apache.log4j.varia.StringMatchFilter">
+            <param name="StringToMatch" value="java.net.SocketException: Connection reset by peer"/>
+            <param name="AcceptOnMatch" value="false"/>
+        </filter>
+
+    </appender>
+
+
+    <category name="org.apache.catalina.session.ManagerBase">
+        <priority value="info"/>
+    </category>
+    <category name="org.hibernate.pretty.Printer">
+        <priority value="info"/>
+    </category>
+
+    <category name="com.mchange.v2.resourcepool">
+        <priority value="debug"/>
+    </category>
+
+    <category name="com.mchange.v2.c3p0.impl">
+        <priority value="debug"/>
+    </category>
+
+    <category name="org.hibernate.cfg">
+        <priority value="info"/>
+    </category>
+
+    <category name="org.hibernate.ejb.packaging">
+        <priority value="info"/>
+    </category>
+
+
+    <!-- Settings for the root category -->
+    <root>
+        <priority value="debug"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Client Billing Category" preserve-order="true" parallel="tests" thread-count="1" verbose="10">
+
+    <parameter name="hub" value="http://xifin-qa013.mba.xifin.com:"/>
+    <parameter name="port" value="4444"/>
+    <parameter name="timeout" value="45"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="version" value="ANY"/>
+    <parameter name="ssoXpUsername" value="qatester@xifin.com"/>
+    <parameter name="ssoXpPassword" value="qatester123"/>
+    <parameter name="marUsername" value="infonam"/>
+    <parameter name="marPassword" value="tang12345"/>
+    <parameter name="marTabName" value="FILE_MAINTENANCE"/>
+
+    <test name="Add Client Billing category with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_756">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add Client Billing Category with displayed is check">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_757">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Update record with valid data">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_758">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Help icon">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_760">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Reset button">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_761">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Delete record from DB">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_762">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Add client billing without input require fields">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_764">
+                </include>
+            </methods>
+        </classes>
+    </test>
+
+    <test name="Verify Reset button after add new record">
+        <classes>
+            <class name="com.newXp.tests.ClientBillingCategoryTest"/>
+            <methods>
+                <include name="testXPR_780">
+                </include>
+            </methods>
+        </classes>
+    </test>
+</suite>
+	
